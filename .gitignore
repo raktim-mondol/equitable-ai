@@ -12,7 +12,6 @@
 *.lot
 *.bcf
 *.run.xml
-*.pdf
 
 # Build directory
 build/
