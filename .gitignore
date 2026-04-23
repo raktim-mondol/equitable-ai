@@ -12,10 +12,24 @@
 *.lot
 *.bcf
 *.run.xml
+*.pdf
 
 # Build directory
-latex_templete/build/
+build/
 
 # Temporary files
 *.tmp
 *.bak
+
+# Project-specific (not for repo)
+.cursor/
+.obsidian/
+*.json
+all_paper/
+cross_domain_evidence.json
+histo_and_experimental_paper.json
+histo_and_review_paper.json
+metadata_availability/
+non-histopath-paper.json
+wiki/
+Welcome.md
