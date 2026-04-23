@@ -1,0 +1,21 @@
+# LaTeX build artifacts
+*.aux
+*.log
+*.bbl
+*.blg
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+*.bcf
+*.run.xml
+
+# Build directory
+latex_templete/build/
+
+# Temporary files
+*.tmp
+*.bak
