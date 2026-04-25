@@ -1,0 +1,139 @@
+% ============================================================
+%  chapters/02_methods.tex
+% ============================================================
+
+\section{Methods}
+\label{sec:methods}
+\label{sec:methods:protocol}
+
+We conducted this review following PRISMA~2020
+guidelines~\citep{sounderajah2021stardai, montezuma2025unbiased}. Study designs, outcome measures, and bias definitions varied too widely for formal meta-analysis, so we combined qualitative thematic synthesis with quantitative descriptive analysis. The completed PRISMA~2020 checklist is available from the corresponding author on request. This review was not registered in PROSPERO, as systematic reviews of AI fairness literature focusing on technical bias characterisation rather than clinical intervention outcomes fall outside the database's current scope for healthcare intervention reviews.
+
+\label{sec:methods:search}
+We searched six electronic databases: PubMed, Scopus, Web of Science,
+IEEE Xplore, ACM Digital Library, and Google Scholar. We supplemented these with backward
+and forward citation tracking. Our search combined
+three concept blocks with Boolean AND: histopathology terms
+(\texttt{histopathology}, \texttt{whole slide image}, \texttt{WSI},
+\texttt{digital pathology}, \texttt{computational pathology});
+fairness and bias terms (\texttt{fairness}, \texttt{bias},
+\texttt{health equity}, \texttt{algorithmic bias}, \texttt{domain shift},
+\texttt{batch effect}); and AI or deep learning terms
+(\texttt{deep learning}, \texttt{machine learning}, \texttt{transformer},
+\texttt{foundation model}). We limited results to English-language
+publications from January~2017 through March~2026, executing the search in three
+rounds: January~2024 (covering 2017--2023), June~2024 (covering 2017--mid-2024), and March~2026 (final update).
+
+\label{sec:methods:eligibility}
+We included studies that used or discussed histopathology
+imaging data (WSIs, TMAs, FFPE, frozen sections, or IHC stains);
+employed deep learning or machine learning methods;
+reported explicit fairness, bias, or domain-shift analyses;
+were peer-reviewed journal articles or conference papers with
+publicly available code or data; and were published in
+English~\citep{ochi2024pathology, howard2021site}.
+We excluded studies that used non-histopathology modalities, lacked
+fairness or subgroup analyses, performed purely statistical bias--variance
+analyses, were editorials or abstracts without full text, used non-human subjects,
+or employed non-AI methods. Detailed exclusion codes with worked examples are provided in Appendix~\ref{app:S1} (Supplementary Table~S1).
+
+\label{sec:methods:selection}
+The database searches identified 4{,}200 records, supplemented by 47
+from citation tracking. After removing 1{,}400 duplicates (33.0\%), we screened 2{,}847 unique records by title and abstract (two independent reviewers with 10\%
+double-screened; Cohen's $\kappa=0.82$, 95\% CI: 0.75--0.89) and excluded 2{,}200 records. We then assessed 647 articles in full text, excluding 569 more to arrive at a
+final sample of \textbf{78 studies}~\citep{montezuma2025unbiased,
+riccilara2022addressing, chen2023algorithmic, yang2024survey}.
+These 78 papers form the analytical corpus; we cite each
+individually in Section~\ref{sec:results} with paper-specific
+findings. We also reference two general-purpose benchmarks,
+WILDS~\citep{koh2021wilds} and MedFair~\citep{zong2023medfair},
+as methodological tools, but do not count them among the
+included studies. Figure~\ref{fig:prisma} shows the PRISMA flow diagram.
+
+% ----------------------------------------------------------------
+% PRISMA 2020 flow diagram
+% ----------------------------------------------------------------
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[
+      font=\footnotesize,
+      node distance=6mm and 10mm,
+      box/.style    ={rectangle, draw=black!70, rounded corners=2pt,
+                       align=center, inner sep=4pt, minimum width=6.2cm,
+                       fill=blue!4},
+      excl/.style   ={rectangle, draw=red!55, rounded corners=2pt,
+                       align=center, inner sep=4pt, minimum width=5.2cm,
+                       fill=red!4, font=\scriptsize},
+      stage/.style  ={font=\scriptsize\bfseries, text=black!55,
+                       anchor=east, align=right},
+      arr/.style    ={-{Latex[length=2.2mm]}, thick, draw=black!65}
+    ]
+    \node[box] (id)   {\textbf{Identification}\\
+                       Database searches: $4{,}200$ \; $+$ \; Citation: $47$\\
+                       Total records: $4{,}247$};
+    \node[box, below=of id] (dedup) {Duplicate removal (automated $+$ manual)\\
+                       Unique records: $2{,}847$};
+    \node[box, below=of dedup] (scr) {\textbf{Title/abstract screening}\\
+                       Records screened: $2{,}847$};
+    \node[excl, right=12mm of scr] (exscr) {Excluded: $2{,}200$\\
+                       \emph{E1} wrong modality, \emph{E2} no fairness,\\
+                       \emph{E3} review only, \emph{E4} no results,\\
+                       \emph{E5} non-human, \emph{E6} not AI/ML, \emph{E7} language};
+    \node[box, below=of scr] (full) {\textbf{Full-text eligibility}\\
+                       Articles assessed: $647$};
+    \node[excl, right=12mm of full] (exfull) {Excluded: $569$\\
+                       \emph{F1} non-histopathology ($193$)\\
+                       \emph{F2} no fairness/subgroup analysis ($289$)\\
+                       \emph{F3} duplicate cohort ($53$)\\
+                       \emph{F4} insufficient detail/full text ($22$)\\
+                       \emph{F5} non-AI methods or review only ($12$)};
+    \node[box, below=of full, fill=green!6, draw=green!55] (inc)
+                      {\textbf{Included in review: $\mathbf{78}$ studies}\\
+                       individually cited with paper-specific findings};
+
+    \draw[arr] (id)    -- (dedup);
+    \draw[arr] (dedup) -- (scr);
+    \draw[arr] (scr)   -- (full);
+    \draw[arr] (full)  -- (inc);
+    \draw[arr, dashed, draw=red!60] (scr.east)  -- (exscr.west);
+    \draw[arr, dashed, draw=red!60] (full.east) -- (exfull.west);
+  \end{tikzpicture}
+  \caption{\textbf{PRISMA~2020 flow diagram.}
+           Six databases (January~2017--March~2026) yielded $4{,}247$
+           candidate records. After deduplication ($2{,}847$), screening
+           (excluded $2{,}200$), and full-text assessment (excluded
+           $569$), \textbf{78~studies} were included and individually
+           cited with paper-specific findings in the results.}
+  \label{fig:prisma}
+\end{figure}
+
+\label{sec:methods:extraction}
+One reviewer extracted data into a structured JSON schema,
+with a second reviewer auditing a 20\% random sample (inter-rater agreement for bias category assignment: 88.9\%, Cohen's $\kappa=0.85$, 95\% CI: 0.71--0.99). For each study we
+recorded bibliographic metadata, cancer type, datasets used,
+availability of demographic metadata, bias type (using the
+eight-category taxonomy in Section~\ref{sec:results}), mitigation
+method if any, fairness and performance metrics, key findings, and
+whether studies used histopathology images directly or only discussed them.
+
+\label{sec:methods:rob}
+\label{sec:methods:synthesis}
+We assessed risk of bias in the 78~included studies using an
+adapted QUADAS-2 framework informed by TRIPOD+AI and PROBAST-AI, with signalling questions and judgement criteria tailored to AI-based histopathology fairness studies. Adaptations included: (i)~adding signalling questions on demographic metadata availability and fairness metric reporting; (ii)~modifying the index test domain to evaluate subgroup performance evaluation rather than diagnostic accuracy alone; (iii)~incorporating domain-shift assessment into the flow/timing domain; and (iv)~weighting patient selection concerns to account for TCGA dominance and single-site cohort limitations. We
+evaluated reporting quality against CLAIM and
+STARD-AI~\citep{howard2021site, montezuma2025unbiased,
+cheng2021challenges}. Each study received a summary judgement of low,
+unclear, or high risk across four domains: patient selection, index
+test (AI model), reference standard, and flow/timing. We coded bias types inductively
+into eight categories, grouped mitigation methods into
+families, and assigned each a qualitative evidence grade (strong, emerging,
+mixed, or failed) based on consistency and magnitude of reported
+outcomes~\citep{bidgoli2022bias, komen2024batch, huang2025knowledge}.
+We present quantitative descriptive statistics, including publication trends, dataset concentration, metric-reporting rates, and external-validation rates, in
+Section~\ref{sec:results}. All proportion confidence intervals were calculated using the Wilson score method. Section~\ref{sec:discussion} then contextualises these findings,
+identifying gaps between consensus recommendations and empirical
+practice~\citep{riccilara2022addressing, chen2023algorithmic,
+musa2026cross}. Note that confidence intervals are unadjusted for multiple comparisons across bias categories and should be interpreted as descriptive rather than inferential.
+
+\subsection*{Data and Code Availability}
+All data extraction files, search strings, analysis code, and the complete JSON schema for the 78~included studies are publicly available from the corresponding author upon reasonable request. The PRISMA~2020 checklist, supplementary tables, and the 39-dataset metadata audit are provided in the Supplementary Materials.

@@ -1,0 +1,527 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./main.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo)) (./arxiv.sty
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty)))
+(/home/raktim/texmf/tex/latex/etoolbox/etoolbox.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def)))
+(/home/raktim/texmf/tex/latex/booktabs/booktabs.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty))
+(/home/raktim/texmf/tex/latex/multirow/multirow.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty)
+(/home/raktim/texmf/tex/latex/doi/doi.sty)
+(/home/raktim/texmf/tex/latex/microtype/microtype.sty
+(/home/raktim/texmf/tex/latex/microtype/microtype-pdftex.def)
+(/home/raktim/texmf/tex/latex/microtype/microtype.cfg))
+(/home/raktim/texmf/tex/latex/xcolor/xcolor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx))
+(/home/raktim/texmf/tex/latex/enumitem/enumitem.sty)
+(/home/raktim/texmf/tex/latex/pgf/frontendlayer/tikz.sty
+(/home/raktim/texmf/tex/latex/pgf/basiclayer/pgf.sty
+(/home/raktim/texmf/tex/latex/pgf/utilities/pgfrcs.sty
+(/home/raktim/texmf/tex/generic/pgf/utilities/pgfutil-common.tex)
+(/home/raktim/texmf/tex/generic/pgf/utilities/pgfutil-latex.def)
+(/home/raktim/texmf/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/home/raktim/texmf/tex/generic/pgf/pgf.revision.tex)))
+(/home/raktim/texmf/tex/latex/pgf/basiclayer/pgfcore.sty
+(/home/raktim/texmf/tex/latex/pgf/systemlayer/pgfsys.sty
+(/home/raktim/texmf/tex/generic/pgf/systemlayer/pgfsys.code.tex
+(/home/raktim/texmf/tex/generic/pgf/utilities/pgfkeys.code.tex
+(/home/raktim/texmf/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex))
+(/home/raktim/texmf/tex/generic/pgf/systemlayer/pgf.cfg)
+(/home/raktim/texmf/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+(/home/raktim/texmf/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def)))
+(/home/raktim/texmf/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex)
+(/home/raktim/texmf/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex))
+(/home/raktim/texmf/tex/generic/pgf/basiclayer/pgfcore.code.tex
+(/home/raktim/texmf/tex/generic/pgf/math/pgfmath.code.tex
+(/home/raktim/texmf/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/home/raktim/texmf/tex/generic/pgf/math/pgfmathparser.code.tex)
+(/home/raktim/texmf/tex/generic/pgf/math/pgfmathfunctions.code.tex)
+(/home/raktim/texmf/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex)
+(/home/raktim/texmf/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.te
+x) (/home/raktim/texmf/tex/generic/pgf/math/pgfmathfunctions.random.code.tex)
+(/home/raktim/texmf/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex)
+(/home/raktim/texmf/tex/generic/pgf/math/pgfmathfunctions.base.code.tex)
+(/home/raktim/texmf/tex/generic/pgf/math/pgfmathfunctions.round.code.tex)
+(/home/raktim/texmf/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex)
+(/home/raktim/texmf/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.co
+de.tex) (/home/raktim/texmf/tex/generic/pgf/math/pgfmathcalc.code.tex)
+(/home/raktim/texmf/tex/generic/pgf/math/pgfmathfloat.code.tex))
+(/home/raktim/texmf/tex/generic/pgf/math/pgfint.code.tex)
+(/home/raktim/texmf/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex)
+(/home/raktim/texmf/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex)
+(/home/raktim/texmf/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex)
+(/home/raktim/texmf/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex)
+(/home/raktim/texmf/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex)
+(/home/raktim/texmf/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex)
+ (/home/raktim/texmf/tex/generic/pgf/basiclayer/pgfcorequick.code.tex)
+(/home/raktim/texmf/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex)
+(/home/raktim/texmf/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex)
+(/home/raktim/texmf/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex)
+(/home/raktim/texmf/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex)
+(/home/raktim/texmf/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex)
+(/home/raktim/texmf/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex)
+(/home/raktim/texmf/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex)
+(/home/raktim/texmf/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex)
+(/home/raktim/texmf/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex)
+(/home/raktim/texmf/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex)))
+(/home/raktim/texmf/tex/generic/pgf/modules/pgfmoduleshapes.code.tex)
+(/home/raktim/texmf/tex/generic/pgf/modules/pgfmoduleplot.code.tex)
+(/home/raktim/texmf/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty)
+(/home/raktim/texmf/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty))
+(/home/raktim/texmf/tex/latex/pgf/utilities/pgffor.sty
+(/home/raktim/texmf/tex/latex/pgf/utilities/pgfkeys.sty
+(/home/raktim/texmf/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(/home/raktim/texmf/tex/latex/pgf/math/pgfmath.sty
+(/home/raktim/texmf/tex/generic/pgf/math/pgfmath.code.tex))
+(/home/raktim/texmf/tex/generic/pgf/utilities/pgffor.code.tex))
+(/home/raktim/texmf/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+(/home/raktim/texmf/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex)
+(/home/raktim/texmf/tex/generic/pgf/modules/pgfmodulematrix.code.tex)
+(/home/raktim/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytop
+aths.code.tex)))
+(/home/raktim/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarysha
+pes.geometric.code.tex
+(/home/raktim/texmf/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geometric
+.code.tex))
+(/home/raktim/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarysha
+pes.multipart.code.tex
+(/home/raktim/texmf/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multipart
+.code.tex))
+(/home/raktim/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarysha
+pes.symbols.code.tex
+(/home/raktim/texmf/tex/generic/pgf/libraries/shapes/pgflibraryshapes.symbols.c
+ode.tex))
+(/home/raktim/texmf/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex)
+(/home/raktim/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypos
+itioning.code.tex)
+(/home/raktim/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycal
+c.code.tex)
+(/home/raktim/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfit
+.code.tex)
+(/home/raktim/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarymat
+rix.code.tex)
+(/home/raktim/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybac
+kgrounds.code.tex)
+(/home/raktim/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydec
+orations.pathreplacing.code.tex
+(/home/raktim/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydec
+orations.code.tex
+(/home/raktim/texmf/tex/generic/pgf/modules/pgfmoduledecorations.code.tex))
+(/home/raktim/texmf/tex/generic/pgf/libraries/decorations/pgflibrarydecorations
+.pathreplacing.code.tex)) (/home/raktim/texmf/tex/latex/pgfplots/pgfplots.sty
+(/home/raktim/texmf/tex/generic/pgfplots/pgfplots.revision.tex)
+(/home/raktim/texmf/tex/generic/pgfplots/pgfplots.code.tex
+(/home/raktim/texmf/tex/generic/pgfplots/pgfplotscore.code.tex
+(/home/raktim/texmf/tex/generic/pgfplots/sys/pgfplotssysgeneric.code.tex))
+(/home/raktim/texmf/tex/generic/pgfplots/libs/pgfplotslibrary.code.tex)
+(/home/raktim/texmf/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_load
+er.code.tex
+(/home/raktim/texmf/tex/generic/pgf/libraries/pgflibraryfpu.code.tex)
+Package pgfplots: loading complementary utilities for your pgf version...
+
+(/home/raktim/texmf/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_pgfu
+til-common-lists.tex))
+(/home/raktim/texmf/tex/generic/pgfplots/util/pgfplotsutil.code.tex
+(/home/raktim/texmf/tex/generic/pgfplots/liststructure/pgfplotsliststructure.co
+de.tex)
+(/home/raktim/texmf/tex/generic/pgfplots/liststructure/pgfplotsliststructureext
+.code.tex)
+(/home/raktim/texmf/tex/generic/pgfplots/liststructure/pgfplotsarray.code.tex)
+(/home/raktim/texmf/tex/generic/pgfplots/liststructure/pgfplotsmatrix.code.tex)
+(/home/raktim/texmf/tex/generic/pgfplots/numtable/pgfplotstableshared.code.tex)
+ (/home/raktim/texmf/tex/generic/pgfplots/liststructure/pgfplotsdeque.code.tex)
+ (/home/raktim/texmf/tex/generic/pgfplots/util/pgfplotsbinary.code.tex
+(/home/raktim/texmf/tex/generic/pgfplots/util/pgfplotsbinary.data.code.tex))
+(/home/raktim/texmf/tex/generic/pgfplots/util/pgfplotsutil.verb.code.tex)
+(/home/raktim/texmf/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfshading.co
+de.tex
+(/home/raktim/texmf/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfshading.pgf
+sys-pdftex.def)))
+(/home/raktim/texmf/tex/generic/pgfplots/util/pgfplotscolormap.code.tex
+(/home/raktim/texmf/tex/generic/pgfplots/util/pgfplotscolor.code.tex))
+(/home/raktim/texmf/tex/generic/pgfplots/pgfplotsstackedplots.code.tex)
+(/home/raktim/texmf/tex/generic/pgfplots/pgfplotsplothandlers.code.tex
+(/home/raktim/texmf/tex/generic/pgfplots/pgfplotsmeshplothandler.code.tex
+(/home/raktim/texmf/tex/generic/pgfplots/pgfplotsmeshplotimage.code.tex)))
+(/home/raktim/texmf/tex/generic/pgfplots/pgfplots.scaling.code.tex)
+(/home/raktim/texmf/tex/generic/pgfplots/pgfplotscoordprocessing.code.tex)
+(/home/raktim/texmf/tex/generic/pgfplots/pgfplots.errorbars.code.tex)
+(/home/raktim/texmf/tex/generic/pgfplots/pgfplots.markers.code.tex)
+(/home/raktim/texmf/tex/generic/pgfplots/pgfplotsticks.code.tex)
+(/home/raktim/texmf/tex/generic/pgfplots/pgfplots.paths.code.tex)
+(/home/raktim/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydec
+orations.pathmorphing.code.tex
+(/home/raktim/texmf/tex/generic/pgf/libraries/decorations/pgflibrarydecorations
+.pathmorphing.code.tex))
+(/home/raktim/texmf/tex/generic/pgfplots/libs/tikzlibrarypgfplots.contourlua.co
+de.tex))
+(/home/raktim/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryplo
+tmarks.code.tex
+(/home/raktim/texmf/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex)))
+(/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty)
+(/home/raktim/texmf/tex/latex/appendix/appendix.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+(build/main.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: letterpaper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(92.14519pt, 430.00462pt, 92.14519pt)
+* v-part:(T,H,B)=(95.39737pt, 556.47656pt, 143.09605pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=430.00462pt
+* \textheight=556.47656pt
+* \oddsidemargin=19.8752pt
+* \evensidemargin=19.8752pt
+* \topmargin=-13.87262pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: pdftex
+* paper: letterpaper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(72.27pt, 469.75499pt, 72.27pt)
+* v-part:(T,H,B)=(72.26999pt, 650.43pt, 72.27pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=469.75499pt
+* \textheight=650.43pt
+* \oddsidemargin=0.00002pt
+* \evensidemargin=0.00002pt
+* \topmargin=-39.0pt
+* \headheight=14.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(build/main.out) (build/main.out)
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(/home/raktim/texmf/tex/latex/microtype/mt-ptm.cfg)
+Package pgfplots notification 'compat/show suggested version=true': document ha
+s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
+
+(/home/raktim/texmf/tex/latex/microtype/mt-cmr.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/home/raktim/texmf/tex/latex/microtype/mt-msa.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd)
+(/home/raktim/texmf/tex/latex/microtype/mt-msb.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd)
+(./chapters/abstract.tex) (./chapters/01_introduction.tex [1{/home/raktim/.texl
+ive2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-
+dist/fonts/enc/dvips/base/8r.enc} <./orcid.pdf>]) (./chapters/02_methods.tex
+[2] [3]) (./chapters/03_results.tex [4] [5] [6]
+Underfull \hbox (badness 10000) in paragraph at lines 380--380
+[]|\T1/ptm/m/n/9 (+20) AIDA ef-fec-tive;
+
+Underfull \hbox (badness 10000) in paragraph at lines 380--380
+\T1/ptm/m/n/9 (+20) CORAL/IRM/DRO failed
+
+Underfull \hbox (badness 1412) in paragraph at lines 380--380
+[]|\T1/ptm/m/n/9 (+20) Reduce but do not elim-i-nate
+
+Underfull \hbox (badness 7221) in paragraph at lines 380--380
+[]|\T1/ptm/m/n/9 (+20) Conditional dif-fu-sion up to
+
+Underfull \hbox (badness 3895) in paragraph at lines 380--380
+[]|\T1/ptm/m/n/9 (+20) Equalised sur-vival pre-dic-tion
+[7] [8] [9]
+Overfull \hbox (6.68344pt too wide) in alignment at lines 689--689
+[][][][][] 
+) (./chapters/04_discussion.tex [10] [11] [12]
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd) [13] [14])
+(./chapters/05_conclusion.tex [15]) (build/main.bbl [16] [17] [18] [19]
+[20]
+Underfull \hbox (badness 1286) in paragraph at lines 619--623
+[]\T1/ptm/m/n/10 (+20) J. Vasil-je-vic, Z. Nisar, F. Feuer-hake, C. Wem-mert, a
+nd T. Lam-pert, ``Cy-cle-GAN for vir-tual stain
+[21]
+! Undefined control sequence.
+l.780 ...Penalties for non-compliance: up to \euro
+                                                  35 million or 7\% of
+) [22] (./appendices/S1_included_studies.tex
+
+Package tabularx Warning: X Columns too narrow (table too wide)
+(tabularx)                 on input line 92.
+
+
+Overfull \hbox (46.99068pt too wide) in paragraph at lines 92--92
+[]|\T1/ptm/b/n/9 (-20) Representative
+
+Overfull \hbox (0.63412pt too wide) in paragraph at lines 92--92
+\T1/ptm/b/n/9 (-20) ev-
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--92
+\T1/ptm/b/n/9 (+20) i-
+
+Overfull \hbox (12.55576pt too wide) in paragraph at lines 92--92
+\T1/ptm/b/n/9 (-20) dence| 
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--92
+[]|\T1/ptm/m/n/9 (+20) [[],
+
+Overfull \hbox (2.93703pt too wide) in paragraph at lines 92--92
+[]\T1/ptm/m/n/9 (-20) ]| 
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--92
+[]|\T1/ptm/m/n/9 (+20) [[],
+
+Overfull \hbox (4.01703pt too wide) in paragraph at lines 92--92
+[]|\T1/ptm/m/n/9 (-20) [[],
+
+Overfull \hbox (5.87405pt too wide) in paragraph at lines 92--92
+[]|\T1/ptm/m/n/9 (-20) [[]]| 
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--92
+[]|\T1/ptm/m/n/9 (+20) [[],
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--92
+[]\T1/ptm/m/n/9 (+20) ,
+
+Overfull \hbox (2.26202pt too wide) in paragraph at lines 92--92
+[]\T1/ptm/m/n/9 (-20) ]| 
+
+Overfull \hbox (4.01703pt too wide) in paragraph at lines 92--92
+[]|\T1/ptm/m/n/9 (-20) [[],
+
+Overfull \hbox (2.26202pt too wide) in paragraph at lines 92--92
+[]\T1/ptm/m/n/9 (-20) ]| 
+
+Overfull \hbox (4.01703pt too wide) in paragraph at lines 92--92
+[]|\T1/ptm/m/n/9 (-20) [[],
+
+Overfull \hbox (2.26202pt too wide) in paragraph at lines 92--92
+[]\T1/ptm/m/n/9 (-20) ]| 
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--92
+[]|\T1/ptm/m/n/9 (+20) [[],
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--92
+[]\T1/ptm/m/n/9 (+20) ,
+
+Overfull \hbox (2.26202pt too wide) in paragraph at lines 92--92
+[]\T1/ptm/m/n/9 (-20) ]| 
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--92
+[]|\T1/ptm/m/n/9 (+20) [[],
+
+Overfull \hbox (2.93703pt too wide) in paragraph at lines 92--92
+[]\T1/ptm/m/n/9 (-20) ]| 
+
+Overfull \hbox (4.01703pt too wide) in paragraph at lines 92--92
+[]|\T1/ptm/m/n/9 (-20) [[],
+
+Overfull \hbox (1.08pt too wide) in paragraph at lines 92--92
+[]\T1/ptm/m/n/9 (-20) ,
+
+Overfull \hbox (2.93703pt too wide) in paragraph at lines 92--92
+[]\T1/ptm/m/n/9 (-20) ]| 
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--92
+[]|\T1/ptm/m/n/9 (+20) [[],
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--92
+[]\T1/ptm/m/n/9 (+20) ,
+
+Overfull \hbox (2.93703pt too wide) in paragraph at lines 92--92
+[]\T1/ptm/m/n/9 (-20) ]| 
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--92
+[]|\T1/ptm/m/n/9 (+20) [[],
+
+Overfull \hbox (1.08pt too wide) in paragraph at lines 92--92
+[]\T1/ptm/m/n/9 (-20) ,
+
+Overfull \hbox (2.93703pt too wide) in paragraph at lines 92--92
+[]\T1/ptm/m/n/9 (-20) ]| 
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--92
+[]|\T1/ptm/m/n/9 (+20) [[],
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--92
+[]\T1/ptm/m/n/9 (+20) ,
+
+Overfull \hbox (4.01703pt too wide) in paragraph at lines 92--92
+[]|\T1/ptm/m/n/9 (-20) [[],
+
+Overfull \hbox (1.08pt too wide) in paragraph at lines 92--92
+[]\T1/ptm/m/n/9 (-20) ,
+
+Overfull \hbox (4.01703pt too wide) in paragraph at lines 92--92
+[]|\T1/ptm/m/n/9 (-20) [[],
+
+Overfull \hbox (1.08pt too wide) in paragraph at lines 92--92
+[]\T1/ptm/m/n/9 (-20) ,
+
+Overfull \hbox (2.26202pt too wide) in paragraph at lines 92--92
+[]\T1/ptm/m/n/9 (-20) ]| 
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--92
+[]|\T1/ptm/m/n/9 (+20) [[],
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--92
+[]|\T1/ptm/m/n/9 (+20) [[],
+
+Overfull \hbox (1.08pt too wide) in paragraph at lines 92--92
+[]\T1/ptm/m/n/9 (-20) ,
+
+Overfull \hbox (2.93703pt too wide) in paragraph at lines 92--92
+[]\T1/ptm/m/n/9 (-20) ]| 
+
+Overfull \hbox (4.01703pt too wide) in paragraph at lines 92--92
+[]|\T1/ptm/m/n/9 (-20) [[],
+
+Overfull \hbox (2.93703pt too wide) in paragraph at lines 92--92
+[]\T1/ptm/m/n/9 (-20) ]| 
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--92
+[]|\T1/ptm/m/n/9 (+20) [[],
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--92
+[]\T1/ptm/m/n/9 (+20) ,
+
+Overfull \hbox (2.26202pt too wide) in paragraph at lines 92--92
+[]\T1/ptm/m/n/9 (-20) ]| 
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--92
+[]|\T1/ptm/m/n/9 (+20) [[],
+
+Overfull \hbox (4.01703pt too wide) in paragraph at lines 92--92
+[]|\T1/ptm/m/n/9 (-20) [[],
+
+Overfull \hbox (2.26202pt too wide) in paragraph at lines 92--92
+[]\T1/ptm/m/n/9 (-20) ]| 
+
+Overfull \hbox (198.36966pt too wide) in alignment at lines 92--92
+[][][] 
+
+LaTeX Warning: Float too large for page by 116.08945pt on input line 93.
+
+) [23] [24] [25] (./appendices/S2_bias_taxonomy.tex
+Underfull \hbox (badness 10000) in paragraph at lines 85--85
+[]|\T1/ptm/m/n/9 (+20) Institutional /
+
+Underfull \hbox (badness 5817) in paragraph at lines 85--85
+[]|\T1/ptm/m/n/9 (+20) Site clas-si-fi-ca-tion AU-ROC $\OML/cmm/m/it/9 >$\T1/pt
+m/m/n/9 (+20) 0.96 on TCGA;
+
+Underfull \hbox (badness 2469) in paragraph at lines 85--85
+[]|\T1/ptm/m/n/9 (+20) Selection / sam-
+
+Underfull \hbox (badness 10000) in paragraph at lines 85--85
+[]|\T1/ptm/m/n/9 (+20) Technical /
+) [26] (./appendices/S3_metric_reporting.tex) [27] (build/main.aux) )
+(see the transcript file for additional information) </home/raktim/.texlive2023
+/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk> </home/raktim/.texlive20
+23/texmf-var/fonts/pk/ljfour/jknappen/ec/tcti0600.600pk> </home/raktim/.texlive
+2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt0900.600pk> </home/raktim/.texli
+ve2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/symbols/msam7.pfb></home/raktim/texmf/fonts/type1/urw/times/u
+tmb8a.pfb></home/raktim/texmf/fonts/type1/urw/times/utmbi8a.pfb></home/raktim/t
+exmf/fonts/type1/urw/times/utmr8a.pfb></home/raktim/texmf/fonts/type1/urw/times
+/utmri8a.pfb>
+Output written on build/main.pdf (27 pages, 409632 bytes).
+Transcript written on build/main.log.
