@@ -14,10 +14,10 @@ including temporal distribution, geographic spread, dataset usage,
 cancer coverage, and fairness-metric reporting rates
 (Tables~\ref{tab:study_characteristics}--\ref{tab:cancer_coverage}).
 The field grew in three distinct phases: an early period (2017--2019,
-$n=6$), a growth phase (2020--2022, $n=17$), and a sharp inflection
-(2023--2024, $n=32$), with 18~additional studies appearing in
+$n=6$), a growth phase (2020--2022, $n=16$), and a sharp inflection
+(2023--2024, $n=35$), with 21~additional studies appearing in
 2025--2026~\citep{howard2021site, vaidya2024demographic,
-komen2024batch}. Five studies had unreported publication years, totaling 78 studies ($6+17+32+18+5=78$). Research institutions in North America and Europe account for 84.6\% (66/78) of first/corresponding authors, with East Asia contributing most of the remainder~\citep{celi2022sources, musa2026cross},
+komen2024batch}. Research institutions in North America and Europe account for 84.6\% (66/78) of first/corresponding authors, with East Asia contributing most of the remainder~\citep{celi2022sources, musa2026cross},
 and the work concentrates on breast and multi-cancer detection tasks.
 Cancer-type counts are non-exclusive (studies addressing multiple cancer types are counted under each category). Breast cancer was the primary focus in 44 studies (56.4\% of 78) and multi-cancer analyses as the primary focus in 24 studies (30.8\% of 78); no studies address paediatric or rare tumours as primary focus~\citep{tasci2022bias}. Other primary focus areas included prostate (15 studies, 19.2\%), skin/melanoma (10 studies, 12.8\%), lung (9 studies, 11.5\%), and colorectal (8 studies, 10.3\%). When counting any mention (including secondary focus), lung cancer appeared in 28 studies (35.9\%), prostate and colorectal each in 21 studies (26.9\%), and skin/melanoma in 13 studies (16.7\%). This distinction reflects the field's broader coverage beyond primary research questions (Appendix~\ref{app:S1}, Table~\ref{tab:cancer_coverage}).
 We organise our principal findings around four themes: bias taxonomy,
@@ -83,7 +83,7 @@ reproducibility. We begin by presenting the bias taxonomy derived from our syste
     % Data/label-level (center)
     \node[databox, below=16mm of root] (sel)
         {\textbf{Selection / Sampling} ($n=8$)\\
-         ${\sim}33/78$ on TCGA (42.3\%); acc.\ $95\%\!\to\!79\%$\\
+         ${\sim}36/78$ on TCGA (46.2\%); acc.\ $95\%\!\to\!79\%$\\
          (site removed)~\citep{kheiri2025investigation, celi2022sources}};
     \node[databox, below=of sel] (lab)
         {\textbf{Class / Label} ($n=7$)\\
@@ -158,7 +158,7 @@ Representation bias ($n\!=\!7$) stems from skewed training populations and geogr
 
 Confounding bias ($n\!=\!6$) arises from site--demographic entanglement, evidenced by AUROC collapse from 0.798 to 0.507 under preserved-site cross-validation~\citep{howard2021site}. Disease prevalence differences across racial groups inflate race-prediction performance~\citep{chen2025predicting}. Confounding has been quantified in multi-site survival analysis~\citep{dawood2026confounding}, via shortcut-detection frameworks~\citep{ly2024shortcut}, and through two distinct mutual-information measures: MI(label, center)~$=1.47$ quantifying cancer--center dependency~\citep{kheiri2025investigation}, and MI between model predictions and technical confounders (AUROC 0.83--0.88 before correction, 0.71 after)~\citep{lazard2022identifies}.
 
-Data and label-level biases affect cohort composition and annotation quality. Selection and sampling bias ($n\!=\!8$) characterises the corpus, with 33 of the 78 studies (42.3\%, 95\% CI: 32.0--53.2\%) relying on TCGA. Balanced accuracy drops from 95\% to 79\% when cancer--center correlation is removed (MI$=1.47$)~\citep{kheiri2025investigation}. Single-site cohorts comprising ${>}70\%$ White patients yield lower non-White accuracy~\citep{soltan2024challenges, celi2022sources}. International multi-site validation across 12~centers (distinct laboratory or hospital locations) shows sensitivity variation of 0.971--1.000, confirming that single-site results overstate generalizability~\citep{tolkach2023international}. This finding is corroborated by clinical-grade deployment studies documenting single-center generalization limits~\citep{raza2026clinical, bussola2023weakly, ceccon2025underrepresentation}.
+Data and label-level biases affect cohort composition and annotation quality. Selection and sampling bias ($n\!=\!8$) characterises the corpus, with 36 of the 78 studies (46.2\%, 95\% CI: 35.5--57.1\%) relying on TCGA. Balanced accuracy drops from 95\% to 79\% when cancer--center correlation is removed (MI$=1.47$)~\citep{kheiri2025investigation}. Single-site cohorts comprising ${>}70\%$ White patients yield lower non-White accuracy~\citep{soltan2024challenges, celi2022sources}. International multi-site validation across 12~centers (distinct laboratory or hospital locations) shows sensitivity variation of 0.971--1.000, confirming that single-site results overstate generalizability~\citep{tolkach2023international}. This finding is corroborated by clinical-grade deployment studies documenting single-center generalization limits~\citep{raza2026clinical, bussola2023weakly, ceccon2025underrepresentation}.
 
 Class and label bias ($n\!=\!7$) emerges from long-tail sub-type distributions, inter-observer variability, and annotation shortcuts. Gleason grading exhibits 30--53\% discordance among general pathologists, with deep-learning systems outperforming them at 0.70 versus 0.61 mean accuracy~\citep{nagpal2020development}. Grayscale conversion reduces center discrimination by 15\%~\citep{kheiri2025investigation, hagele2020resolving}, confirming stain as a labeling shortcut. Dynamic label denoising attenuates noise-driven disparities~\citep{liang2023dynamic}, though SMOTE improved balanced accuracy by only 3.4\% and failed for demographic bias~\citep{rezama2018imbalanced}.
 
@@ -185,7 +185,7 @@ Algorithmic bias ($n\!=\!5$) originates in model architectures and training prot
     TPR / FPR disparity ($n=3$) \citep{vaidya2024demographic,huang2025knowledge,soltan2024challenges} &
       Max--min difference in TPR or FPR across subgroups;
       detects error-rate inequity. \\
-    Subgroup AUROC gap ($n=4$) \citep{vaidya2024demographic,zong2023medfair,lin2025contrastive,huang2025knowledge} &
+    Subgroup AUROC gap ($n=3$) \citep{vaidya2024demographic,lin2025contrastive,huang2025knowledge} &
       Absolute AUROC difference between advantaged and disadvantaged
       groups. \\
     TPR disparity RMSE ($n=1$) \citep{huang2025knowledge} &
@@ -204,7 +204,7 @@ Algorithmic bias ($n\!=\!5$) originates in model architectures and training prot
       cancer types. \\
     \midrule
     \multicolumn{2}{l}{\textbf{Calibration metrics}} \\
-    Expected Calibration Error (ECE) ($n=2$) \citep{roschewitz2023automatic,zong2023medfair} &
+    Expected Calibration Error (ECE) ($n=2$) \citep{roschewitz2023automatic,park2025uncertainty} &
       Gap between predicted probability and observed frequency;
       fairness-relevant when stratified. \\
     Subgroup calibration gap ($n=0$) &
@@ -215,13 +215,13 @@ Algorithmic bias ($n\!=\!5$) originates in model architectures and training prot
       under shift. \\
     \midrule
     \multicolumn{2}{l}{\textbf{Worst-case and evaluation protocols}} \\
-    Worst-group accuracy / AUROC ($n=6$) \citep{zong2023medfair,koh2021wilds,soltan2024challenges,huang2025knowledge,lin2025contrastive,xu2026spare} &
+    Worst-group accuracy / AUROC ($n=4$) \citep{soltan2024challenges,huang2025knowledge,lin2025contrastive,xu2026spare} &
       Min performance across predefined subgroups; direct proxy for
       equity of service. \\
-    Preserved-site CV ($n=4$) \citep{howard2021site,vaidya2024demographic,kheiri2025investigation} &
+    Preserved-site CV ($n=3$) \citep{howard2021site,vaidya2024demographic,kheiri2025investigation} &
       Quadratic-programming partition keeping each site in a single
       fold; eliminates site leakage. \\
-    In-dist.\ vs.\ OOD evaluation ($n=5+$) \citep{koh2021wilds,huang2025knowledge,zong2023medfair,asadiaghbolagh2024learning,komen2024batch} &
+    In-dist.\ vs.\ OOD evaluation ($n=5+$) \citep{huang2025knowledge,asadiaghbolagh2024learning,komen2024batch,faryna2024automatic,ktena2024generative} &
       Separates performance on seen vs.\ unseen sites;
       CAMELYON17 gap of 22.9~pp. \\
     \midrule
