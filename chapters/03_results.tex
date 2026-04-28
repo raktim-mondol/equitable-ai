@@ -256,18 +256,18 @@ overall AUROC of 0.98 for breast cancer subtyping coexists with a
 \label{sec:results:reproducibility}
 \label{sec:results:reporting}
 Fairness metrics appear far less frequently: only 15~studies (19.2\%, 95\% CI: 12.0--29.3\%) reported any fairness metric at all, and worst-group
-accuracy appeared in just six
-(7.7\%, 95\% CI: 3.6--16.0\%)~\citep{zong2023medfair, koh2021wilds, soltan2024challenges}.
-Expected calibration error (ECE) was reported in only two studies (2.6\%, 95\% CI: 0.7--9.1\%)~\citep{roschewitz2023automatic, zong2023medfair}, and
+accuracy appeared in just four
+(5.1\%, 95\% CI: 2.0--12.5\%)~\citep{soltan2024challenges, huang2025knowledge, lin2025contrastive, xu2026spare}.
+Expected calibration error (ECE) was reported in only two studies (2.6\%, 95\% CI: 0.7--8.9\%)~\citep{roschewitz2023automatic, park2025uncertainty}, and
 no study reported the subgroup calibration gap. The fairness metrics that do appear fall into five
 families (Table~\ref{tab:fairness_metrics}): disparity metrics (TPR/FPR
 gap)~\citep{vaidya2024demographic, huang2025knowledge,
 soltan2024challenges}, subgroup AUC
-gap~\citep{vaidya2024demographic, zong2023medfair,
-lin2025contrastive}, group fairness criteria (equalised odds, demographic
+gap~\citep{vaidya2024demographic,
+lin2025contrastive, huang2025knowledge}, group fairness criteria (equalised odds, demographic
 parity)~\citep{soltan2024challenges, sufian2024mitigating,
 cecconi2024fairness}, calibration metrics (ECE, Youden's index, conformal
-coverage)~\citep{roschewitz2023automatic, zong2023medfair,
+coverage)~\citep{roschewitz2023automatic, park2025uncertainty,
 olsson2022estimating}, and bias proxy
 metrics (site-classification accuracy, mutual
 information)~\citep{dehkharghanian2023biased, bidgoli2022bias,
@@ -673,8 +673,8 @@ Bias in histopathology AI is multifactorial and co-occurring
 (Section~\ref{sec:results:taxonomy}), yet fairness measurement remains
 the exception rather than the norm
 (Section~\ref{sec:results:metrics}). Only 19.2\% of studies report any
-fairness metric, and 7.7\% report worst-group
-accuracy~\citep{zong2023medfair, vaidya2024demographic}. Effective mitigation strategies exist but remain under-adopted. Methods with strong empirical
+fairness metric, and 5.1\% report worst-group
+accuracy~\citep{soltan2024challenges, xu2026spare}. Effective mitigation strategies exist but remain under-adopted. Methods with strong empirical
 support include preserved-site CV~\citep{howard2021site}, ComBat
 harmonisation~\citep{murchan2024combat}, fairness-aware learning
 (FAIR-Path~\citep{lin2025contrastive}, SPARE~\citep{xu2026spare},
