@@ -1,0 +1,90 @@
+% ============================================================
+%  appendices/S1_included_studies.tex
+% ============================================================
+
+\section{Summary Characteristics of Included Studies}
+\label{app:S1}
+
+Table~\ref{tab:study_characteristics} summarises the key dimensional characteristics of the 78 included studies, and Table~\ref{tab:cancer_coverage} provides the cancer-type breakdown. Percentages are computed over the analytical corpus unless otherwise indicated; category counts may be non-exclusive where a study contributes to more than one dimension.
+
+\begin{table}[htbp]
+  \centering
+  \renewcommand{\arraystretch}{0.82}
+  \caption{Summary characteristics of the 78~included
+           histopathology fairness studies (2017--2026). Percentages
+           are computed over the analytical corpus of 78 studies unless
+           otherwise indicated; category counts may be non-exclusive
+           where a study contributes to more than one bucket.}
+  \label{tab:study_characteristics}
+  \footnotesize
+  \begin{tabularx}{\linewidth}{@{}l l X@{}}
+    \toprule
+    \textbf{Dimension} & \textbf{Value} & \textbf{Representative evidence} \\
+    \midrule
+    \multicolumn{3}{l}{\textit{Temporal and publication profile}} \\
+    Time window & 2017--2026 (10 yr) & \citep{howard2021site, huang2025knowledge} \\
+    Pre-2020 / 2020--22 / 2023--24 / 2025--26 & 6 / 16 / 35 / 21 ($n$); unreported: 0 & \citep{komen2024batch, vaidya2024demographic} \\
+    Peer-reviewed journal / ML conference & 71 (91.0\%) / 7 (9.0\%) & \citep{cheng2021challenges, chen2025predicting} \\
+    \midrule
+    \multicolumn{3}{l}{\textit{Geographic distribution (first/corresponding author)}} \\
+    North America + Europe & 84.6\% (66/78) & \citep{howard2021site, komen2024batch, celi2022sources} \\
+    East Asia / Global South & Most of remainder / Near-absent & \citep{musa2026cross, montezuma2025unbiased} \\
+    \midrule
+    \multicolumn{3}{l}{\textit{Dataset usage (non-exclusive)}} \\
+    TCGA (primary or supplementary) & 36 (46.2\%) & \citep{howard2021site, dehkharghanian2023biased} \\
+    CAMELYON16/17 & $\sim$7 (9.0\%) & \citep{komen2024batch, campanella2019clinical} \\
+    Private single-site / Multi-institutional & 40 (51.3\%) / 23 (29.5\%) & \citep{soltan2024challenges, vaidya2024demographic} \\
+    External validation performed & 23 (29.5\%, 95\% CI: 20.5--40.2\%) & \citep{lin2025contrastive, huang2025knowledge} \\
+    \midrule
+    \multicolumn{3}{l}{\textit{Cancer coverage (primary focus)}} \\
+    Breast / Multi / Prostate & 44 (56.4\%) / 24 (30.8\%) / 15 (19.2\%) & \citep{vaidya2024demographic, howard2021site, dehkharghanian2023biased} \\
+    Lung / Colorectal / Skin & 9 (11.5\%) / 8 (10.3\%) / 10 (12.8\%) & \citep{chen2025predicting, huang2025knowledge, komen2024batch} \\
+    Paediatric / rare tumours & 0 & --- \\
+    \midrule
+    \multicolumn{3}{l}{\textit{Fairness evaluation and reporting}} \\
+    Accuracy / AUROC reported & 67 (85.9\%) / 55 (70.5\%) & \citep{campanella2019clinical, howard2021site, vaidya2024demographic} \\
+    Any fairness metric & 15 (19.2\%, 95\% CI: 12.0--29.3\%) & --- \\
+    Subgroup AUC gap / Worst-group & 3 (3.8\%) / 4 (5.1\%) & \citep{vaidya2024demographic, huang2025knowledge} \\
+    ECE / Preserved-site CV & 2 (2.6\%) / 3 (3.8\%) & \citep{roschewitz2023automatic, howard2021site} \\
+    \midrule
+    \multicolumn{3}{l}{\textit{Public dataset demographic metadata (audit, $n=39$)}} \\
+    Race\,/\,ethnicity / sex / age & 28.2 / 25.6 / 23.1\% & \citep{howard2021site, vaidya2024demographic} \\
+    Ancestry, skin tone, intersectional \& other attributes & 0\% (all 39) & \citep{montezuma2025unbiased, norori2021addressing} \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\begin{table}[htbp]
+  \centering
+  \caption{Cancer-type coverage across the 78~included studies.
+           Counts are non-exclusive: studies addressing multiple cancer
+           types are counted under each relevant category.
+           ``Primary'' denotes the cancer type listed first or
+           identified as the principal focus of the study.}
+  \label{tab:cancer_coverage}
+  \small
+  \begin{tabularx}{\linewidth}{@{}l r r X@{}}
+    \toprule
+    \textbf{Cancer Type} & \textbf{Primary} & \textbf{Any mention} & \textbf{Representative studies} \\
+    \midrule
+    Breast               & 44 & 54 & \citep{vaidya2024demographic, howard2021site, lin2025contrastive} \\
+    Multi / Pan-cancer   & 24 & 30 & \citep{dehkharghanian2023biased, howard2021site, tasci2022bias} \\
+    Prostate             & 15 & 21 & \citep{vaidya2024demographic, dehkharghanian2023biased} \\
+    Skin / Melanoma      & 10 & 13 & \citep{chen2025predicting, vaidya2024demographic} \\
+    Lung                 &  9 & 28 & \citep{huang2025knowledge, komen2024batch, howard2021site} \\
+    Colorectal           &  8 & 21 & \citep{vaidya2024demographic, howard2021site} \\
+    Ovarian              &  3 &  4 & \citep{ahmed2025robust} \\
+    Brain / Glioma       &  2 & 10 & \citep{howard2021site, tasci2022bias} \\
+    Kidney / Renal       &  1 & 11 & \citep{howard2021site} \\
+    Liver                &  1 &  7 & \citep{howard2021site} \\
+    Gastric              &  --- &  5 & \citep{huang2025knowledge} \\
+    Thyroid              &  --- &  5 & \citep{dehkharghanian2023biased} \\
+    Bladder              &  --- &  4 & --- \\
+    Head \& Neck         &  --- &  3 & \citep{howard2021site} \\
+    Cervical             &  1 &  2 & --- \\
+    Pancreatic           &  --- &  1 & --- \\
+    Paediatric / rare    &  0 &  0 & --- \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+

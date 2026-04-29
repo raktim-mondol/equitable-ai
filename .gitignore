@@ -38,17 +38,24 @@ supplementary_checklist.tex
 supplementary_citations.tex
 supplementary_methods.tex
 
-# LaTeX manuscript files (deployed from latex/ subdirectory, not root)
-main.tex
-main.pdf
-arxiv.sty
-IEEEtranN_doi.bst
-references.bib
-compile.sh
-generate_pdf_readme.md
-License.txt
-README.md
-chapters/
-appendices/
-figures/
-tables/
+# Generated images (not for manuscript)
+latex/figures/ChatGPT Image*
+latex/figures/Gemini_Generated_*
+latex/figures/1777278322.png
+
+# Not manuscript content
+latex/chapters/CLAUDE.md
+
+# Guard against accidental root-level duplicates
+/main.tex
+/arxiv.sty
+/IEEEtranN_doi.bst
+/references.bib
+/compile.sh
+/generate_pdf_readme.md
+/License.txt
+/README.md
+/chapters/
+/appendices/
+/figures/
+/tables/
