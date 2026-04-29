@@ -12,6 +12,7 @@
 *.lot
 *.bcf
 *.run.xml
+missfont.log
 
 # Build directory
 build/
@@ -20,19 +21,26 @@ build/
 *.tmp
 *.bak
 
-# Project-specific (not for repo)
+# Tooling config
 .cursor/
 .obsidian/
-*.json
-all_paper/
-wiki/
+.claude/
 
-# Not manuscript content
+# Project files (not manuscript)
+CLAUDE.md
+data/
+docs/
+paper/
+scripts/
+wiki/
+*.json
+*.xlsx
+data/*.txt
 supplementary_checklist.tex
 supplementary_citations.tex
 supplementary_methods.tex
 
-# Generated images (not for manuscript)
+# Generated images
 figures/ChatGPT Image*
 figures/Gemini_Generated_*
 figures/1777278322.png
