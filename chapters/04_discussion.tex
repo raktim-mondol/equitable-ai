@@ -5,15 +5,15 @@
 
 \section{Discussion}
 \label{sec:discussion}
-\label{sec:discussion:findings}
 
 \subsection{Principal Findings}
+\label{sec:discussion:findings}
 
 This systematic review of 78 histopathology AI fairness studies identifies three converging evidence patterns. First, pathology foundation models faithfully encode TSS signatures despite claims of domain invariance~\citep{vorontsov2024foundation, campanella2025clinical}. Linear probes recover TSS at $>$90\% accuracy from frozen foundation-model features~\citep{komen2024batch}, corresponding to site-classification AUROC $>$0.96 on TCGA~\citep{howard2021site}. These complementary metrics (accuracy and AUROC) both confirm strong TSS encoding in learned features. When TSS correlates with labels, downstream classification collapses~\citep{howard2021site, dehkharghanian2023biased}. Feature-level corrections such as ComBat~\citep{murchan2024combat} offer partial relief, but the persistence of TSS encoding underscores the need for fairness-aware pretraining rather than post-hoc correction. Cross-modal evidence from radiology confirms this is a structural property of medical imaging pipelines, not pathology-specific~\citep{gao2022race, yang2025demographic}.
 
 Second, fairness metrics are systematically under-reported: only 19.2\% (95\% CI: 12.0--29.3\%) of studies report any fairness metric and 7.7\% (95\% CI: 3.6--16.0\%) report worst-group accuracy. This reporting asymmetry masks clinically significant disparities: overall AUROC of 0.98 coexists with 3--16\% subgroup gaps~\citep{vaidya2024demographic}. Third, the evidence base is structurally concentrated on TCGA (42.3\%, 95\% CI: 32.0--53.2\% of studies), which embeds strong site--label dependencies and demographic skews~\citep{howard2021site, wang2018tcga}. These three patterns reinforce one another: site leakage goes undetected without fairness metrics, and both deficits are amplified by TCGA's dominance.
 
-Despite this consensus, every normative recommendation exceeds realised practice by 55--89 percentage points (Table~\ref{tab:consensus_vs_practice}). Four factors sustain this gap: recommendations are costless to reviewers but costly to implementers; compliant datasets largely do not exist~\citep{norori2021addressing, ceccon2025underrepresentation}; reviewer consensus is trailing-edge (29.5\% of experiments pre-date 2023); and the reward structure privileges aggregate AUROC over subgroup audits~\citep{cheng2021challenges, chen2023algorithmic, yang2024survey}.
+Despite this consensus, realised practice falls short of every normative recommendation by 55--89 percentage points (Table~\ref{tab:consensus_vs_practice}). Four factors sustain this gap: recommendations are costless to reviewers but costly to implementers; compliant datasets largely do not exist~\citep{norori2021addressing, ceccon2025underrepresentation}; reviewer consensus is trailing-edge (29.5\% of experiments pre-date 2023); and the reward structure privileges aggregate AUROC over subgroup audits~\citep{cheng2021challenges, chen2023algorithmic, yang2024survey}.
 
 %% ─── Consensus vs Practice table ─────────────────────────
 \begin{table}[htbp]
