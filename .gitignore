@@ -39,23 +39,9 @@ supplementary_citations.tex
 supplementary_methods.tex
 
 # Generated images (not for manuscript)
-latex/figures/ChatGPT Image*
-latex/figures/Gemini_Generated_*
-latex/figures/1777278322.png
+figures/ChatGPT Image*
+figures/Gemini_Generated_*
+figures/1777278322.png
 
 # Not manuscript content
-latex/chapters/CLAUDE.md
-
-# Guard against accidental root-level duplicates
-/main.tex
-/arxiv.sty
-/IEEEtranN_doi.bst
-/references.bib
-/compile.sh
-/generate_pdf_readme.md
-/License.txt
-/README.md
-/chapters/
-/appendices/
-/figures/
-/tables/
+chapters/CLAUDE.md

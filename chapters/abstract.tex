@@ -1,0 +1,14 @@
+% ============================================================
+%  chapters/abstract.tex
+% ============================================================
+
+\begin{abstract}
+% TARGET LENGTH: 250--300 words
+Artificial intelligence and deep learning now support diagnosis, prognosis, biomarker prediction, and treatment-response assessment in digital pathology. Whole-slide imaging pipelines and large pathology foundation models are rapidly approaching clinical deployment. Yet subgroup performance gaps in these systems lead directly to differential misdiagnosis, incorrect biomarker assignment, and unequal patient outcomes. Fairness is therefore a prerequisite for clinical use and regulatory clearance, not merely an academic concern.
+
+We systematically appraise fairness challenges, bias sources, and debiasing strategies specific to histopathology imaging, quantifying the gap between what the field recommends and what it currently practises. Following PRISMA~2020, we searched six databases (January~2017--March~2026) and included 78~histopathology-specific experimental studies (analytical corpus), each individually cited with paper-specific findings. Data extraction covered cohorts, datasets, bias types, mitigation methods, fairness metrics, and reproducibility artefacts.
+
+We derive an eight-category bias taxonomy (demographic, institutional/batch, selection, technical, class/label, algorithmic, confounding, representation) grounded in the experimental evidence. Only 19.2\% ($n=15$) of included studies report any fairness metric, only 7.7\% ($n=6$) report worst-group performance, and only 29.5\% ($n=23$, 95\% CI: 20.5--40.2\%) perform external validation, despite near-universal recommendation across the broader literature. Pathology foundation models retain tissue-source-site signatures at ${>}90\%$ linear-probe accuracy, and preserved-site cross-validation collapses many previously reported ancestry and biomarker signals.
+
+We grade debiasing methods, finding knowledge-guided fine-tuning, fairness-aware contrastive learning, proportional federated averaging, and conditional-diffusion augmentation effective, while stain normalization alone is insufficient. We propose a histopathology-specific reporting checklist, a six-pillar fairness benchmark for whole-slide multiple-instance-learning models, and a research and policy agenda aligning researcher, clinician, regulator, and funder incentives. The evidence indicates that equitable pathology AI is an infrastructural and enforcement problem, not a discovery one.
+\end{abstract}
