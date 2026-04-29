@@ -37,3 +37,18 @@ REFERENCE_VERIFICATION_REPORT.md
 supplementary_checklist.tex
 supplementary_citations.tex
 supplementary_methods.tex
+
+# LaTeX manuscript files (deployed from latex/ subdirectory, not root)
+main.tex
+main.pdf
+arxiv.sty
+IEEEtranN_doi.bst
+references.bib
+compile.sh
+generate_pdf_readme.md
+License.txt
+README.md
+chapters/
+appendices/
+figures/
+tables/
