@@ -25,15 +25,9 @@ build/
 .obsidian/
 *.json
 all_paper/
-cross_domain_evidence.json
-histo_and_experimental_paper.json
-histo_and_review_paper.json
-metadata_availability/
-non-histopath-paper.json
 wiki/
-Welcome.md
-verification_papers/
-REFERENCE_VERIFICATION_REPORT.md
+
+# Not manuscript content
 supplementary_checklist.tex
 supplementary_citations.tex
 supplementary_methods.tex
@@ -42,6 +36,3 @@ supplementary_methods.tex
 figures/ChatGPT Image*
 figures/Gemini_Generated_*
 figures/1777278322.png
-
-# Not manuscript content
-chapters/CLAUDE.md
