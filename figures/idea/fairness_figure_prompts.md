@@ -257,41 +257,48 @@ Clean flat vector style. Blue (#1F78B4) and orange (#E66101).
 ## Panel 8: In-Distribution vs Out-of-Distribution (OOD) Gap
 
 ### Reference
-**Ly et al. (2024)** — *"Shortcut learning in medical AI hinders generalization: method for estimating AI model performance without external validation"*
-- **Citation key:** `ly2024shortcut`
+**Komen et al. (2024)** — *"Do Histopathological Foundation Models Eliminate Batch Effects? A Comparative Study"*
+- **Citation key:** `komen2024batch`
+- **Dataset:** TCGA-LUSC-5 (5 tissue source sites, ~250,000 patches); CAMELYON16 (2 sites, ~100,000 patches)
+- **Why this example:** Directly investigates whether foundation models eliminate site-specific batch effects in histopathology. Shows that even state-of-the-art pathology foundation models encode site identity, and when batch effects correlate with labels, performance collapses OOD.
 
 ### Real Data
-- COVID-19 detection (Kaggle→International): source AUROC **0.99**, external AUROC **0.64** → **Δ = 0.36 (36pp drop)**
-- MIMIC-CXR → CheXpert: source 0.85, external 0.73 → Δ = 0.12
-- Average across 10 benchmarks: source 0.87, external 0.68 → **20% overestimation** without calibration
-- DABIS estimate (calibrated): 0.73 vs actual: 0.68 (underestimates by only 4%)
+- **TSS (tissue source site) prediction accuracy: >90% on TCGA-LUSC-5, ~100% on CAMELYON16** — features encode site identity nearly perfectly via linear probing
+- **Cancer classification drops from >90% (uncorrelated data) to <20–50% (fully correlated TSS-label data)** — dramatic OOD failure
+- Stain normalization (Reinhard, Macenko) reduced TSS prediction but linear probe accuracies remained **>80% (TCGA-LUSC-5)** and **>97% (CAMELYON16)**
+- Foundation models do NOT eliminate batch effects; site signatures dominate distances in feature space
 
 ### AI Image Generation Prompt
 
 ```
 Scientific illustration, clean flat vector style, white background, single panel 8cm x 6cm.
 
-Two paired bar groups showing dramatic performance drop.
+Top section: Schematic showing two scenarios side by side.
 
-Left pair labeled "COVID-19 Detection":
-- Blue bar at 0.99 labeled "In-distribution (Kaggle)"
-- Orange bar at 0.64 labeled "OOD (International hospitals)"
-- Arrow between them annotated "Δ = 36 percentage points"
+Left scenario (labeled "Uncorrelated: TSS ⟂ Label"):
+- Two site blocks (Site A blue, Site B orange) with disease labels (+ and -) evenly mixed across both sites
+- Bar below: Cancer classification accuracy at 92% (tall green bar)
+- Label: "Model learns disease, not site"
 
-Right pair labeled "Chest X-ray Classification":
-- Blue bar at 0.85 labeled "In-distribution (MIMIC-CXR)"
-- Orange bar at 0.73 labeled "OOD (CheXpert)"
-- Arrow between them annotated "Δ = 12 percentage points"
+Right scenario (labeled "Correlated: TSS ~ Label"):
+- Site A (blue) has mostly positive disease labels (+), Site B (orange) has mostly negative labels (-)
+- Bar below: Cancer classification accuracy at 35% (short red bar)
+- Label: "Model exploits site as shortcut — OOD collapse"
 
-Below the bars, small schematic showing two microscope slides with different staining patterns to suggest domain shift.
+Middle: A bridge arrow between scenarios labeled "When training site predicts label, OOD performance collapses to <20-50%".
 
-Below: small text "Ly et al. 2024".
+Bottom section: Bar chart showing "Site prediction accuracy from features". 
+Two bars: "TCGA-LUSC-5" at >90% (blue) and "CAMELYON16" at ~100% (orange).
+Annotation: "Features encode site identity near-perfectly even in foundation models."
 
-Clean vector style. Blue (#1F78B4) for ID, orange (#E66101) for OOD. A red downward arrow emphasizing the performance drop.
+Below: small text "Komen et al. 2024 — TCGA-LUSC-5, CAMELYON16".
+
+Blue (#1F78B4) for advantaged/clean setup, orange (#E66101) for confounded/OOD setup. 
+Red (#D55E00) for performance collapse. Clean vector style.
 ```
 
 ### Caption Text
-**ID vs OOD evaluation separates seen from unseen hospitals/scanners.** Ly et al. (2024) found a 36-percentage-point gap between in-distribution (AUROC 0.99) and external validation (AUROC 0.64) for COVID-19 detection — shortcut learning inflates ID performance, while OOD evaluation reveals true generalisation.
+**ID vs OOD evaluation exposes site-confounded shortcuts.** Komen et al. (2024) showed that histopathology foundation model features encode tissue source site with >90–100% accuracy via linear probing. When site correlates with disease label, cancer classification collapses from >90% to <20–50% under distribution shift — demonstrating that even state-of-the-art models fail OOD when batch effects are not controlled.
 
 ---
 
