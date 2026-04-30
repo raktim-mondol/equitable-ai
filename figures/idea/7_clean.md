@@ -8,13 +8,10 @@
 
 ```
                         DATA LAYER
-┌──────────────────────────────┐    ┌─────────────────────────────────┐
-│ Multi-site WSIs              │    │ Paired same-patient slides      │
-│ 10+ sites, 4 continents      │    │ Different stain / scanner       │
-│                              │    │ + demographic metadata           │
-└─────────────┬────────────────┘    └────────────────┬────────────────┘
-              │                                      │
-              └──────────────────┬───────────────────┘
+┌─────────────────────────────────────────────────────────────────┐
+│ Multi-site WSIs + Paired same-patient slides                    │
+│ Different stain / scanner + demographic metadata                │
+└──────────────────────────────┬──────────────────────────────────┘
                                  ▼
                        TRAINING LAYER
 ┌─────────────────────────────────────────────────────────────────┐
