@@ -367,10 +367,9 @@ Clean vector style. Blue (#1F78B4) and orange (#E66101).
 
 1. Vaidya et al. (2024). Demographic bias in misdiagnosis by computational pathology models. *Nature Medicine*. `vaidya2024demographic`
 2. Huang et al. (2025). Knowledge-guided adaptation of pathology foundation models effectively improves fairness. `huang2025knowledge`
-3. Shabazian et al. (2025). Joint optimization of accuracy and fairness. *BMC Medical Informatics and Decision Making*. `shabazian2025joint`
-4. Soltan & Washington (2024). Challenges in Reducing Bias Using Post-Processing Fairness for Breast Cancer Staging. `soltan2024challenges`
-5. Roschewitz et al. (2023). Automatic correction of performance drift under acquisition shift in medical imaging. *Nature Communications*. `roschewitz2023automatic`
-6. Xu et al. (2026). Rethinking fairness in medical imaging: Maximizing group-specific performance with SPARE. `xu2026spare`
-7. Howard et al. (2021). The impact of site-specific digital histology signatures on deep learning model accuracy and bias. *Nature Communications*. `howard2021site`
-8. Ly et al. (2024). Shortcut learning in medical AI hinders generalization. `ly2024shortcut`
-9. Kheiri et al. (2025). Investigation on potential bias factors in histopathology datasets. `kheiri2025investigation`
+3. Lin et al. (2025). Contrastive learning enhances fairness in pathology artificial intelligence systems. `lin2025contrastive`
+4. Soltan & Washington (2024). Challenges in Reducing Bias Using Post-Processing Fairness for Breast Cancer Stage Classification with Deep Learning. `soltan2024challenges`
+5. Roschewitz et al. (2023). Automatic correction of performance drift under acquisition shift in medical image classification. *Nature Communications*. `roschewitz2023automatic`
+6. Howard et al. (2021). The impact of site-specific digital histology signatures on deep learning model accuracy and bias. *Nature Communications*. `howard2021site`
+7. Komen et al. (2024). Do Histopathological Foundation Models Eliminate Batch Effects? A Comparative Study. `komen2024batch`
+8. Kheiri et al. (2025). Investigation on potential bias factors in histopathology datasets. `kheiri2025investigation`
