@@ -179,35 +179,43 @@ Blue and orange dots for different subgroups within each plot. Clean vector styl
 ## Panel 6: Worst-Group Accuracy
 
 ### Reference
-**Xu et al. (2026)** — *"Rethinking fairness in medical imaging: Maximizing group-specific performance with SPARE"*
-- **Citation key:** `xu2026spare`
+**Soltan & Washington (2024)** — *"Challenges in Reducing Bias Using Post-Processing Fairness for Breast Cancer Stage Classification with Deep Learning"*
+- **Citation key:** `soltan2024challenges`
+- **Dataset:** AIM-Ahead / Nightingale Open Science Dataset; 10,856 breast biopsy WSIs from 842 patients
+- **Why this example:** Directly measures group-stratified accuracy on histopathology slides, revealing that the worst-performing demographic group (non-White patients) receives substantially lower accuracy — a clear demonstration of worst-group accuracy as an equity metric.
 
 ### Real Data
-- ISIC 2019 skin lesion classification: SPARE achieves **+3.7% accuracy** for Black patients, **+5.8%** for older patients vs baseline
-- Fitzpatrick-17K: Dark skin precision 0.534, F1 0.517; Light skin precision 0.508, F1 0.488
-- SPARE improves worst-group performance without sacrificing average accuracy
+- Binary breast cancer staging: **White patients 58–71% accuracy** vs **non-White patients 30–62% accuracy** across models
+- Worst-group (non-White at lower bound): just **30%** accuracy — less than half the best-group performance
+- Post-processing fairness interventions showed mixed results with no consistent improvement across groups
+- Multi-class staging: lower overall performance with inconsistent disparities between groups
 
 ### AI Image Generation Prompt
 
 ```
 Scientific illustration, clean flat vector style, white background, single panel 8cm x 6cm.
 
-A horizontal bar chart titled "Accuracy by Subgroup (Skin Lesion Classification)". Four bars:
-1. "White, young" — blue bar at 82%
-2. "White, old" — blue bar at 76%
-3. "Black, young" — orange bar at 66%
-4. "Black, old" — orange bar at 61% (shortest bar, circled in red)
+A horizontal bar chart titled "Accuracy by Demographic Group (Breast Cancer Staging)".
 
-A red dashed circle around the shortest bar, labeled "Worst-group accuracy = 61%".
-An arrow from a "Baseline" marker to an "After SPARE" marker showing the worst group improving from 61% to 67%.
+Four bars showing a stark gradient:
+1. "White, age <60" — blue bar at 71%
+2. "White, age 60+" — blue bar at 65%
+3. "non-White, age <60" — orange bar at 62%  
+4. "non-White, age 60+" — orange bar at 30% (shortest, circled in red)
 
-Below: small text "Xu et al. 2026".
+A prominent red dashed circle around the shortest bar (30%), with annotation "Worst-group accuracy = 30%".
+A bracket connecting the highest bar (71%) to the lowest (30%) labeled "41pp gap".
 
-Blue (#1F78B4) for advantaged subgroups, orange (#E66101) for disadvantaged subgroups. Clean vector style.
+Right side: inset showing a breast biopsy histopathology slide with a faded/red "X" overlay on the disadvantaged group side, indicating the model fails more often for these patients.
+
+Below: small text "Soltan & Washington 2024 — 10,856 breast biopsy WSIs".
+
+Blue (#1F78B4) for advantaged subgroups, orange (#E66101) for disadvantaged subgroups. 
+Clean vector style. Scientific publication quality.
 ```
 
 ### Caption Text
-**Worst-group accuracy = min(accuracy across predefined subgroups).** Xu et al. (2026) found that skin lesion classifiers perform worst on older Black patients (61%). Their SPARE method improved worst-group accuracy by 3.7–5.8% without sacrificing average performance — a direct proxy for equity of service.
+**Worst-group accuracy = min(accuracy across predefined subgroups).** Soltan & Washington (2024) found that breast cancer staging models achieve 58–71% accuracy for White patients but only 30–62% for non-White patients — the worst group receives less than half the best group's accuracy. This metric directly quantifies equity of service in histopathology AI.
 
 ---
 
