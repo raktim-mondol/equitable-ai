@@ -162,22 +162,25 @@
 
 ### Left Chart: TSS Leakage Before vs. After Fairness-Aware Pretraining
 
-**Metric:** Linear-probe site-classification AUROC (measures how easily a classifier can identify which site a slide came from by reading the model's learned features).
+**Metric:** TSS Leakage — linear-probe site-classification AUROC.  
+This is a *failure metric*: it measures how easily a classifier can identify which hospital/scanner a slide came from by reading the model's features. **Lower = better** (less leakage). AUROC = 0.50 means site identity is unrecoverable (TSS erased); AUROC ≈ 1.0 means the model has memorised site-specific artifacts.
 
 **Data:**
 
-| Condition | AUROC | 95\% CI | Source |
-|-----------|-------|---------|--------|
+| Condition | TSS Leakage (AUROC) | 95\% CI | Source |
+|-----------|---------------------|---------|--------|
 | Standard SSL pretraining | 0.98 | 0.96–0.99 | \citep{komen2024batch}, \citep{howard2021site} |
 | After fairness-aware pretraining | 0.52 | 0.48–0.55 | \citep{lin2025contrastive} |
-| Chance level (dashed line) | 0.50 | — | — |
+| Chance level (dashed reference line) | 0.50 | — | — |
 
-**Interpretation:** Lower is better. AUROC near 0.50 means site identity cannot be recovered from embeddings — TSS has been erased. The drop from 0.98 to 0.52 confirms that fairness-aware pretraining eliminates site-specific signatures that standard SSL faithfully encodes.
+**Interpretation:** The bar dropping from 0.98 to 0.52 is the *desired outcome* — it means the model can no longer distinguish sites, confirming TSS erasure. Standard SSL pretraining (light bar, red-toned) leaks site identity near-perfectly; fairness-aware pretraining (dark bar, green-toned) brings leakage down to chance.
 
-**Chart type:** Grouped bar chart or box-and-whisker plots. Dashed horizontal line at 0.50 labeled "Chance level."  
-**Y-axis:** Site-classification AUROC (0.40–1.00).  
+**Chart type:** Grouped bar chart. Dashed horizontal reference line at 0.50 with label "Chance (no leakage)".  
+**Y-axis label:** "TSS Leakage (site-classification AUROC)" — range 0.40–1.00.  
+**Y-axis direction annotation:** A bold arrow on the axis pointing downward, labeled "← Better (less leakage)".  
 **X-axis labels:** "Standard SSL pretraining", "Fairness-aware pretraining".  
-**Annotation arrow:** "← Better (chance)" pointing toward the 0.50 line.
+**Bar colours:** Standard SSL = red/light (high leakage = bad); Fairness-aware = green/dark (low leakage = good).  
+**Annotation callout:** An arrow pointing from the 0.98 bar down to the 0.52 bar, labeled "TSS erased".
 
 ### Right Chart: Subgroup AUROC Gap Across Cancer Types
 
