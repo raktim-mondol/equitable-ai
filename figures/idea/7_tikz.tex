@@ -1,0 +1,193 @@
+% TikZ code for Figure 7: Overall Fairness-Aware Histopathology Analysis Pipeline
+% This reproduces the three-layer pipeline diagram with the fairness-aware contrastive pretraining objective
+
+\begin{figure}[t]
+\centering
+\caption{Overall Fairness-Aware Histopathology Analysis Pipeline. \textbf{(A)} Three-layer methodology spanning data, training, and evaluation. \textbf{(B)} Fairness-aware contrastive pretraining objective that decouples biological signal from technical and demographic attributes.}
+\label{fig:overall-pipeline}
+\begin{tikzpicture}[
+    node distance=2mm,
+    >=latex,
+    box/.style={
+        rectangle,
+        rounded corners,
+        draw=black,
+        thick,
+        align=center,
+        font=\small
+    },
+    layerbox/.style={
+        rectangle,
+        rounded corners,
+        thick,
+        align=center,
+        font=\small
+    },
+    titlebox/.style={
+        rectangle,
+        draw=black,
+        thick,
+        fill=white,
+        align=center,
+        font=\bfseries\small
+    },
+    arrow/.style={
+        ->,
+        thick,
+        >=stealth
+    }
+]
+
+% Define colors from the original figure
+\definecolor{datalayercolor}{RGB}{197,199,237}
+\definecolor{traininglayercolor}{RGB}{213,232,212}
+\definecolor{evaluationlayercolor}{RGB}{200,206,217}
+\definecolor{pretraincolor}{RGB}{255,217,195}
+\definecolor{harmonisationcolor}{RGB}{197,216,237}
+\definecolor{finetuningcolor}{RGB}{229,241,200}
+\definecolor{calibrationcolor}{RGB}{200,220,207}
+\definecolor{evaluationboxcolor}{RGB}{195,205,237}
+
+% ==================== MAIN TITLE ====================
+\node[font=\bfseries\Large, anchor=south] (main-title) at (0,0) {Overall Fairness-Aware Histopathology Analysis Pipeline};
+
+% ==================== LAYER TITLES ====================
+\node[below=3mm of main-title.south west, anchor=north west, font=\bfseries\large] (data-title) {Data Layer};
+\node[below=3mm of main-title.south, anchor=north, font=\bfseries\large] (training-title) {Training Layer};
+\node[below=3mm of main-title.south east, anchor=north east, font=\bfseries\large] (eval-title) {Evaluation Layer};
+
+% ==================== DATA LAYER ====================
+\node[below=1mm of data-title.south, anchor=north, layerbox, fill=datalayercolor, minimum width=3.2cm, minimum height=3.8cm] (data-layer) {};
+
+\node[below=2mm of data-title.south, anchor=north, align=center, font=\small] (data-content) {
+    \textbf{Combined Data} \\
+    \textbf{Input Layer} \\[2mm]
+    \begin{tabular}{@{}l@{}}
+    \textbullet~Multi-site WSIs \\
+    (20+ sites, multiple \\
+    scanners) \\
+    \textbullet~Paired clinical slides + \\
+    Demographic metadata \\
+    (Block C)
+    \end{tabular}
+};
+
+% ==================== TRAINING LAYER ====================
+\node[below=1mm of training-title.south, anchor=north, layerbox, fill=traininglayercolor, minimum width=9.5cm, minimum height=3.8cm] (training-layer) {};
+
+% Training sub-boxes
+\node[anchor=north west, layerbox, fill=pretraincolor, minimum width=2.2cm, minimum height=3.6cm] (pretrain) at ([xshift=2mm,yshift=-2mm] training-layer.north west) {
+    \textbf{1) Multi-task} \\
+    \textbf{adversarial} \\
+    \textbf{pretraining} (see B) \\[1mm]
+    \begin{tabular}{@{}l@{}}
+    \textbullet~Contrastive \\
+    learning with multi- \\
+    task adversarial \\
+    constraints \\
+    \textbullet~Forcing technical \\
+    site/stain (TSS) and \\
+    attribute invariance
+    \end{tabular}
+};
+
+\node[right=1mm of pretrain.east, anchor=west, layerbox, fill=harmonisationcolor, minimum width=2.2cm, minimum height=3.6cm] (harmonisation) {
+    \textbf{2) Multi-attribute} \\
+    \textbf{feature} \\
+    \textbf{harmonisation} \\[1mm]
+    \begin{tabular}{@{}l@{}}
+    \textbullet~Harmonising \\
+    across sites and \\
+    demographic \\
+    groups (e.g., age, \\
+    race, sex) \\
+    \textbullet~Domain-adversarial \\
+    neural \\
+    harmonisation
+    \end{tabular}
+};
+
+\node[right=1mm of harmonisation.east, anchor=west, layerbox, fill=finetuningcolor, minimum width=2.2cm, minimum height=3.6cm] (finetuning) {
+    \textbf{3) Group-specific} \\
+    \textbf{fine-tuning} \\
+    \textbf{(FairMIL)} \\[1mm]
+    \begin{tabular}{@{}l@{}}
+    \textbullet~Multiple Instance \\
+    Learning (MIL) for \\
+    patient-level \\
+    survival/risk \\
+    prediction \\
+    \textbullet~Group-sensitive \\
+    objective function
+    \end{tabular}
+};
+
+\node[right=1mm of finetuning.east, anchor=west, layerbox, fill=calibrationcolor, minimum width=2.2cm, minimum height=3.6cm] (calibration) {
+    \textbf{4) Post-} \\
+    \textbf{processing} \\
+    \textbf{model calibration} \\[1mm]
+    \begin{tabular}{@{}l@{}}
+    \textbullet~Post-hoc \\
+    subgroup score \\
+    calibration \\
+    \textbullet~Equalizing \\
+    performance \\
+    metrics
+    \end{tabular}
+};
+
+% Vertical label for frozen features
+\node[right=1mm of pretrain.east, anchor=south, rotate=90, font=\small] at ([yshift=-1.8cm]pretrain.east) {frozen feature extractor};
+
+% ==================== EVALUATION LAYER ====================
+\node[below=1mm of eval-title.south, anchor=north, layerbox, fill=evaluationlayercolor, minimum width=3.5cm, minimum height=3.8cm] (eval-layer) {};
+
+\node[below=2mm of eval-title.south, anchor=north, align=center, font=\small] (eval-content) {
+    \textbf{Comprehensive} \\
+    \textbf{Evaluation Checklist} \\[2mm]
+    \begin{tabular}{@{}l@{}}
+    \textbullet~Preserved-site CV -- \\
+    internal validation \\
+    \textbullet~Demographic subgroup \\
+    performance \\
+    (Age, Race, Sex) \\
+    \textbullet~TSS leakage probe -- \\
+    site/scanner \\
+    classification
+    \end{tabular}
+};
+
+% ==================== ARROWS BETWEEN LAYERS ====================
+\draw[arrow] (data-layer.east) -- ([xshift=-2mm]pretrain.west);
+\draw[arrow] (calibration.east) -- (eval-layer.west);
+
+% ==================== EQUATION BOX ====================
+\node[below=5mm of training-layer.south, anchor=north, box, fill=white, minimum width=10cm] (equation-box) {
+    \parbox{\linewidth}{
+        \centering
+        \textbf{Fairness-aware contrastive pretraining objective} \\[3mm]
+        \[
+        \mathcal{L}_{\text{fair}} = -\sum_{i \in B} \log \left[
+        \frac{\exp(\text{sim}(\mathbf{z}_i, \mathbf{z}_i^{+}) / \tau)}
+        {\sum\limits_{j \in B, i \neq j} \exp(\text{sim}(\mathbf{z}_i, \mathbf{z}_j) / \tau) + \sum\limits_{\text{attr}} \lambda_{\text{attr}} \exp(\text{sim}(\mathbf{z}_i, \mathbf{z}_j^{+}) / \tau)}
+        \right]
+        \] \\[2mm]
+        \begin{tabular}{ll}
+        \hline
+        \textbf{Term} & \textbf{Definition} \\
+        \hline
+        $\mathbf{z}_i$ & Feature embedding for image $i$ \\
+        $\mathbf{z}_i^{+}$ & Positive pair (different view of same patient) \\
+        $\lambda_{\text{attr}}$ & Adversarial penalty weights for attributes \\
+        & (e.g. TSS, race, etc.) \\
+        \hline
+        \end{tabular} \\[2mm]
+        \parbox{\linewidth}{\raggedright
+        \textbf{Effect:} Effectively decouples biological signal from technical \\
+        (site/stain) and group-related (age, race, sex) attributes.
+        }
+    }
+};
+
+\end{tikzpicture}
+\end{figure}
