@@ -316,6 +316,7 @@ Clean flat vector style. Blue (#1F78B4) and orange (#E66101).
 - **Cancer classification drops from >90% (uncorrelated data) to <20–50% (fully correlated TSS-label data)** — dramatic OOD failure
 - Stain normalization (Reinhard, Macenko) reduced TSS prediction but linear probe accuracies remained **>80% (TCGA-LUSC-5)** and **>97% (CAMELYON16)**
 - Foundation models do NOT eliminate batch effects; site signatures dominate distances in feature space
+- **Corroborating evidence:** WILDS-CAMELYON17 benchmark shows **22.9pp** ID–OOD accuracy gap (Koh et al. 2021, cited in the paper's discussion); CORAL, IRM, and Group DRO all leave this gap largely unresolved on histopathology data
 
 ### AI Image Generation Prompt
 
