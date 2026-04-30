@@ -92,37 +92,58 @@ Blue (#1F78B4) and orange (#E66101) color scheme. Clean, no gridlines. Scientifi
 ### Reference
 **Lin et al. (2025)** — *"Contrastive learning enhances fairness in pathology artificial intelligence systems"*
 - **Citation key:** `lin2025contrastive`
-- **Dataset:** TCGA (28,732 WSIs from 14,456 patients across 20 cancer types), CPTAC-3, PLCO, DFCI
-- **Why this example:** Uses real histopathology WSIs to measure fairness across race, gender, and age groups — the only study in the corpus to systematically evaluate equalised odds across 20 cancer types on pathology images.
+- **Dataset:** TCGA (28,732 WSIs from 14,456 patients across 20 cancer types), CPTAC-3 (1,248 slides), PLCO (1,573 FFPE), DFCI (1,000+ slides); 15 independent cohorts total
+- **Why this example:** The most comprehensive histopathology fairness evaluation to date — 20 cancer types, 8 datasets, 7 institutions. Measures equal opportunity (EOp) and equalized odds (EOEq) per demographic group, and shows before/after mitigation.
 
 ### Real Data
-- **88.5%** of baseline disparities mitigated in internal validation across 20 cancer types
+- **29.93%** (11/37) of cancer diagnostic tasks showed significant race, gender, or age bias in standard models
+- FAIR-Path mitigated **88.5%** of baseline disparities in internal validation
 - **91.1%** reduction in diagnostic performance gaps in external validation (15 independent cohorts)
 - **100%** resolution in cancer detection and subtype classification tasks
-- Standard deep learning models showed significant demographic biases (race, gender, age) affecting **29.93%** of cancer diagnostic tasks
-- No significant AUROC drop in most tasks after fairness intervention
+- **80.0%** resolution in histological type classification tasks
+- Specific example — LUAD vs LUSC classification (FFPE): significant racial disparity in EOp (p=0.048), significant gender disparity in EOp (p<0.0001), and gender disparity in EBAcc (p=0.0059)
+- IDC vs ILC (breast, FFPE): significant age disparities in EOp (p=0.038) and EBAcc (p=0.044)
+- GBM vs LGG (brain, frozen): significant racial disparities in EOp (p=0.025)
+- Most disparities found in underrepresented groups: racial minorities, females, older age groups
 
 ### AI Image Generation Prompt
 
 ```
 Scientific illustration, clean flat vector style, white background, single panel 8cm x 6cm.
 
-Left side: Two bar chart pairs showing "Before FAIR-Path" and "After FAIR-Path" for Equal Opportunity Difference.
-Before: a tall blue bar (reference group TPR ~0.92) and a shorter orange bar (disadvantaged group TPR ~0.78), with a gap arrow annotated "EOp gap". 
-After: both bars nearly equal height around 0.90, gap nearly closed. Arrow between the pairs labeled "88.5% reduction".
+Top section: A summary statistics block.
+Left: "Standard Model" with a red warning badge "29.93% of tasks biased" (11/37 across 20 cancer types).
+Right: "FAIR-Path" with a green checkmark badge "88.5% disparities resolved".
 
-Right side: A small grid of organ icons (lung, breast, colon, kidney, brain) with checkmarks indicating "100% resolution in cancer detection and subtype classification".
+Middle section: Two bar chart pairs in before/after layout for EOp (Equal Opportunity difference).
 
-A dashed horizontal "Equality target" line across both chart pairs at y=0 difference.
+Left pair labeled "Before FAIR-Path (LUAD vs LUSC)":
+- Blue bar "Reference group TPR ≈ 0.92" 
+- Orange bar "Disadvantaged group TPR ≈ 0.78" 
+- Gap arrow annotated "EOp gap significant (p=0.048)"
 
-Below: small text "Lin et al. 2025 — TCGA 28,732 WSIs, 20 cancer types".
-Small histopathology slide icon in corner as domain marker.
+Right pair labeled "After FAIR-Path":
+- Both bars now nearly equal height around 0.90
+- Gap arrow shows near-zero difference
+- Annotation: "88.5% mitigation across all tasks"
+
+Between the two pairs: a bridging arrow with "Fairness-aware contrastive learning".
+
+Bottom: Three small task icons (lung, breast, brain) with resolution badges:
+- Cancer detection: "100% resolved" (green)
+- Subtype classification: "100% resolved" (green) 
+- Histological type: "80% resolved" (yellow)
+
+Dashed horizontal "Equality target" line at y=0 across both chart pairs.
+
+Below: small text "Lin et al. 2025 — 28,732 TCGA WSIs, 20 cancer types, 15 cohorts".
+Small histopathology slide icon in corner.
 
 Blue (#1F78B4) and orange (#E66101). Clean vector style. No 3D effects.
 ```
 
 ### Caption Text
-**Equalised odds: TPR and FPR equal across demographic groups.** Lin et al. (2025) applied fairness-aware contrastive learning (FAIR-Path) to 28,732 TCGA WSIs across 20 cancer types, mitigating 88.5% of baseline diagnostic disparities internally and 91.1% in external cohorts — the most comprehensive histopathology-specific fairness evaluation to date.
+**Equalised odds: TPR and FPR equal across demographic groups; equality of opportunity: only TPR equal.** Lin et al. (2025) found that 29.93% of cancer diagnostic tasks (11/37, spanning 20 cancer types) showed significant race, gender, or age bias. Their FAIR-Path framework mitigated 88.5% of these disparities internally and 91.1% in external cohorts — the most comprehensive histopathology fairness evaluation to date.
 
 ---
 
