@@ -216,43 +216,55 @@ Blue and orange dots for different subgroups within each plot. Clean vector styl
 ## Panel 6: Worst-Group Accuracy
 
 ### Reference
-**Soltan & Washington (2024)** — *"Challenges in Reducing Bias Using Post-Processing Fairness for Breast Cancer Stage Classification with Deep Learning"*
+**Soltan & Washington (2024)** — *"Challenges in Reducing Bias Using Post-Processing Fairness for Breast Cancer Stage Classification with Deep Learning"*, Algorithms, Vol. 17, 141.
 - **Citation key:** `soltan2024challenges`
-- **Dataset:** AIM-Ahead / Nightingale Open Science Dataset; 10,856 breast biopsy WSIs from 842 patients
-- **Why this example:** Directly measures group-stratified accuracy on histopathology slides, revealing that the worst-performing demographic group (non-White patients) receives substantially lower accuracy — a clear demonstration of worst-group accuracy as an equity metric.
+- **Dataset:** AIM-Ahead / Nightingale Open Science Dataset; 10,856 breast biopsy WSIs from 842 patients (2014–2020)
+- **Why this example:** Reports full subgroup-stratified accuracy/precision/recall/F1 tables for 10 CNN architectures across White vs non-White groups — the most granular worst-group data in the corpus. The Ensemble model's non-White accuracy (29.56%) is less than half the White accuracy (62.88%).
 
-### Real Data
-- Binary breast cancer staging: **White patients 58–71% accuracy** vs **non-White patients 30–62% accuracy** across models
-- Worst-group (non-White at lower bound): just **30%** accuracy — less than half the best-group performance
-- Post-processing fairness interventions showed mixed results with no consistent improvement across groups
-- Multi-class staging: lower overall performance with inconsistent disparities between groups
+### Real Data (from Table 3, prior to fairness adjustments)
+- **ResNet18**: White accuracy **70.62%** ± 2.83 vs non-White **55.27%** ± 6.33 → **15.35pp gap**
+- **ResNet50**: White **67.37%** ± 1.75 vs non-White **61.95%** ± 4.31 → 5.42pp gap
+- **Ensemble model**: White **62.88%** ± 8.76 vs non-White **29.56%** ± 13.26 → **33.32pp gap** (most extreme)
+- **Slide Level**: White **65.44%** ± 8.18 vs non-White **55.11%** ± 16.47 → 10.33pp gap
+- Across all 10 models: White accuracy range 58–71%, non-White range 30–62%
+- ResNet18 recall: White 0.71 ± 0.03, non-White 0.55 ± 0.06
+- ResNet18 F1: White 0.73 ± 0.03, non-White 0.46 ± 0.08
+- Independent t-tests: majority of models showed statistically significant FPR differences between groups; TPR differences trended consistently toward better White performance with no reversed cases
 
 ### AI Image Generation Prompt
 
 ```
 Scientific illustration, clean flat vector style, white background, single panel 8cm x 6cm.
 
-A horizontal bar chart titled "Accuracy by Demographic Group (Breast Cancer Staging)".
+Title: "Accuracy by Demographic Group (Breast Cancer Staging, Binary Classification)"
 
-Four bars showing a stark gradient:
-1. "White, age <60" — blue bar at 71%
-2. "White, age 60+" — blue bar at 65%
-3. "non-White, age <60" — orange bar at 62%  
-4. "non-White, age 60+" — orange bar at 30% (shortest, circled in red)
+A grouped horizontal bar chart showing four representative models from the study:
 
-A prominent red dashed circle around the shortest bar (30%), with annotation "Worst-group accuracy = 30%".
-A bracket connecting the highest bar (71%) to the lowest (30%) labeled "41pp gap".
+Model 1 — "ResNet18":
+  Blue bar (White): 70.6%, Orange bar (non-White): 55.3%
 
-Right side: inset showing a breast biopsy histopathology slide with a faded/red "X" overlay on the disadvantaged group side, indicating the model fails more often for these patients.
+Model 2 — "EfficientNet":
+  Blue bar (White): 67.3%, Orange bar (non-White): 56.4%
 
-Below: small text "Soltan & Washington 2024 — 10,856 breast biopsy WSIs".
+Model 3 — "Ensemble":
+  Blue bar (White): 62.9%, Orange bar (non-White): 29.6% ← SHORTEST bar circled in red
 
-Blue (#1F78B4) for advantaged subgroups, orange (#E66101) for disadvantaged subgroups. 
-Clean vector style. Scientific publication quality.
+Model 4 — "Slide Level":
+  Blue bar (White): 65.4%, Orange bar (non-White): 55.1%
+
+A prominent red dashed circle around the Ensemble non-White bar (29.6%), with annotation "Worst-group accuracy = 29.6%".
+A bracket connecting the Ensemble White bar (62.9%) to non-White bar (29.6%) labeled "Δ = 33.3pp".
+
+Right side inset: a small histopathology slide with a faded red "X" indicating diagnostic failure for the disadvantaged group.
+
+Below: small text "Soltan & Washington 2024, Algorithms 17:141 — 10,856 breast biopsy WSIs".
+
+Blue (#1F78B4) for White/advantaged, orange (#E66101) for non-White/disadvantaged.
+Error bars (±SD) on all bars. Clean vector style. Scientific publication quality.
 ```
 
 ### Caption Text
-**Worst-group accuracy = min(accuracy across predefined subgroups).** Soltan & Washington (2024) found that breast cancer staging models achieve 58–71% accuracy for White patients but only 30–62% for non-White patients — the worst group receives less than half the best group's accuracy. This metric directly quantifies equity of service in histopathology AI.
+**Worst-group accuracy = min(accuracy across predefined subgroups).** Soltan & Washington (2024) evaluated 10 CNN architectures on 10,856 breast biopsy WSIs and found the Ensemble model achieves 62.9% accuracy for White patients but only 29.6% for non-White patients — the worst group receives less than half the best group's accuracy. No model showed better performance for non-White patients, and post-processing fairness interventions yielded mixed results.
 
 ---
 
