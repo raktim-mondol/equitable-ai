@@ -88,4 +88,5 @@
 | \(\lambda\) | Penalty weight for same-site negatives |
 | \(\mathbb{1}_{[j \neq i]}\) | Applies penalty only to distinct samples |
 
-**Effect:** Linear-probe TSS accuracy: >96% → ~52% (chance). Diagnostic features preserved.
+**Effect:** Linear-probe TSS accuracy: >96% → ~52% (chance). Diagnostic features preserved.  
+Adapted from Lin et al. (2025).
