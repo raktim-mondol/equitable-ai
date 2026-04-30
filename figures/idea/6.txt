@@ -1,0 +1,46 @@
+Create an imageThe fairness-metric reporting gap is the headline finding of your Results—an 80.8% absence of any fairness evaluation—so it deserves a standalone main‑text figure, not an appendix burial. Below is a concrete plan for a single, high‑impact figure that makes the asymmetry between standard‑performance reporting and fairness‑metric reporting instantly visible.
+
+---
+
+## Figure design: “Reporting of standard vs. fairness metrics in histopathology AI studies (n = 78)”
+
+### Layout
+Two horizontally aligned bar charts (Panel A and Panel B) sharing the same x‑axis scale (0–100 %) and a common y‑axis label “Metric”. The figure should be compact and colour‑coded: e.g., teal for standard metrics, orange for fairness metrics.
+
+**Panel A – Standard performance metrics**  
+Horizontal bars for the six metrics you reported with percentages and 95% confidence intervals:
+
+| Metric | % (95% CI) |
+|--------|-------------|
+| Accuracy | 85.9 (76.5–92.0) |
+| AUROC | 70.5 (59.7–79.5) |
+| F1 | 42.3 (32.0–53.2) |
+| Sensitivity / specificity | 39.7 (29.7–50.8) |
+| Balanced accuracy | 17.9 (11.1–28.0) |
+| Cohen’s κ | 9.0 (4.5–17.5) |
+
+**Panel B – Fairness reporting**  
+A single, prominent bar for the overall prevalence of **any fairness metric** (19.2%, CI 12.0–29.3%).  
+Optionally, add a second, smaller bar for **worst‑group accuracy** (7.7%, CI 3.6–16.0%) to underscore that even the most basic equity check is rarely done.  
+A dashed vertical line at 80.8% with the annotation “80.8% of studies reported no fairness metric” provides the crucial counter‑point.
+
+If you prefer to show the fairness‑metric *families* that appear in Table 1, you could break out Panel B into a small inset or a second row, but the stark Panel B‑only version is far more powerful for the main paper. A detailed family breakdown can remain in the supplement.
+
+### Visual details
+- Draw bars from a common baseline (0%) with error bars representing the 95% CI.
+- Use large, readable axis labels.
+- Add a figure caption that contains the full statistical wording, referencing the total N = 78 and explaining the contrast. For example:
+
+> **Figure X. Reporting asymmetry between standard performance metrics and fairness metrics in the 78 included studies.** Panel A shows the proportion of studies (with 95% confidence intervals) that reported each common performance metric. Panel B shows the proportion that reported *any* fairness metric; the dashed line indicates that 80.8% of studies reported none. Worst‑group accuracy, the most direct operational equity measure, was reported in only 7.7% of studies.
+
+### Why this is a must‑have
+1. **Underscores the central message** – your Results highlight that “bias in histopathology AI is multifactorial… yet fairness measurement remains the exception rather than the norm.” This figure turns that statement into an immediately digestible, evidence‑based visual.
+2. **Shames the field productively** – the gap between 86% accuracy reporting and 19% any‑fairness reporting is a powerful call to action.
+3. **Breaks the monotony of tables and text** – a simple bar chart is often the most memorable element of a paper and is easily cited in presentations and policy briefs.
+
+### Implementation tip
+You can generate this figure in a few lines of R (ggplot2) or Python (matplotlib/seaborn). If you’d like, I can provide the exact R code that uses the numbers above and exports a publication‑ready PDF.
+
+---
+
+Generate this for academic figure. 

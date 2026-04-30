@@ -1,0 +1,33 @@
+Generate a horizontal grouped bar chart using Python (matplotlib/seaborn) that visualises the implementation gap between reviewer consensus and reported practice for 7 fairness recommendations in histopathology AI.
+
+Use the following exact data (from Table 1 in the paper). Each row contains: (recommendation label, consensus_percent, practice_percent, gap_label).
+
+Data:
+1. ('Batch-effect mitigation*', 95, 6, '~89 pp')
+2. ('Multi-site training data', 95, 18.7, '~76 pp')
+3. ('External validation', 95, 29.5, '~66 pp')
+4. ('Standardised fairness reporting', 82, 19.2, '~63 pp')
+5. ('Demographic metadata†', 85, 28.2, '~57 pp')
+6. ('Worst-group accuracy/AUC', 65, 7.7, '~57 pp')
+7. ('Preserved-site CV', 90, 35, '~55 pp')
+
+Important: Sort the bars in descending order of gap size (largest gap at top). The order above is already sorted correctly. If you plot them as a horizontal bar chart, the first item should appear at the top.
+
+Chart specifications:
+- Type: Grouped horizontal bar chart with two series per recommendation.
+- Colours: Consensus bars = teal (#008080), Practice bars = orange/red (#E66C37).
+- Bar width: 0.35, with a small gap between groups.
+- X-axis: Percentage (0–100). Label: "Percentage (%)".
+- Y-axis: The 7 recommendation labels, in the exact order given (largest gap at top). Do not abbreviate labels.
+- For each Practice bar, annotate the gap_label (e.g., "~89 pp") at the end of the bar (just to the right, horizontally aligned). Use a bold, small font (e.g., weight='bold', fontsize=9) and the same orange colour.
+- Do not plot the Consensus and Practice values as data labels on the bars themselves; only show the gap annotations on the Practice bars.
+- Chart title: "Implementation deficit: consensus endorsement versus reported practice" (use title case, no full stop).
+- Remove the legend. Instead, add a text annotation inside the plot area (e.g., top-right corner) that explains the colours: "■ Consensus   ■ Practice" using the same teal and orange colours.
+- Styling: Remove top and right spines. Use light grey horizontal grid lines (only on x-axis, alpha=0.3). Background white. Font family 'serif', font size 11 for axis labels, 12 for title.
+- Figure size: (8, 5) inches. Save as a high-resolution PNG (300 dpi).
+
+Add footnotes below the chart (using figtext or suptitle with offset):
+- Footnote line 1: "* Feature-level methods only (ComBat, FAIR-Path, FLEX, etc.); approximately 5 studies; stain normalization excluded."
+- Footnote line 2: "† Demographic metadata documented in ≤28.2% of datasets (39-dataset audit)."
+
+Generate this figure for academic publication 

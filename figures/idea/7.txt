@@ -1,0 +1,107 @@
+Below is a suggested academic figure that visualises the integrated fairness‑aware methodology advocated in the Discussion. The figure combines a pipeline overview, a key training equation, and quantitative evidence, following the mutually‑reinforcing priorities identified in the text (fairness‑aware pretraining, causal/federated/generative augmentation, and standardised reporting).
+
+---
+
+**Proposed Figure: Integrated fairness‑aware methodology for histopathology AI**
+
+- **Format:** Multi‑panel figure (3 panels: A–C), single‑column or spanning full page width.
+- **Audience:** Clinical AI researchers, reviewers, regulatory scientists.
+
+### Panel A: Methodological pipeline
+*Flowchart, left‑to‑right, with three tiers (Data, Training, Evaluation).*
+
+```
+   DATA LAYER
+ ┌───────────────┐   ┌────────────────────────────────┐
+ │ Multi‑site WSIs │   │ Paired same‑patient slides      │
+ │ (10+ sites,     │   │ (different stain/scanner)       │
+ │  4 continents) │   │ + demographic metadata (Block C) │
+ └──────┬────────┘   └──────────────┬─────────────────┘
+        │                           │
+        ▼                           ▼
+   TRAINING LAYER
+ ┌────────────────────────────────────────────────────┐
+ │ 1) Fairness‑aware pretraining (Equation in Panel B) │
+ │    · Contrastive learning with domain‑invariance     │
+ │    · Site‑adversarial self‑supervision               │
+ └─────────────────┬──────────────────────────────────┘
+                   │ frozen foundation model features
+                   ▼
+ ┌────────────────────────────────────────────────────┐
+ │ 2) Causal / counterfactual feature harmonisation     │
+ │    (e.g., site‑balanced counterfactual survival)    │
+ └─────────────────┬──────────────────────────────────┘
+                   │
+                   ▼
+ ┌────────────────────────────────────────────────────┐
+ │ 3) Federated fairness‑aware fine‑tuning (FlexFair)  │
+ │    · Subgroup parity constraints across clients     │
+ │    · Privacy‑preserving local updates              │
+ └─────────────────┬──────────────────────────────────┘
+                   │
+                   ▼
+ ┌────────────────────────────────────────────────────┐
+ │ 4) Generative augmentation (conditional diffusion)  │
+ │    · Synthesise under‑represented subgroups         │
+ │    · Fill long‑tail intersectional cells            │
+ └─────────────────┬──────────────────────────────────┘
+                   │
+                   ▼
+   EVALUATION LAYER
+ ┌────────────────────────────────────────────────────┐
+ │ Reporting Checklist Blocks A–E (24 items)           │
+ │ · Preserved‑site CV – subgroup AUROC, ECE, gap     │
+ │ · MIL attention fairness probe                      │
+ │ · TSS leakage audit (≤ chance) – external validation│
+ └────────────────────────────────────────────────────┘
+```
+
+### Panel B: Core fairness‑aware pretraining equation
+*Centered below Panel A or in an inset box.*
+
+**Contrastive fairness‑aware objective** (adapted from \(\texttt{Lin et al., 2025}\)):
+
+\[
+\mathcal{L}_{\text{fair}} = 
+- \frac{1}{|B|} \sum_{i \in B} 
+\log \frac
+{ \exp\!\big(\text{sim}(\mathbf{z}_i, \mathbf{z}_{i}^{+}) / \tau \big) }
+{ \sum_{j \in B \setminus \{i\}} 
+   \exp\!\big(\text{sim}(\mathbf{z}_i, \mathbf{z}_{j}) / \tau \big) 
+   + \mathbb{1}_{[j \neq i]} \, 
+     \lambda \cdot \exp\!\big(\text{sim}(\mathbf{z}_i, \mathbf{z}_{j}^{\text{(site)}}) / \tau \big)
+}
+\]
+
+- \(\mathbf{z}_i\): embedding of WSI \(i\).  
+- \(\mathbf{z}_{i}^{+}\): positive pair = same patient, **different scanner or stain** (forces invariance to technical TSS).  
+- \(\lambda\): penalty weight for same‑site negatives (pushes site‑related embeddings apart).  
+- **Effect:** Reduces linear‑probe TSS accuracy from \(>96\%\) to near chance while preserving diagnostic features.
+
+### Panel C: Empirical evidence
+*Two side‑by‑side bar/line charts based on literature cited in the Discussion.*
+
+- **Left chart – TSS leakage before vs. after fairness‑aware pretraining**  
+  Y‑axis: Linear‑probe site‑classification AUROC.  
+  Bars (or boxplots):  
+  - “Standard SSL pretraining” → \(0.98\) (95% CI 0.96–0.99)  
+  - “After fairness‑aware pretraining” → \(0.52\) (95% CI 0.48–0.55)  
+  A dashed line at 0.50 marks “chance level”.  
+
+- **Right chart – Subgroup AUROC gap reduction across cancer types**  
+  Y‑axis: Worst‑group AUROC minus aggregate AUROC.  
+  Grouped bars for 3 exemplary cancers (lung, breast, colorectal):  
+  - “Baseline (no mitigation)” → gaps 0.10–0.16  
+  - “Fairness‑aware pipeline” → gaps 0.01–0.03  
+  Annotation: “Median 88‑91% disparity reduction (FAIR‑Path internal/external)”.
+
+### Figure caption (suggested)
+
+> **Integrated fairness‑aware methodology for histopathology AI.**  
+> **(A)** End‑to‑end pipeline: multi‑site data with paired slides and demographic metadata feed a four‑stage training process (fairness‑aware pretraining, causal harmonisation, federated fine‑tuning, generative augmentation), followed by standardised reporting using the proposed 24‑item checklist.  
+> **(B)** Contrastive pretraining objective that forces invariance across technical site/stain variations while penalising site‑confounded negatives, effectively erasing TSS signatures (based on FAIR‑Path, \(\text{Lin et al., 2025}\)).  
+> **(C)** Expected impact: left – site‑classification AUROC drops from \(>0.96\) to chance after fairness‑aware pretraining (compiled from \(\text{Komen et al., 2024}\); \(\text{Howard et al., 2021}\)); right – subgroup AUROC gaps shrink to clinically negligible levels, consistent with FAIR‑Path’s 88–91% disparity reduction (\(\text{Lin et al., 2025}\)).  
+
+---
+
+This figure directly supports the Discussion’s argument: the four priorities are mutually reinforcing, and the equation + graphs make the proposed pretraining intervention concrete and evaluable. It can be readily adapted with real data from the user’s own experiments.

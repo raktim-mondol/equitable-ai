@@ -1,0 +1,21 @@
+You are a technical illustrator. Generate a publication‑ready PRISMA 2020 flow diagram using TikZ (LaTeX). The diagram must exactly replicate the flow below and be compilable standalone with \documentclass{standalone}.
+
+Flow to depict:
+- Identification phase:
+  * Database searches: n = 4200
+  * Citation tracking: n = 47
+  * Total records: n = 4247
+- After duplicate removal: n = 2847 (automated + manual)
+- Screening: Records screened = 2847; excluded = 2200 with reasons E1–E7 (wrong modality, no fairness, review only, no results, non‑human, not AI/ML, language)
+- Full‑text eligibility: assessed = 647; excluded = 569 with reasons F1 (non‑histopathology, 193), F2 (no fairness/subgroup analysis, 289), F3 (duplicate cohort, 53), F4 (insufficient detail/full text, 22), F5 (non‑AI methods/review only, 12)
+- Included: 78 studies
+
+Style requirements:
+- clean, minimal, black thin lines, white background, small sans‑serif font
+- main boxes aligned vertically, arrows between them
+- exclusion boxes placed to the right of the screening and eligibility boxes, connected by dashed red arrows
+- the final “Included” box in a subtle green fill (e.g., green!6, draw=green!55)
+- no shadows, no 3D, strictly flat design
+- add a title “PRISMA 2020 flow diagram” above the figure.
+
+Generate this image
