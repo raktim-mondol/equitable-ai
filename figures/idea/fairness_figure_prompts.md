@@ -13,31 +13,47 @@ Generate a **3×3 grid illustration** for an academic paper titled *"Towards Equ
 ## Panel 1: TPR / FPR Disparity
 
 ### Reference
-**Vaidya et al. (2024)** — *"Demographic bias in misdiagnosis by computational pathology models"*, Nature Medicine.
+**Vaidya et al. (2024)** — *"Demographic bias in misdiagnosis by computational pathology models"*, Nature Medicine, Vol. 30, pp. 1174–1190.
 - **Citation key:** `vaidya2024demographic`
+- **Dataset:** TCGA (breast, lung, brain), MGB (breast, lung), EBRAINS brain tumor atlas; whole slide images
+- **Why this example:** The only study in the corpus to systematically measure TPR disparity across race groups for multiple cancer types on histopathology WSIs, revealing that Black patients consistently have lower recall rates.
 
 ### Real Data
-- Breast cancer subtyping: White patients AUROC ≈ 0.98 vs Black patients AUROC ≈ 0.95 → **3.0% gap**
-- IDH1 mutation prediction (brain cancer): White vs Black AUROC gap = **16.0%**
-- TPR disparity: model correctly flags disease less often for Black patients
+- **Lung cancer subtyping** (MGB→MGB test): White TPR = **0.971**, Black TPR = **0.920** → **5.1 percentage-point gap**
+- **IDH1 mutation prediction** (brain cancer): mean TPR disparity for Black patients = **−0.060** (95% CI −0.080 to −0.020) with UNI encoder
+- **Breast cancer subtyping**: AUC gap White (0.98) vs Black (0.95) = **3.0% gap**
+- **IDH1 mutation prediction AUC gap**: White vs Black = **16.0%** (with ResNet50)
+- Self-supervised encoders (CTransPath, UNI) reduced gaps by up to 50% vs ResNet50
+- TPR disparity for Black patients approached zero when using CTransPath+TransMIL+AR
 
 ### AI Image Generation Prompt
 
 ```
 Scientific illustration, clean flat vector style, white background, single panel 8cm x 6cm.
 
-Two side-by-side vertical bar charts titled "TPR by Group (Breast Subtyping)". 
-Left chart shows one tall blue bar at 0.98 labeled "White", right chart shows a shorter orange bar at 0.95 labeled "Black". 
-A double-headed arrow between the two bars annotated "Δ = 3% gap". 
-Below the charts, small text: "Vaidya et al. 2024, Nature Medicine". 
-Below that: a small 2x2 confusion matrix for each group showing TP, FN, FP, TN counts with TP highlighted.
+Two side-by-side sets of bar charts titled "TPR by Race Group (Lung Cancer Subtyping, MGB Cohort)".
 
-Clean academic style, no gridlines, subtle axis labels. Blue (#1F78B4) and orange (#E66101) color scheme. 
+Left bar pair: "LUAD Subtype"
+- Blue bar labeled "White" at height 0.971
+- Orange bar labeled "Black" at height 0.920
+- Double-headed arrow between them annotated "Δ = 5.1pp"
+
+Right bar pair: "IDH1 Mutation (Brain)"
+- Blue bar labeled "White" at approximate height 0.92
+- Orange bar labeled "Black" at approximate height 0.86
+- Double-headed arrow annotated "Δ = 6.0pp"
+
+Below each bar pair: a small 2×2 confusion matrix with cells labeled TP, FN, FP, TN. The TP cell highlighted in green, FN cell highlighted in red. For the Black group, show the FN count visibly larger than for White group.
+
+Below: small text "Vaidya et al. 2024, Nature Medicine 30:1174–1190".
+Tiny histopathology slide icon as domain marker.
+
+Clean academic style, no gridlines, subtle axis labels. Blue (#1F78B4) and orange (#E66101). 
 No shadows, no 3D effects. Vector illustration quality suitable for scientific publication.
 ```
 
 ### Caption Text
-**TPR/FPR disparity = max TPR − min TPR.** In Vaidya et al. (2024), breast cancer subtyping shows a 3% TPR gap between White (0.98) and Black (0.95) patients; IDH1 mutation prediction shows a 16% gap — the model systematically misses disease more often in disadvantaged groups.
+**TPR/FPR disparity = max TPR − min TPR (or RMSE across subgroups).** Vaidya et al. (2024) found that lung cancer subtyping models achieve TPR = 0.971 for White patients but only 0.920 for Black patients — a 5.1pp gap. For IDH1 mutation prediction, Black patients showed mean TPR disparity of −0.060, meaning the model systematically misses true disease cases more often in disadvantaged groups.
 
 ---
 
