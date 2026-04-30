@@ -74,31 +74,39 @@ Blue (#1F78B4) and orange (#E66101) color scheme. Clean, no gridlines. Scientifi
 ## Panel 3: Equalised Odds / Equality of Opportunity
 
 ### Reference
-**Shabazian et al. (2025)** — *Joint optimization of accuracy and fairness in chest X-ray classification*, BMC Medical Informatics and Decision Making
-- **Citation key:** `shabazian2025joint`
+**Lin et al. (2025)** — *"Contrastive learning enhances fairness in pathology artificial intelligence systems"*
+- **Citation key:** `lin2025contrastive`
+- **Dataset:** TCGA (28,732 WSIs from 14,456 patients across 20 cancer types), CPTAC-3, PLCO, DFCI
+- **Why this example:** Uses real histopathology WSIs to measure fairness across race, gender, and age groups — the only study in the corpus to systematically evaluate equalised odds across 20 cancer types on pathology images.
 
 ### Real Data
-- Cardiomyopathy detection on NIH Chest X-ray: EOD reduced by **73%** (from 0.11 → 0.03)
-- Equalized Odds Ratio (EOR) improved by **19%**
-- Accuracy maintained at 88.05% (validation), 71.30% (test) — no accuracy sacrifice
+- **88.5%** of baseline disparities mitigated in internal validation across 20 cancer types
+- **91.1%** reduction in diagnostic performance gaps in external validation (15 independent cohorts)
+- **100%** resolution in cancer detection and subtype classification tasks
+- Standard deep learning models showed significant demographic biases (race, gender, age) affecting **29.93%** of cancer diagnostic tasks
+- No significant AUROC drop in most tasks after fairness intervention
 
 ### AI Image Generation Prompt
 
 ```
 Scientific illustration, clean flat vector style, white background, single panel 8cm x 6cm.
 
-Two pairs of bar charts in a before/after layout. Left pair labeled "Before Mitigation": 
-a blue bar at height 0.11 and an orange bar at height 0.03, both above a dashed horizontal line at y=0 labeled "Equality target". 
-Right pair labeled "After Joint Optimization": both bars now near y=0, nearly touching the dashed line. 
-An arrow connecting left to right annotated "73% reduction".
-Below: small text "Shabazian et al. 2025, BMC Med Inform Decis Mak".
-Small inset showing a chest X-ray with two demographic icons (male/female) and equal checkmarks.
+Left side: Two bar chart pairs showing "Before FAIR-Path" and "After FAIR-Path" for Equal Opportunity Difference.
+Before: a tall blue bar (reference group TPR ~0.92) and a shorter orange bar (disadvantaged group TPR ~0.78), with a gap arrow annotated "EOp gap". 
+After: both bars nearly equal height around 0.90, gap nearly closed. Arrow between the pairs labeled "88.5% reduction".
+
+Right side: A small grid of organ icons (lung, breast, colon, kidney, brain) with checkmarks indicating "100% resolution in cancer detection and subtype classification".
+
+A dashed horizontal "Equality target" line across both chart pairs at y=0 difference.
+
+Below: small text "Lin et al. 2025 — TCGA 28,732 WSIs, 20 cancer types".
+Small histopathology slide icon in corner as domain marker.
 
 Blue (#1F78B4) and orange (#E66101). Clean vector style. No 3D effects.
 ```
 
 ### Caption Text
-**Equalised odds: TPR and FPR equal across groups.** Shabazian et al. (2025) reduced the Equalized Odds Difference (EOD) by 73% (0.11→0.03) for cardiomyopathy detection on chest X-rays, with no accuracy loss — demonstrating that fairness constraints need not degrade performance.
+**Equalised odds: TPR and FPR equal across demographic groups.** Lin et al. (2025) applied fairness-aware contrastive learning (FAIR-Path) to 28,732 TCGA WSIs across 20 cancer types, mitigating 88.5% of baseline diagnostic disparities internally and 91.1% in external cohorts — the most comprehensive histopathology-specific fairness evaluation to date.
 
 ---
 
