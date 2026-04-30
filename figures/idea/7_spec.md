@@ -184,7 +184,8 @@ This is a *failure metric*: it measures how easily a classifier can identify whi
 
 ### Right Chart: Subgroup AUROC Gap Across Cancer Types
 
-**Metric:** Worst-group AUROC minus aggregate AUROC (lower = more equitable). A gap of 0.00 means the worst-performing subgroup scores identically to the overall population.
+**Metric:** Subgroup disparity — worst-group AUROC minus aggregate AUROC.  
+This is an *inequality metric*: a gap of 0.00 means the worst-performing subgroup scores identically to the overall population. **Lower = more equitable.**
 
 **Data:**
 
@@ -197,10 +198,11 @@ This is a *failure metric*: it measures how easily a classifier can identify whi
 
 **Sources:** \citep{lin2025contrastive} — FAIR-Path results across 20 TCGA cancer types; \citep{vaidya2024demographic} — independent documentation of 3–16\% subgroup AUROC gaps.
 
-**Chart type:** Grouped bar chart with two bars per cancer type (baseline: light / fairness-aware: dark).  
-**Y-axis:** Worst-group AUROC gap (0.00–0.20).  
+**Chart type:** Grouped bar chart with two bars per cancer type (baseline: light/red-toned; fairness-aware: dark/green-toned).  
+**Y-axis label:** "Subgroup disparity (worst-group AUROC − aggregate AUROC)" — range 0.00–0.20.  
+**Y-axis direction annotation:** Arrow pointing downward labeled "← Better (more equitable)".  
 **X-axis:** Cancer type (Lung, Breast, Colorectal).  
-**Annotation:** "Median 88–91\% disparity reduction (FAIR-Path)" with bracket spanning the difference.
+**Annotation:** Bracket spanning the gap between baseline and fairness-aware bars, labeled "88–91\% disparity reduction (FAIR-Path; Lin et al., 2025)".
 
 ---
 
