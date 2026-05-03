@@ -230,7 +230,6 @@ Title: "Demographic Parity (Breast Cancer Staging)" — 7 pt sans-serif bold, #3
 LEFT (~60% of chart width): Bar chart "Positive Prediction Rate P(ŷ = 1)".
 - Deep teal bar (#2C6E7B, 85% opacity): height at ~65%, label "White patients" below (5 pt #666666).
 - Muted crimson bar (#C44E52, 85% opacity): height at ~46%, label "Non-White patients" below (5 pt #666666).
-- Dashed horizontal line (#9E9E9E, 0.4 pt) spanning both bars at y = 55%, labeled "Equal rate (if parity achieved)" (4.5 pt #9E9E9E).
 - Vertical gap bracket between bar tops annotated "Δ = 19 pp" (5 pt #444444).
 
 RIGHT (~40% of chart width): Warning inset box with amber (#E08E45 at 8% opacity) fill, 0.5 pt amber (#E08E45) solid border.
