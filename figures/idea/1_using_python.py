@@ -96,7 +96,14 @@ ax.text(bx + 0.15, by + bh/2, 'ΔTPR  =  max  TPR  −  min  TPR',
 
 # ── Save ──────────────────────────────────────────
 out = '/mnt/e/fairness-review-paper/literature-review-paper_v8/figures/idea/panel_A.png'
-# Use a fixed bbox to enforce exact 6.5×6.5 cm square
-fig.savefig(out, dpi=300, facecolor='white', edgecolor='none',
-            bbox_inches='tight', pad_inches=0.05)
-print(f'Saved → {out}')
+fig.savefig(out, dpi=300, facecolor='white', edgecolor='none', bbox_inches='tight',
+            pad_inches=0.03)
+# Re-open and force-crop to square
+from PIL import Image
+img = Image.open(out)
+sz = max(img.size)
+square = Image.new('RGB', (sz, sz), 'white')
+square.paste(img, ((sz - img.size[0]) // 2, (sz - img.size[1]) // 2))
+square.save(out, dpi=(300, 300))
+w = sz / 300 * 2.54
+print(f'Saved → {out}  ({sz}x{sz}px, {w:.1f}x{w:.1f} cm)')
