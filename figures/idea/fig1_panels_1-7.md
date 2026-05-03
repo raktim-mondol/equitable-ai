@@ -231,7 +231,7 @@ No reference text. No author names. No border. No icons. Flat vectors only.
 $$\text{DP} = \left| P(\hat{Y}=1 \mid G=a) - P(\hat{Y}=1 \mid G=b) \right|$$
 
 ### Real Data (from Soltan & Washington 2024, Algorithms 17:141)
-- Binary breast cancer classification: White group positive prediction rate 58–71%, non-White group 30–62%
+- Binary breast cancer classification: White group accuracy 58–71%, non-White group accuracy 30–62% (across 10 CNN architectures)
 - Post-processing fairness interventions showed mixed results — no consistent improvement across groups
 - Multi-class staging: lower overall performance with inconsistent disparities
 
