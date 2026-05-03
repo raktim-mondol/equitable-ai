@@ -13,10 +13,10 @@ Generate a **6-panel multi-figure illustration** (3×2 grid) for an academic pap
 Every panel must obey these rules exactly. These are **identical** to Figure 1 — the two figures form a matched pair.
 
 ### Geometry
-- **Panel canvas:** 7.0 cm wide × 5.5 cm tall (chart area only; caption is separate text, not part of the image)
+- **Panel canvas:** 6.5 cm wide × 6.5 cm tall — square (chart area only; caption is separate text, not part of the image)
 - **Bounding box:** Tight — trim all excess whitespace around the chart. Panels have no border stroke. Internal margin ≤2 mm from chart elements to canvas edge
 - **Panel label:** Bold uppercase letter (H, I, J, K, L, M) in 9 pt sans-serif, top-left corner, 2 mm from canvas edges, colour #000000
-- **Chart area:** Centered within the canvas, 6.0 cm × 4.0 cm, axes drawn with 0.5 pt #9E9E9E strokes, no gridlines
+- **Chart area:** Centered within the canvas, 5.5 cm × 5.5 cm — square, axes drawn with 0.5 pt #9E9E9E strokes, no gridlines
 
 ### Typography
 - **Panel title:** 7 pt sans-serif bold, #333333, centered above chart
