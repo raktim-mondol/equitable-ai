@@ -18,6 +18,18 @@ Every panel must obey these rules exactly. These are **identical** to Figure 1 �
 - **Panel label:** Bold uppercase letter (H, I, J, K, L, M) in 9 pt sans-serif, top-left corner, 2 mm from canvas edges, colour #000000
 - **Chart area:** Centered within the canvas, 5.5 cm × 5.5 cm — square, axes drawn with 0.5 pt #9E9E9E strokes, no gridlines
 
+### Scale & Proportion
+All data values must be rendered with correct proportional relationships — not merely illustrative. Bar heights, curve positions, and gap sizes must reflect the actual numbers.
+
+- **Bar chart y-axis:** Always starts at 0.0 unless the metric is bounded differently (e.g., Youden's J 0.0–1.0, variance 0 to max+15%). Choose the range so bars fill 50–80% of the available chart height — never compressed into a narrow band.
+- **Bar widths:** Consistent within each chart. For grouped bars (2–4 per model), each bar is 0.6–0.8 cm wide with 0.15 cm gap between bars in a group and 0.4 cm between groups.
+- **Bar heights:** Proportional to data values. If Prop-FFL variance = 10.00 and FedSGD variance = 32.54, the FedSGD bar must be ~3.25× taller than the Prop-FFL bar.
+- **ROC curves (AUROC):** Both axes span exactly 0.0–1.0, forming a perfect square sub-plot. The diagonal chance line runs corner-to-corner.
+- **Calibration plots (ECE):** Both axes span exactly 0.0–1.0, square sub-plot. The perfect-calibration diagonal runs corner-to-corner.
+- **Gap arrows:** Double-headed arrows span the exact height difference between the two bars they connect. The Δ value annotation is placed at the arrow's midpoint.
+- **Across panels:** Bars representing the same metric range (e.g., accuracy 0–100%, variance) must use consistent y-axis scaling so visual comparison across panels is valid.
+- **No broken axes, no logarithmic scales, no truncated bars.**
+
 ### Typography
 - **Panel title:** 7 pt sans-serif bold, #333333, centered above chart
 - **Axis labels:** 5.5 pt sans-serif, #666666
