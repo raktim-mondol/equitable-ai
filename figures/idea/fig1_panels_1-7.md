@@ -4,7 +4,7 @@
 
 Generate a **7-panel multi-figure illustration** (3×3 grid, 2 cells used for legend/title) for an academic paper titled *"Towards Equitable AI in Pathology: A Systematic Review of Fairness Challenges and Debiasing Methods in Histopathology Imaging."* Each panel explains one fairness metric using a **real published histopathology example** with actual numbers from the 78-study systematic review corpus. The figure serves as a visual glossary for histopathology researchers.
 
-**Figure title (top):** **"How Fairness Metrics Work — Part 1: Group-Level Performance Metrics"**
+**Figure title:** Centered at top of the grid, 10 pt sans-serif bold, #000000: **How Fairness Metrics Work — Part 1: Group-Level Performance Metrics**
 
 ---
 
