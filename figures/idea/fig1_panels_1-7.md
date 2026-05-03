@@ -171,7 +171,7 @@ Scientific illustration, high resolution 4K sharp, clean flat vector style, whit
 
 Chart area 5.5 cm × 5.5 cm centered — square. No gridlines. Axis strokes 0.5 pt #9E9E9E. Tick labels 5 pt #999999.
 
-Title: "Equalised Odds (EOp / EOEq)" — 7 pt sans-serif bold, #333333.
+Title: "Equality of Opportunity — EOp" — 7 pt sans-serif bold, #333333.
 
 TOP ROW: Two summary stat blocks (each ~1.8 cm × 0.75 cm, warm stone tint #D4C5C2 at 12%).
 - Left block: text "29.93% of tasks biased" + "11/37 across 20 cancer types" (5 pt #555555). Small amber "!" badge (#E08E45, 6 pt bold).
