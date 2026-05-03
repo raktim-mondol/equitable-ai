@@ -21,7 +21,7 @@ Every panel must obey these rules exactly. These are **identical** to Figure 1 �
 ### Scale & Proportion
 All data values must be rendered with correct proportional relationships — not merely illustrative. Bar heights, curve positions, and gap sizes must reflect the actual numbers.
 
-- **Bar chart y-axis:** Always starts at 0.0 unless the metric is bounded differently (e.g., Youden's J 0.0–1.0, variance 0 to max+15%). Choose the range so bars fill 50–80% of the available chart height — never compressed into a narrow band.
+- **Bar chart y-axis:** Zoom to the data range so group differences are clearly visible. For Youden's J (range ~0.29–0.87), set y-axis to 0.20–1.00. For variance, set y-axis to 0–max+15%. For MI values, set y-axis to 0–max+20%. The goal is to make disparities legible, not to anchor at zero. Bars should fill 50–80% of the available chart height.
 - **Bar widths:** Consistent within each chart. For grouped bars (2–4 per model), each bar is 0.6–0.8 cm wide with 0.15 cm gap between bars in a group and 0.4 cm between groups.
 - **Bar heights:** Proportional to data values. If Prop-FFL variance = 10.00 and FedSGD variance = 32.54, the FedSGD bar must be ~3.25× taller than the Prop-FFL bar.
 - **ROC curves (AUROC):** Both axes span exactly 0.0–1.0, forming a perfect square sub-plot. The diagonal chance line runs corner-to-corner.
