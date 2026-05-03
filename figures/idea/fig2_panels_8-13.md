@@ -126,7 +126,7 @@ $$\text{MI}(X; Y) = \sum_{x \in X} \sum_{y \in Y} P(x,y) \log \frac{P(x,y)}{P(x)
 ### AI Image Generation Prompt
 
 ```
-Scientific illustration, clean flat vector style, white background. Panel canvas 7.0 cm × 5.5 cm, borderless. Tight bounding box — trim all excess whitespace. Panel label "I" in 9 pt bold sans-serif at top-left corner, 2 mm from edges, colour #2C6E7B.
+Scientific illustration, clean flat vector style, white background. Panel canvas 7.0 cm × 5.5 cm, borderless. Tight bounding box — trim all excess whitespace. Panel label "I" in 9 pt bold sans-serif at top-left corner, 2 mm from edges, colour #000000.
 
 Chart area 6.0 cm × 4.0 cm centered. No gridlines. Axis strokes 0.5 pt #9E9E9E. Tick labels 5 pt #999999.
 
