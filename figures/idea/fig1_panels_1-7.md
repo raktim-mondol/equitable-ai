@@ -403,18 +403,14 @@ No reference text. No author names. No border. No icons. Flat vectors only.
 - Each panel is borderless; the grid arrangement provides visual separation via gutters
 
 ### Dimensions
-- **Full grid:** exactly 22.0 cm wide × 18.0 cm tall at 300 DPI (2598 × 2126 px)
-- **Each panel cell:** 7.0 cm wide × 5.5 cm tall
+- **Full grid:** exactly 21.1 cm wide × 21.1 cm tall at 300 DPI (2492 × 2492 px)
+- **Each panel cell:** 6.5 cm wide × 6.5 cm tall — square
 - **Gutters:** 0.3 cm horizontal, 0.3 cm vertical between panels
 - **Grid margins:** 0.5 cm top, 0.5 cm bottom, 0.5 cm left, 0.5 cm right
 - **Bounding box:** Crop exactly to grid margins — zero whitespace beyond the outermost panel edges
 
-### Colour Legend (cell 1,1 — separate from panels, not rendered inside any panel image)
-- Deep teal (#2C6E7B) = Reference / advantaged group
-- Muted crimson (#C44E52) = Disadvantaged group
-- Charcoal (#555555) = Metric value (before/after comparisons)
-- Amber (#E08E45) = Knowledge gap / caution
-- Sea green (#4A9E8E) = Improvement / resolution (text and badges only)
+### Colour Legend
+No colour legend, no swatches, no hex codes appear anywhere on the figure. All panels are self-explanatory through labels, arrows, and annotation text alone.
 
 ### Shared Footer (below grid, not inside any panel)
 "Data from 78-study systematic review of fairness in histopathology AI. See Table 1 for the full 15-metric inventory and reporting frequency."
