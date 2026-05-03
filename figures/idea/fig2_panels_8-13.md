@@ -14,9 +14,8 @@ Every panel must obey these rules exactly. These are **identical** to Figure 1 �
 
 ### Geometry
 - **Panel canvas:** 7.0 cm wide × 5.5 cm tall (chart area only; caption is separate text, not part of the image)
-- **Bounding box:** Tight — no padding beyond the panel border. Trim all excess whitespace around the chart to the minimum needed for legibility (≤2 mm margin inside the panel edge)
-- **Panel border:** 0.5 pt solid stroke, colour #D0D0D0, rounded corners (radius 3 pt)
-- **Panel label:** Bold uppercase letter (H, I, J, K, L, M) in 9 pt sans-serif, top-left corner, 2 mm from panel edges, colour #2C6E7B
+- **Bounding box:** Tight — trim all excess whitespace around the chart. Panels have no border stroke. Internal margin ≤2 mm from chart elements to canvas edge
+- **Panel label:** Bold uppercase letter (H, I, J, K, L, M) in 9 pt sans-serif, top-left corner, 2 mm from canvas edges, colour #2C6E7B
 - **Chart area:** Centered within the canvas, 6.0 cm × 4.0 cm, axes drawn with 0.5 pt #9E9E9E strokes, no gridlines
 
 ### Typography
@@ -28,32 +27,34 @@ Every panel must obey these rules exactly. These are **identical** to Figure 1 �
 - **Caption (outside panel):** NOT included in the image — supplied separately as text
 
 ### Colour Palette
-Derived from a **split-complementary academic scheme** (teal base, muted crimson accent, sea-green for improvement) — same as Figure 1:
 
 | Role | Colour | Hex |
 |------|--------|-----|
-| Reference / advantaged group | Deep teal | **#2C6E7B** |
-| Disadvantaged / confounded group | Muted crimson | **#C44E52** |
-| After mitigation / equality achieved | Sea green | **#4A9E8E** |
-| Before mitigation / baseline | Warm stone grey | **#D4C5C2** |
-| Knowledge gap / warning | Amber | **#E08E45** |
+| Reference / advantaged / clean setup (bar fill) | Deep teal | **#2C6E7B** |
+| Disadvantaged / confounded / OOD failure (bar fill) | Muted crimson | **#C44E52** |
+| Success / improvement (text & icon only, never bar fill) | Sea green | **#4A9E8E** |
+| Section background tint (never bar fill) | Warm stone | **#D4C5C2** |
+| Knowledge gap / warning (text & icon only, never bar fill) | Amber | **#E08E45** |
 | Neutral reference lines / chance | Cool grey | **#9E9E9E** |
-| Highlight / emphasis stroke | Charcoal | **#555555** |
+| Emphasis stroke / annotation arrow | Charcoal | **#555555** |
 | Background | White | **#FFFFFF** |
+
+**Critical colour rule:** Bar fills always use group-identity colours (deep teal for reference/advantaged/large-data, muted crimson for disadvantaged/confounded/small-data). Never use sea green, warm stone, or amber as bar fills. Before/after mitigation is conveyed through layout, labels, arrows, and annotation text — not through bar colour changes. Section background tints and success/warning badges may use warm stone, sea green, or amber sparingly as non-bar accents.
 
 ### Visual Style
 - **Flat vector aesthetic** — no gradients, no 3D extrusions, no drop shadows, no photo-realistic textures
 - **Stroke width:** All bar outlines 0.4 pt, all connector lines 0.6 pt, all emphasis strokes 1.0 pt
-- **Fill opacity:** Bars and filled areas at 85% opacity for a professional printed look
+- **Fill opacity:** Bars at 85% opacity for a professional printed look
 - **Markers:** Small filled circles (radius 2 pt) for data points on scatter/calibration plots
-- **Icons:** Minimalist line-art histopathology slide icon (12 pt × 12 pt) in bottom-right corner, colour #9E9E9E at 40% opacity, as a discreet domain marker only (no meaning, no legend entry)
+- **No icons, no watermarks, no domain markers** on any panel
 
 ### What NOT to include on any panel
+- No panel border stroke — panels are borderless
 - No author names, journal names, year, or citation keys
 - No reference text of any kind
 - No "Data from…" or "See Table…" footnotes
-- No legend inside the panel (legend is a separate cell in the grid)
-- No emoji, clip-art, or decorative elements
+- No legend or colour swatches inside the panel (legend is a separate strip below the grid)
+- No emoji, clip-art, decorative elements, or domain icons
 
 ---
 
@@ -73,38 +74,36 @@ $$\text{OOD Gap} = \text{AUROC}_{\text{ID}} - \text{AUROC}_{\text{OOD}} \qquad \
 ### AI Image Generation Prompt
 
 ```
-Scientific illustration, clean flat vector style, white background. Panel canvas 7.0 cm × 5.5 cm. Tight bounding box — trim all excess whitespace. Panel border: 0.5 pt #D0D0D0 solid stroke with 3 pt rounded corners. Panel label "H" in 9 pt bold sans-serif at top-left corner, 2 mm from edges, colour #2C6E7B.
+Scientific illustration, clean flat vector style, white background. Panel canvas 7.0 cm × 5.5 cm, borderless. Tight bounding box — trim all excess whitespace. Panel label "H" in 9 pt bold sans-serif at top-left corner, 2 mm from edges, colour #2C6E7B.
 
 Chart area 6.0 cm × 4.0 cm centered. No gridlines. Axis strokes 0.5 pt #9E9E9E. Tick labels 5 pt #999999.
 
 Title: "ID vs OOD Gap (Site Confounding)" — 7 pt sans-serif bold, #333333.
 
-TOP ROW: Two scenario schematics side by side (each ~2.5 cm wide).
+TOP ROW: Two scenario schematics side by side (each ~2.6 cm wide).
 
-LEFT SCENARIO — "TSS ⟂ Label (Uncorrelated)":
-- Two site blocks: Site A (deep teal tint #2C6E7B at 15%), Site B (muted crimson tint #C44E52 at 15%), each ~1.0 cm × 1.2 cm.
-- Disease labels (+ and −) evenly mixed across both sites (small +/- markers in balanced proportion).
-- Arrow below pointing to a sea green bar (#4A9E8E) at height proportional to ~92%, width 1.0 cm.
-- Label: "Cancer classification ≈ 92% — model learns disease, not site" (4.5 pt #4A9E8E).
+LEFT SCENARIO — "TSS ⟂ Label (Uncorrelated)" (5 pt bold #555555):
+- Two site blocks: Site A (deep teal tint #2C6E7B at 12%), Site B (muted crimson tint #C44E52 at 12%), each ~1.0 cm × 1.0 cm.
+- Disease labels (+ and −) evenly mixed across both sites (small balanced +/- markers).
+- Arrow below pointing to a deep teal bar (#2C6E7B) at height proportional to ~92%, width 1.0 cm.
+- Label: "Classification ≈ 92% — learns disease, not site" (4.5 pt #4A9E8E).
 
-RIGHT SCENARIO — "TSS ~ Label (Correlated)":
+RIGHT SCENARIO — "TSS ~ Label (Correlated)" (5 pt bold #555555):
 - Site A (deep teal tint): mostly + disease labels.
 - Site B (muted crimson tint): mostly − disease labels.
 - Arrow below pointing to a muted crimson bar (#C44E52) at height proportional to ~35%, width 1.0 cm.
-- Label: "Cancer classification ≈ 35% — model exploits site as shortcut" (4.5 pt #C44E52).
+- Label: "Classification ≈ 35% — exploits site as shortcut" (4.5 pt #C44E52).
 
-Bridge arrow between scenarios labeled "When site predicts label → OOD collapse" (5 pt #555555, 0.6 pt stroke).
+Bridge arrow between scenarios: "When site predicts label → OOD collapse" (5 pt #555555, 0.6 pt stroke).
 
-BOTTOM ROW: Small bar chart "Site Prediction from Features".
+BOTTOM ROW: Small bar chart "Site Prediction Accuracy from Features".
 - Deep teal bar (#2C6E7B) at >90%, label "TCGA-LUSC-5" (4.5 pt #666666).
 - Muted crimson bar (#C44E52) at ~100%, label "CAMELYON16" (4.5 pt #666666).
 - Annotation: "Features encode site near-perfectly even in foundation models" (4.5 pt #555555).
 
 Equation box at bottom: "OOD Gap = Acc_ID − Acc_OOD" in 6 pt monospace #2C6E7B, pale tint box (#F0F5F5 fill, 1 pt #D0D0D0 border, 2 pt corner radius, 1.5 mm padding).
 
-Discreet line-art histopathology slide icon (12×12 pt, #9E9E9E at 40% opacity) bottom-right corner.
-
-No reference text. No author names. No legend inside panel. Flat vectors only — no gradients, shadows, or 3D effects.
+No reference text. No author names. No border. No icons. Flat vectors only.
 ```
 
 ### Caption Text (for separate use — NOT rendered on figure)
@@ -127,7 +126,7 @@ $$\text{MI}(X; Y) = \sum_{x \in X} \sum_{y \in Y} P(x,y) \log \frac{P(x,y)}{P(x)
 ### AI Image Generation Prompt
 
 ```
-Scientific illustration, clean flat vector style, white background. Panel canvas 7.0 cm × 5.5 cm. Tight bounding box — trim all excess whitespace. Panel border: 0.5 pt #D0D0D0 solid stroke with 3 pt rounded corners. Panel label "I" in 9 pt bold sans-serif at top-left corner, 2 mm from edges, colour #2C6E7B.
+Scientific illustration, clean flat vector style, white background. Panel canvas 7.0 cm × 5.5 cm, borderless. Tight bounding box — trim all excess whitespace. Panel label "I" in 9 pt bold sans-serif at top-left corner, 2 mm from edges, colour #2C6E7B.
 
 Chart area 6.0 cm × 4.0 cm centered. No gridlines. Axis strokes 0.5 pt #9E9E9E. Tick labels 5 pt #999999.
 
@@ -135,22 +134,20 @@ Title: "Bias Proxy: Site-Classifiability & MI" — 7 pt sans-serif bold, #333333
 
 LEFT HALF: Simplified neural probe diagram.
 - Input box: "Histopathology Patch" (4.5 pt #555555, 0.5 pt #9E9E9E border, ~1.0 cm × 0.5 cm).
-- Arrow down to feature extractor box: "CNN Feature Extractor" (5 pt #555555, 0.5 pt #2C6E7B border, #2C6E7B at 8% fill, ~1.5 cm × 0.6 cm).
+- Arrow down to feature extractor box: "CNN Feature Extractor" (5 pt #555555, 0.5 pt #2C6E7B border, #2C6E7B at 6% fill, ~1.5 cm × 0.6 cm).
 - Two output arrows from extractor, splitting to:
-  - TOP HEAD: "Cancer Classifier" box → accuracy badge "99%" in sea green (#4A9E8E, 7 pt bold).
-  - BOTTOM HEAD: "Site Probe" box → accuracy badge "96%" in amber (#E08E45, 7 pt bold), with amber exclamation mark "!" beside it (10 pt bold).
-- Annotation: "If a linear probe achieves 96% site accuracy, features encode batch effects almost as strongly as disease — a bias red flag." (4 pt #555555, 3 lines, italic).
+  - TOP HEAD: "Cancer Classifier" box → accuracy "99%" in sea green (#4A9E8E, 7 pt bold).
+  - BOTTOM HEAD: "Site Probe" box → accuracy "96%" in amber (#E08E45, 7 pt bold), with amber "!" beside it (10 pt bold).
+- Annotation below diagram: "If a linear probe achieves 96% site accuracy, features encode batch effects almost as strongly as disease." (4 pt #555555, 2 lines, italic).
 
 RIGHT HALF: Bar chart "Mutual Information (TCGA)".
-- Deep teal bar (#2C6E7B): MI(cancer type, site) = 1.47, labeled "Label–Site dependency" (4.5 pt #666666).
-- Muted crimson bar (#C44E52): MI(features, site) with a comparably high value, labeled "Feature–Site dependency" (4.5 pt #666666).
+- Deep teal bar (#2C6E7B, 85% opacity): MI(cancer type, site) = 1.47, labeled "Label–Site dependency" (4.5 pt #666666).
+- Muted crimson bar (#C44E52, 85% opacity): MI(features, site) comparably high, labeled "Feature–Site dependency" (4.5 pt #666666).
 - Annotation: "High MI → strong confounding" (4.5 pt #C44E52).
 
 Equation box at bottom: "MI(X;Y) = Σ Σ P(x,y) log[P(x,y) / P(x)P(y)]" in 5.5 pt monospace #2C6E7B, pale tint box.
 
-Discreet line-art histopathology slide icon (12×12 pt, #9E9E9E at 40% opacity) bottom-right corner.
-
-No reference text. No author names. No legend inside panel. Flat vectors only.
+No reference text. No author names. No border. No icons. Flat vectors only.
 ```
 
 ### Caption Text (for separate use — NOT rendered on figure)
@@ -173,35 +170,34 @@ $$\text{TPR-RMSE} = \sqrt{\frac{1}{n} \sum_{i=1}^{n} \left( \text{TPR}_i - \over
 ### AI Image Generation Prompt
 
 ```
-Scientific illustration, clean flat vector style, white background. Panel canvas 7.0 cm × 5.5 cm. Tight bounding box — trim all excess whitespace. Panel border: 0.5 pt #D0D0D0 solid stroke with 3 pt rounded corners. Panel label "J" in 9 pt bold sans-serif at top-left corner, 2 mm from edges, colour #2C6E7B.
+Scientific illustration, clean flat vector style, white background. Panel canvas 7.0 cm × 5.5 cm, borderless. Tight bounding box — trim all excess whitespace. Panel label "J" in 9 pt bold sans-serif at top-left corner, 2 mm from edges, colour #2C6E7B.
 
 Chart area 6.0 cm × 4.0 cm centered. No gridlines. Axis strokes 0.5 pt #9E9E9E. Tick labels 5 pt #999999.
 
 Title: "TPR Disparity RMSE (C-UAD-EGFR)" — 7 pt sans-serif bold, #333333.
 
-TOP: Schematic showing 4 subgroups (Race A, B, C, D) each with a TPR bar at different heights deviating from a population-mean reference line (dashed, #9E9E9E, 0.4 pt). Deviation arrows (0.4 pt #9E9E9E) from each bar to mean line. Annotation: "RMSE captures deviations across ALL subgroups, not just max−min gap" (4.5 pt #555555).
+TOP: Schematic showing 4 subgroups (Race A, B, C, D) each with a TPR bar at different heights. A dashed population-mean reference line (#9E9E9E, 0.4 pt) runs horizontally. Small deviation arrows (0.4 pt #9E9E9E) from each bar to the mean line. Bars use deep teal (#2C6E7B) for subgroups at/above mean, muted crimson (#C44E52) for subgroups below mean. Annotation: "RMSE captures deviations across ALL subgroups, not just max−min gap" (4.5 pt #555555).
 
-MIDDLE ROW: Before/after comparison (two boxes, each ~2.5 cm wide).
+MIDDLE ROW: Before/after comparison (two sections, each ~2.5 cm wide, separated by a bridge arrow).
 
-LEFT BOX — "Before FLEX" (warm stone tint #D4C5C2 at 10% fill):
+LEFT SECTION — "Before FLEX" (label 5 pt bold #555555, warm stone tint #D4C5C2 at 8% background):
 - 4 TPR bars at heights ~0.82, 0.88, 0.91, 0.96 with wide spread.
-  Bar colours: deep teal (#2C6E7B) for groups near mean, muted crimson (#C44E52) for disadvantaged groups below mean.
-- Bold annotation below: "TPR disparity RMSE = 0.140" (5 pt #C44E52, bold).
+  Bars at/above mean: deep teal (#2C6E7B). Bars below mean: muted crimson (#C44E52).
+- Annotation below: "TPR disparity RMSE = 0.140" (5 pt #C44E52, bold).
 
-RIGHT BOX — "After FLEX" (sea green tint #4A9E8E at 10% fill):
+RIGHT SECTION — "After FLEX" (label 5 pt bold #555555, warm stone tint #D4C5C2 at 8% background):
 - Same 4 bars now tightly clustered at heights ~0.88, 0.90, 0.91, 0.93.
-  All bars now in sea green (#4A9E8E) to indicate fairness achieved.
-- Bold annotation below: "TPR disparity RMSE = 0.085 (↓ 39%)" (5 pt #4A9E8E, bold).
+  Bars still use deep teal (#2C6E7B) for groups at/above mean, muted crimson (#C44E52) for groups below mean.
+  The reduction in spread is visually obvious — bars are tightly grouped.
+- Annotation below: "TPR disparity RMSE = 0.085 (↓ 39%)" (5 pt #4A9E8E, bold).
 
-Bridge arrow between boxes: "Knowledge-guided adaptation (FLEX)" (5 pt #555555, 0.6 pt stroke).
+Bridge arrow between sections: "Knowledge-guided adaptation (FLEX)" (5 pt #555555, 0.6 pt stroke).
 
-BOTTOM: Small annotation listing statistically significant tasks: "Significant improvements: NSCLC-CTE P=0.018, BRCA-PR P=0.048, CRCA-CTLA4 P=0.004" (4 pt #555555).
+BOTTOM: Small annotation: "Significant improvements: NSCLC-CTE P=0.018, BRCA-PR P=0.048, CRCA-CTLA4 P=0.004, CLUAD-EGFR P=0.004" (4 pt #555555).
 
 Equation box at bottom: "TPR-RMSE = √(1/n · Σ(TPR_i − TPR_mean)²)" in 6 pt monospace #2C6E7B, pale tint box.
 
-Discreet line-art histopathology slide icon (12×12 pt, #9E9E9E at 40% opacity) bottom-right corner.
-
-No reference text. No author names. No legend inside panel. Flat vectors only.
+No reference text. No author names. No border. No icons. Flat vectors only.
 ```
 
 ### Caption Text (for separate use — NOT rendered on figure)
@@ -225,42 +221,40 @@ $$\text{EBAcc} = \left| \text{BalAcc}_a - \text{BalAcc}_b \right| \qquad \text{A
 ### AI Image Generation Prompt
 
 ```
-Scientific illustration, clean flat vector style, white background. Panel canvas 7.0 cm × 5.5 cm. Tight bounding box — trim all excess whitespace. Panel border: 0.5 pt #D0D0D0 solid stroke with 3 pt rounded corners. Panel label "K" in 9 pt bold sans-serif at top-left corner, 2 mm from edges, colour #2C6E7B.
+Scientific illustration, clean flat vector style, white background. Panel canvas 7.0 cm × 5.5 cm, borderless. Tight bounding box — trim all excess whitespace. Panel label "K" in 9 pt bold sans-serif at top-left corner, 2 mm from edges, colour #2C6E7B.
 
 Chart area 6.0 cm × 4.0 cm centered. No gridlines. Axis strokes 0.5 pt #9E9E9E. Tick labels 5 pt #999999.
 
 Title: "EBAcc & AUROCDiff" — 7 pt sans-serif bold, #333333.
 
-Two metric panels side by side (equal width, ~2.8 cm each).
+Two metric sub-panels side by side (equal width, ~2.8 cm each).
 
-LEFT SUB-PANEL — "Equal Balanced Accuracy (EBAcc)":
-Title in 6 pt bold #333333.
-Before/after bar pair:
-  - TOP ROW ("Before"):
-    Deep teal bar (#2C6E7B) at height ~0.88 (reference group BalAcc).
-    Muted crimson bar (#C44E52) at height ~0.81 (disadvantaged group BalAcc).
+LEFT SUB-PANEL — "Equal Balanced Accuracy (EBAcc)" (6 pt bold #333333):
+Before/after bar pairs, shared y-axis:
+  - TOP ROW ("Before" — 5 pt bold #555555):
+    Deep teal bar (#2C6E7B) at height ~0.88, labeled "Reference" (4 pt #666666).
+    Muted crimson bar (#C44E52) at height ~0.81, labeled "Disadvantaged" (4 pt #666666).
     Gap bracket annotated "EBAcc gap" (4.5 pt #C44E52).
-  - BOTTOM ROW ("After FAIR-Path"):
-    Both bars at equal height ~0.88 in sea green (#4A9E8E).
+  - BOTTOM ROW ("After FAIR-Path" — 5 pt bold #555555):
+    Deep teal bar (#2C6E7B) at height ~0.88, labeled "Reference" (4 pt #666666).
+    Muted crimson bar (#C44E52) at height ~0.88, labeled "Disadvantaged" (4 pt #666666).
+    Both bars now equal height — gap visually closed.
     Annotation: "Gap closed" (4.5 pt #4A9E8E).
   Mini badge below: "100% resolved — detection & subtyping" (4 pt #4A9E8E).
 
-RIGHT SUB-PANEL — "AUC Difference (AUROCDiff)":
-Title in 6 pt bold #333333.
+RIGHT SUB-PANEL — "AUC Difference (AUROCDiff)" (6 pt bold #333333):
 Two small overlaid ROC curves (axes ~1.5 cm × 1.5 cm):
   - Deep teal curve (#2C6E7B, 0.8 pt): AUC = 0.91.
   - Muted crimson curve (#C44E52, 0.8 pt): AUC = 0.84.
-  - Shaded region between curves (#C44E52 at 10% opacity), annotated "AUROCDiff = 0.07" (4.5 pt #555555).
+  - Shaded region between curves (#C44E52 at 8% opacity), annotated "AUROCDiff = 0.07" (4.5 pt #555555).
   - Dashed diagonal (#9E9E9E, 0.3 pt).
-  Mini inset arrow: "After FAIR-Path → near zero" (4 pt #4A9E8E).
+  Mini text: "After FAIR-Path → near zero" (4 pt #4A9E8E).
 
 BOTTOM: Summary stat — "29.93% (11/37) tasks affected — 88.5% mitigated internally, 91.1% in external cohorts" (4.5 pt #555555, centered, 2 lines).
 
 Equation box at bottom (compact, spans full width): "EBAcc = |BalAcc_a − BalAcc_b|    AUROCDiff = |AUC_a − AUC_b|    BalAcc = (TPR+TNR)/2" in 5 pt monospace #2C6E7B, pale tint box.
 
-Discreet line-art histopathology slide icon (12×12 pt, #9E9E9E at 40% opacity) bottom-right corner.
-
-No reference text. No author names. No legend inside panel. Flat vectors only.
+No reference text. No author names. No border. No icons. Flat vectors only.
 ```
 
 ### Caption Text (for separate use — NOT rendered on figure)
@@ -288,7 +282,7 @@ $$J = \text{TPR} + \text{TNR} - 1 = \max_t \left( \text{sensitivity}(t) + \text{
 ### AI Image Generation Prompt
 
 ```
-Scientific illustration, clean flat vector style, white background. Panel canvas 7.0 cm × 5.5 cm. Tight bounding box — trim all excess whitespace. Panel border: 0.5 pt #D0D0D0 solid stroke with 3 pt rounded corners. Panel label "L" in 9 pt bold sans-serif at top-left corner, 2 mm from edges, colour #2C6E7B.
+Scientific illustration, clean flat vector style, white background. Panel canvas 7.0 cm × 5.5 cm, borderless. Tight bounding box — trim all excess whitespace. Panel label "L" in 9 pt bold sans-serif at top-left corner, 2 mm from edges, colour #2C6E7B.
 
 Chart area 6.0 cm × 4.0 cm centered. No gridlines. Axis strokes 0.5 pt #9E9E9E. Tick labels 5 pt #999999.
 
@@ -297,7 +291,7 @@ Title: "Youden's Index Under Distribution Shift" — 7 pt sans-serif bold, #3333
 TOP LEFT: Conceptual ROC diagram (axes ~1.5 cm × 1.5 cm).
 - ROC curve (#2C6E7B, 0.8 pt stroke) from (0,0) to (1,1), convex toward top-left.
 - Dashed diagonal (#9E9E9E, 0.3 pt).
-- Point P marked on the curve's shoulder with a filled charcoal dot (#555555, radius 2.5 pt).
+- Point P marked on curve shoulder with filled charcoal dot (#555555, radius 2.5 pt).
 - Perpendicular dashed line from P to diagonal, annotated "J = TPR + TNR − 1" (4.5 pt #555555).
 - Label: "J = distance from diagonal to curve shoulder" (4 pt #666666).
 
@@ -305,14 +299,14 @@ TOP RIGHT: Small formula card — "J = max_t [sensitivity(t) + specificity(t) �
 
 BOTTOM (main chart area, ~4.5 cm wide): Grouped bar chart "Youden's Index Before vs After UPA Alignment".
 
-Two groups of bars with warm stone (#D4C5C2) for "Before UPA" and sea green (#4A9E8E) for "After UPA":
+Each scanner/site has two bars side by side: both use charcoal (#555555 at 85% opacity) since these are the same metric (Youden's J) for the same scanner, just at different times. "Before UPA" bars have a subtle hatch pattern overlay or are simply labeled; "After UPA" bars are the same charcoal fill without hatch. Distinction is via labels and arrows.
 
-GROUP 1 — "Breast Screening (Mammography)":
-  Scanner A: Before 0.295 (warm stone), After 0.651 (sea green) — most dramatic improvement. Upward arrow annotated "2.2×" (4.5 pt #4A9E8E, bold).
-  Scanner B: Before 0.589, After 0.594 — nearly unchanged.
-  Scanner D: Before 0.644, After 0.640 — nearly unchanged.
+GROUP 1 — "Breast Screening (Mammography)" (subtitle 5 pt bold #666666):
+  Scanner A: Before 0.295, After 0.651 — dramatic improvement. Upward arrow annotated "2.2×" (4.5 pt #4A9E8E, bold).
+  Scanner B: Before 0.589, After 0.594 — nearly unchanged, annotation "maintained" (4 pt #9E9E9E).
+  Scanner D: Before 0.644, After 0.640 — nearly unchanged, annotation "maintained" (4 pt #9E9E9E).
 
-GROUP 2 — "Histopathology (Camelyon17)":
+GROUP 2 — "Histopathology (Camelyon17)" (subtitle 5 pt bold #666666):
   Site S4: Before 0.868, After 0.864 — preserved near ceiling.
   Site S5: Before 0.859, After 0.863 — preserved near ceiling.
 
@@ -322,9 +316,7 @@ Annotation: "UPA preserves clinical operating point without labelled data from n
 
 Equation box at bottom: "J = TPR + TNR − 1" in 6 pt monospace #2C6E7B, pale tint box.
 
-Discreet line-art histopathology slide icon (12×12 pt, #9E9E9E at 40% opacity) bottom-right corner.
-
-No reference text. No author names. No legend inside panel. Flat vectors only.
+No reference text. No author names. No border. No icons. Flat vectors only.
 ```
 
 ### Caption Text (for separate use — NOT rendered on figure)
@@ -351,44 +343,44 @@ $$\text{Var}_{\text{hosp}} = \frac{1}{K} \sum_{k=1}^{K} \left( \text{Acc}_k - \o
 ### AI Image Generation Prompt
 
 ```
-Scientific illustration, clean flat vector style, white background. Panel canvas 7.0 cm × 5.5 cm. Tight bounding box — trim all excess whitespace. Panel border: 0.5 pt #D0D0D0 solid stroke with 3 pt rounded corners. Panel label "M" in 9 pt bold sans-serif at top-left corner, 2 mm from edges, colour #2C6E7B.
+Scientific illustration, clean flat vector style, white background. Panel canvas 7.0 cm × 5.5 cm, borderless. Tight bounding box — trim all excess whitespace. Panel label "M" in 9 pt bold sans-serif at top-left corner, 2 mm from edges, colour #2C6E7B.
 
 Chart area 6.0 cm × 4.0 cm centered. No gridlines. Axis strokes 0.5 pt #9E9E9E. Tick labels 5 pt #999999.
 
 Title: "Inter-Hospital Variance (Federated Learning)" — 7 pt sans-serif bold, #333333.
 
 TOP ROW: Federated learning schematic.
-- Central server icon (circle, 0.8 cm diameter, #2C6E7B stroke, 0.5 pt, white fill) in center.
-- 4 hospital icons (small rounded rectangles, each ~0.6 cm × 0.5 cm): H1 (large, representing big dataset), H2 (medium), H3 (medium), H4 (small — representing scarce data). Arranged around the server.
+- Central server icon (circle, 0.8 cm diameter, #2C6E7B stroke 0.5 pt, white fill) in center.
+- 4 hospital icons (small rounded rectangles, each ~0.6 cm × 0.5 cm): H1 (large dataset), H2 (medium), H3 (medium), H4 (small — scarce data). Arranged around the server.
 - Upward arrows (model updates, 0.4 pt #9E9E9E) from hospitals to server.
 - Downward arrows (aggregated model, 0.4 pt #2C6E7B) from server to hospitals.
 - Label: "Federated Learning — hospitals share model updates, not data" (4 pt #555555).
 
-BOTTOM ROW: Side-by-side bar chart comparison "TCGA Kidney (4 hospitals)".
+BOTTOM ROW: Side-by-side bar chart comparison "TCGA Kidney (4 hospitals)" (5 pt bold #666666).
+
+Consistent colour rule: deep teal (#2C6E7B) for hospitals with large/medium datasets, muted crimson (#C44E52) for the worst-performing or smallest-data hospital. Same colour assignment in both FedSGD and Prop-FFL sections.
 
 LEFT — "Standard FedSGD — Minimises Average Loss" (4.5 pt bold #555555):
-- H1: deep teal bar (#2C6E7B) at height ~85% (large-data hospital)
+- H1: deep teal bar at height ~85% (large-data hospital)
 - H2: deep teal bar at height ~75%
 - H3: deep teal bar at height ~82%
 - H4: muted crimson bar (#C44E52) at height ~68%, noticeably shortest
-- Large hospital icons (H1, H3) get taller bars — bias toward data-rich sites visible.
+- Large-data hospitals (H1, H3) get taller bars — bias toward data-rich sites.
 - Annotation below: "Var = 32.54 — large spread" (5 pt #C44E52, bold).
 
 RIGHT — "Prop-FFL — Minimises Performance Variance" (4.5 pt bold #555555):
-- H1: sea green bar (#4A9E8E) at height ~79%
-- H2: sea green bar at height ~77%
-- H3: sea green bar at height ~76%
-- H4: sea green bar at height ~84%, tallest — small-data hospital now better served
-- All bars in sea green, tightly grouped — equity achieved.
+- H1: deep teal bar at height ~79%
+- H2: deep teal bar at height ~77%
+- H3: deep teal bar at height ~76%
+- H4: muted crimson bar (#C44E52) at height ~84%, now tallest — small-data hospital better served
+- All bars tightly grouped — equity achieved. Same colours as left panel; improvement is visible from the H4 bar now being tall rather than short.
 - Annotation below: "Var = 10.00 — 69% reduction" (5 pt #4A9E8E, bold).
 
 Bridge arrow between left and right: "Prop-FFL: hospitals with worse performance contribute more to loss" (4.5 pt #555555, 0.6 pt stroke).
 
 Equation box at bottom: "Var_hosp = (1/K)·Σ(Acc_k − Acc_mean)²    Prop-FFL: min_θ Π L_k(θ)" in 5 pt monospace #2C6E7B, pale tint box.
 
-Discreet line-art histopathology slide icon (12×12 pt, #9E9E9E at 40% opacity) bottom-right corner.
-
-No reference text. No author names. No legend inside panel. Flat vectors only.
+No reference text. No author names. No border. No icons. Flat vectors only.
 ```
 
 ### Caption Text (for separate use — NOT rendered on figure)
@@ -403,20 +395,21 @@ No reference text. No author names. No legend inside panel. Flat vectors only.
 - **Row 1:** Panels H, I, J
 - **Row 2:** Panels K, L, M
 - Colour legend: placed in a narrow horizontal strip below the grid (0.8 cm tall, full grid width)
+- Each panel is borderless; the grid arrangement provides visual separation via gutters
 
 ### Dimensions
 - **Full grid:** exactly 22.0 cm wide × 13.0 cm tall at 300 DPI (2598 × 1535 px)
 - **Each panel cell:** 7.0 cm wide × 5.5 cm tall
 - **Gutters:** 0.3 cm horizontal, 0.3 cm vertical between panels
 - **Grid margins:** 0.5 cm top, 0.5 cm bottom, 0.5 cm left, 0.5 cm right
-- **Bounding box:** Crop exactly to grid margins + legend strip — zero whitespace beyond the outermost borders
+- **Bounding box:** Crop exactly to grid margins + legend strip — zero whitespace beyond the outermost panel edges
 
-### Colour Legend (below grid)
-- Deep teal (#2C6E7B) = Reference / advantaged / clean setup
-- Muted crimson (#C44E52) = Disadvantaged / confounded / OOD failure
-- Sea green (#4A9E8E) = After mitigation / equality achieved
-- Warm stone (#D4C5C2) = Before mitigation / baseline
+### Colour Legend (below grid — separate from panels, not rendered inside any panel image)
+- Deep teal (#2C6E7B) = Reference / advantaged / large-data / clean setup
+- Muted crimson (#C44E52) = Disadvantaged / confounded / OOD failure / small-data
+- Charcoal (#555555) = Metric value (before/after comparisons)
 - Amber (#E08E45) = Knowledge gap / caution / warning
+- Sea green (#4A9E8E) = Improvement / resolution (text and badges only)
 
 ### Shared Footer (below legend strip, not inside any panel)
 "Data from 78-study systematic review of fairness in histopathology AI. See Table 1 for the full 15-metric inventory and reporting frequency."
