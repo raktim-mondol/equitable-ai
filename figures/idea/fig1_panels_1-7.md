@@ -87,7 +87,7 @@ $$\Delta \text{TPR} = \max_g \text{TPR}_g - \min_g \text{TPR}_g$$
     - White–Black Δ = 5.1 pp, White–Asian Δ = 0.6 pp
   - TCGA-LUAD/LUSC (n = 1,043): White = 0.960, Black = 0.950, Asian = 0.916
     - White–Asian Δ = 4.4 pp, White–Black Δ = 1.0 pp
-- Across 16 cancer types, White TPR > Black TPR in 14 of 16 types
+- Across cancer types examined, White TPR consistently exceeded Black TPR
 
 ### AI Image Generation Prompt
 
