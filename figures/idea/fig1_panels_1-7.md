@@ -106,7 +106,7 @@ MGB-Lung — subtitle, 5.5 pt #666666:
 - Asian: warm amber at height 0.965. Label "Asian" below — 5 pt #666666. Value "0.965" — 4 pt #999999 above.
 - Arrow from White to Black, annotated "Δ = 5.1 pp" — 5 pt #444444.
 
-"[TCGA-LUAD/LUSC]" — subtitle, 5.5 pt #666666:
+TCGA-LUAD/LUSC — subtitle, 5.5 pt #666666:
 - White: deep teal at height 0.960. Label "White" below — 5 pt #666666. Value "0.960" — 4 pt #999999 above.
 - Black: muted crimson at height 0.950. Label "Black" below — 5 pt #666666. Value "0.950" — 4 pt #999999 above.
 - Asian: warm amber at height 0.916. Label "Asian" below — 5 pt #666666. Value "0.916" — 4 pt #999999 above.
