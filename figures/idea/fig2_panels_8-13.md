@@ -59,6 +59,7 @@ Every panel must obey these rules exactly. These are **identical** to Figure 1 �
 - No "Data from…" or "See Table…" footnotes
 - No legend or colour swatches inside the panel (legend is a separate strip below the grid)
 - No emoji, clip-art, decorative elements, or domain icons
+- No Color Code
 
 ---
 
