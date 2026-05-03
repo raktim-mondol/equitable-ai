@@ -96,6 +96,7 @@ ax.text(bx + 0.15, by + bh/2, 'ΔTPR  =  max  TPR  −  min  TPR',
 
 # ── Save ──────────────────────────────────────────
 out = '/mnt/e/fairness-review-paper/literature-review-paper_v8/figures/idea/panel_A.png'
-fig.savefig(out, dpi=300, bbox_inches='tight', facecolor='white', edgecolor='none',
-            pad_inches=0.02)
+# Use a fixed bbox to enforce exact 6.5×6.5 cm square
+fig.savefig(out, dpi=300, facecolor='white', edgecolor='none',
+            bbox_inches='tight', pad_inches=0.05)
 print(f'Saved → {out}')
