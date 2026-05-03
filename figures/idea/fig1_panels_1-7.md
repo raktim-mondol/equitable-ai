@@ -83,7 +83,7 @@ $$\Delta \text{TPR} = \max_g \text{TPR}_g - \min_g \text{TPR}_g$$
 ### Real Data (from Vaidya et al. 2024, Nature Medicine 30:1174–1190, Extended Data Fig. 6)
 - LUAD lung cancer subtyping, ABMIL + UNI encoder, 20-fold CV:
   - MGB-Lung cohort (Mass General Brigham, n = 1,960): White TPR = 0.971, Black TPR = 0.920 → 5.1 pp gap
-  - TCGA-Lung cohort (The Cancer Genome Atlas, n = 1,043): White TPR = 0.960, Asian TPR = 0.916 → 4.4 pp gap
+  - TCGA-LUAD/LUSC cohort (combined TCGA-LUAD + TCGA-LUSC, n = 1,043): White TPR = 0.960, Asian TPR = 0.916 → 4.4 pp gap
 - Across 16 cancer types, White TPR > Black TPR in 14 of 16 types
 
 ### AI Image Generation Prompt
