@@ -303,7 +303,7 @@ TOP RIGHT: Small formula card — "J = max_t [sensitivity(t) + specificity(t) �
 
 BOTTOM (main chart area, ~4.5 cm wide): Grouped bar chart "Youden's Index Before vs After UPA Alignment".
 
-Each scanner/site has two bars side by side: both use charcoal (#555555 at 85% opacity) since these are the same metric (Youden's J) for the same scanner, just at different times. "Before UPA" bars have a subtle hatch pattern overlay or are simply labeled; "After UPA" bars are the same charcoal fill without hatch. Distinction is via labels and arrows.
+Each scanner/site has two bars side by side: both use deep teal (#2C6E7B at 85% opacity) since these are the same metric (Youden's J) for the same scanner, just at different times. "Before UPA" and "After UPA" are distinguished by labels and arrows — not by colour.
 
 GROUP 1 — "Breast Screening (Mammography)" (subtitle 5 pt bold #666666):
   Scanner A: Before 0.295, After 0.651 — dramatic improvement. Upward arrow annotated "2.2×" (4.5 pt #4A9E8E, bold).
