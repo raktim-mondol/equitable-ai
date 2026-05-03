@@ -115,7 +115,7 @@ No reference text. No author names. No border. No icons. Flat vectors only — n
 ```
 
 ### Caption Text (for separate use — NOT rendered on figure)
-**TPR/FPR disparity = max TPR − min TPR (or RMSE across subgroups).** Vaidya et al. (2024) evaluated LUAD lung cancer subtyping under two settings (Extended Data Fig. 6, ABMIL + UNI). On external MGB→MGB validation, White TPR = 0.971 ± 0.004 vs Black TPR = 0.920 ± 0.006 (5.1 pp gap). On internal TCGA→TCGA validation, the largest gap was White vs Asian: 0.960 vs 0.916 (4.4 pp), while White–Black was only 1.0 pp — showing that which group is most disadvantaged depends on the test population. Across all 16 cancer types, White TPR exceeded Black TPR in 14 of 16.
+**TPR/FPR disparity = max TPR − min TPR (or RMSE across subgroups).** Vaidya et al. (2024) found that for LUAD lung cancer subtyping (ABMIL + UNI), White TPR = 0.971 vs Black TPR = 0.920 on the MGB-Lung cohort (5.1 pp gap). On TCGA-Lung, the largest gap was White vs Asian: 0.960 vs 0.916 (4.4 pp). Across 16 cancer types, White TPR exceeded Black TPR in 14 of 16.
 
 ---
 
