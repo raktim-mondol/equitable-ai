@@ -21,7 +21,7 @@ Every panel must obey these rules exactly.
 ### Scale & Proportion
 All data values must be rendered with correct proportional relationships — not merely illustrative. Bar heights, curve positions, and gap sizes must reflect the actual numbers.
 
-- **Bar chart y-axis:** Always starts at 0.0 unless the metric is bounded differently (e.g., TPR 0.5–1.0, AUROC 0.4–1.0). Choose the range so bars fill 50–80% of the available chart height — never compressed into a narrow band.
+- **Bar chart y-axis:** Zoom to the data range so group differences are clearly visible. For TPR (range ~0.78–0.97), set y-axis to 0.75–1.00. For accuracy (range ~30–70%), set y-axis to 25–75%. For AUROC gaps, set y-axis to 0.0–max+20% since gaps are near zero. The goal is to make disparities legible, not to anchor at zero. Bars should fill 50–80% of the available chart height.
 - **Bar widths:** Consistent within each chart. For grouped bars (2–4 per model), each bar is 0.6–0.8 cm wide with 0.15 cm gap between bars in a group and 0.4 cm between groups.
 - **Bar heights:** Proportional to data values. If reference TPR = 0.971 and disadvantaged TPR = 0.920 on a y-axis of 0.8–1.0, the 0.051 gap must be ~25% of the total axis span.
 - **ROC curves (AUROC):** Both axes span exactly 0.0–1.0, forming a perfect square sub-plot. The diagonal chance line runs corner-to-corner.
