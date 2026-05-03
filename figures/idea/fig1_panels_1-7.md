@@ -119,7 +119,7 @@ No reference text. No author names. No border. No icons. Flat vectors only — n
 ```
 
 ### Caption Text (for separate use — NOT rendered on figure)
-**TPR/FPR disparity = max TPR − min TPR (or RMSE across subgroups).** Vaidya et al. (2024) found that lung cancer subtyping models achieve TPR = 0.971 for White patients but only 0.920 for Black patients — a 5.1 pp gap. For IDH1 mutation prediction, Black patients showed mean TPR disparity of −0.060, meaning the model systematically misses more true disease cases in disadvantaged groups.
+**TPR/FPR disparity = max TPR − min TPR (or RMSE across subgroups).** Vaidya et al. (2024) found that lung cancer subtyping models achieve TPR = 0.971 ± 0.004 for White patients but only 0.920 ± 0.006 for Black patients — a 5.1 pp gap (Extended Data Fig. 6d, ABMIL + UNI encoder, MGB→MGB). For IDH1 mutation prediction, the overall mean TPR disparity across subgroups was −0.060 (95% CI −0.080 to −0.020), while the Black patient-specific disparity for IDH1-mutant cases was −0.284 — meaning the model systematically under-detects true mutations in disadvantaged groups.
 
 ---
 
