@@ -96,7 +96,7 @@ Scientific illustration, high resolution 4K sharp, clean flat vector style, whit
 
 Chart area 5.5 cm × 5.5 cm centered — square. No gridlines. Axis strokes 0.5 pt #9E9E9E. Tick labels 5 pt #999999.
 
-Title: "TPR Disparity in Lung Cancer Subtype Classification" — 7 pt sans-serif bold, #333333.
+Title: "TPR Disparity by Race Group" — 7 pt sans-serif bold, #333333.
 
 Two bar groups, shared y-axis "TPR" (range 0.88–1.00). Each group: White (deep teal #2C6E7B), Black (muted crimson #C44E52), Asian (warm amber #D4943A).
 
