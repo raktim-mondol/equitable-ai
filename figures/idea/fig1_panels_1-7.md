@@ -77,7 +77,7 @@ $$\Delta \text{TPR} = \max_g \text{TPR}_g - \min_g \text{TPR}_g$$
 ### AI Image Generation Prompt
 
 ```
-Scientific illustration, high resolution 4K sharp, clean flat vector style, white background. Panel canvas 7.0 cm × 5.5 cm, borderless. Tight bounding box — trim all excess whitespace. Panel label "A" in 9 pt bold sans-serif at top-left corner, 2 mm from edges, colour #000000.
+Scientific illustration, high resolution 4K sharp, clean flat vector style, white background. Panel canvas 6.5 cm × 6.5 cm square, borderless. Tight bounding box — trim all excess whitespace. Panel label "A" in 9 pt bold sans-serif at top-left corner, 2 mm from edges, colour #000000.
 
 Chart area 6.0 cm × 4.0 cm centered. No gridlines. Axis strokes 0.5 pt #9E9E9E. Tick labels 5 pt #999999.
 
@@ -120,7 +120,7 @@ $$\text{AUROC Gap} = \left| \max_g \text{AUC}_g - \min_g \text{AUC}_g \right|$$
 ### AI Image Generation Prompt
 
 ```
-Scientific illustration, high resolution 4K sharp, clean flat vector style, white background. Panel canvas 7.0 cm × 5.5 cm, borderless. Tight bounding box — trim all excess whitespace. Panel label "B" in 9 pt bold sans-serif at top-left corner, 2 mm from edges, colour #000000.
+Scientific illustration, high resolution 4K sharp, clean flat vector style, white background. Panel canvas 6.5 cm × 6.5 cm square, borderless. Tight bounding box — trim all excess whitespace. Panel label "B" in 9 pt bold sans-serif at top-left corner, 2 mm from edges, colour #000000.
 
 Chart area 6.0 cm × 4.0 cm centered. No gridlines. Axis strokes 0.5 pt #9E9E9E. Tick labels 5 pt #999999.
 
@@ -165,7 +165,7 @@ $$\text{EOp} = \left| \text{TPR}_a - \text{TPR}_b \right| \qquad \text{EOEq} = \
 ### AI Image Generation Prompt
 
 ```
-Scientific illustration, high resolution 4K sharp, clean flat vector style, white background. Panel canvas 7.0 cm × 5.5 cm, borderless. Tight bounding box — trim all excess whitespace. Panel label "C" in 9 pt bold sans-serif at top-left corner, 2 mm from edges, colour #000000.
+Scientific illustration, high resolution 4K sharp, clean flat vector style, white background. Panel canvas 6.5 cm × 6.5 cm square, borderless. Tight bounding box — trim all excess whitespace. Panel label "C" in 9 pt bold sans-serif at top-left corner, 2 mm from edges, colour #000000.
 
 Chart area 6.0 cm × 4.0 cm centered. No gridlines. Axis strokes 0.5 pt #9E9E9E. Tick labels 5 pt #999999.
 
@@ -219,7 +219,7 @@ $$\text{DP} = \left| P(\hat{Y}=1 \mid G=a) - P(\hat{Y}=1 \mid G=b) \right|$$
 ### AI Image Generation Prompt
 
 ```
-Scientific illustration, high resolution 4K sharp, clean flat vector style, white background. Panel canvas 7.0 cm × 5.5 cm, borderless. Tight bounding box — trim all excess whitespace. Panel label "D" in 9 pt bold sans-serif at top-left corner, 2 mm from edges, colour #000000.
+Scientific illustration, high resolution 4K sharp, clean flat vector style, white background. Panel canvas 6.5 cm × 6.5 cm square, borderless. Tight bounding box — trim all excess whitespace. Panel label "D" in 9 pt bold sans-serif at top-left corner, 2 mm from edges, colour #000000.
 
 Chart area 6.0 cm × 4.0 cm centered. No gridlines. Axis strokes 0.5 pt #9E9E9E. Tick labels 5 pt #999999.
 
@@ -258,7 +258,7 @@ $$\text{ECE} = \sum_{m=1}^{M} \frac{|B_m|}{n} \left| \text{acc}(B_m) - \text{con
 ### AI Image Generation Prompt
 
 ```
-Scientific illustration, high resolution 4K sharp, clean flat vector style, white background. Panel canvas 7.0 cm × 5.5 cm, borderless. Tight bounding box — trim all excess whitespace. Panel label "E" in 9 pt bold sans-serif at top-left corner, 2 mm from edges, colour #000000.
+Scientific illustration, high resolution 4K sharp, clean flat vector style, white background. Panel canvas 6.5 cm × 6.5 cm square, borderless. Tight bounding box — trim all excess whitespace. Panel label "E" in 9 pt bold sans-serif at top-left corner, 2 mm from edges, colour #000000.
 
 Chart area 6.0 cm × 4.0 cm centered. No gridlines. Axis strokes 0.5 pt #9E9E9E. Tick labels 5 pt #999999.
 
@@ -311,7 +311,7 @@ $$\text{WGA} = \min_{g \in \mathcal{G}} \; \text{Accuracy}_g$$
 ### AI Image Generation Prompt
 
 ```
-Scientific illustration, high resolution 4K sharp, clean flat vector style, white background. Panel canvas 7.0 cm × 5.5 cm, borderless. Tight bounding box — trim all excess whitespace. Panel label "F" in 9 pt bold sans-serif at top-left corner, 2 mm from edges, colour #000000.
+Scientific illustration, high resolution 4K sharp, clean flat vector style, white background. Panel canvas 6.5 cm × 6.5 cm square, borderless. Tight bounding box — trim all excess whitespace. Panel label "F" in 9 pt bold sans-serif at top-left corner, 2 mm from edges, colour #000000.
 
 Chart area 6.0 cm × 4.0 cm centered. No gridlines. Axis strokes 0.5 pt #9E9E9E. Tick labels 5 pt #999999.
 
@@ -360,7 +360,7 @@ $$\text{Site-leakage} = \text{AUROC}_{\text{standard CV}} - \text{AUROC}_{\text{
 ### AI Image Generation Prompt
 
 ```
-Scientific illustration, high resolution 4K sharp, clean flat vector style, white background. Panel canvas 7.0 cm × 5.5 cm, borderless. Tight bounding box — trim all excess whitespace. Panel label "G" in 9 pt bold sans-serif at top-left corner, 2 mm from edges, colour #000000.
+Scientific illustration, high resolution 4K sharp, clean flat vector style, white background. Panel canvas 6.5 cm × 6.5 cm square, borderless. Tight bounding box — trim all excess whitespace. Panel label "G" in 9 pt bold sans-serif at top-left corner, 2 mm from edges, colour #000000.
 
 Chart area 6.0 cm × 4.0 cm centered. No gridlines. Axis strokes 0.5 pt #9E9E9E. Tick labels 5 pt #999999.
 
