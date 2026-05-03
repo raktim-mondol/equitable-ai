@@ -112,7 +112,9 @@ TCGA-LUAD/LUSC — subtitle, 5.5 pt #666666:
 - Asian: warm amber at height 0.916. Label "Asian" below — 5 pt #666666. Value "0.916" — 4 pt #999999 above.
 - Arrow from White to Asian, annotated "Δ = 4.4 pp" — 5 pt #444444.
 
-Equation box at bottom of chart: "ΔTPR = max_g TPR_g − min_g TPR_g" in 6 pt monospace #2C6E7B, pale tint box (#F0F5F5 fill, 1 pt #D0D0D0 border, 2 pt corner radius, 1.5 mm padding).
+Annotation below bars: "Task: Lung cancer subtyping — distinguish LUAD from LUSC on WSIs" — 4.5 pt #999999, italic, centered.
+
+Equation box at bottom: "ΔTPR = max_g TPR_g − min_g TPR_g" in 6 pt monospace #2C6E7B, pale tint box (#F0F5F5 fill, 1 pt #D0D0D0 border, 2 pt corner radius, 1.5 mm padding).
 
 No reference text. No author names. No border. No icons. Flat vectors only — no gradients, shadows, or 3D effects.
 ```
