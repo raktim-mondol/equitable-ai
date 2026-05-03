@@ -395,7 +395,7 @@ No reference text. No author names. No border. No icons. Flat vectors only.
 
 ### Final Layout
 - Arrange **7 panels (A–G)** in a **3 × 3 grid** — cells (1,1) through (3,3)
-- **Cell (1,1):** Title block + colour legend
+- **Cell (1,1):** Figure title block only (no swatches, no hex codes)
 - **Cells (1,2), (1,3):** Panels A, B
 - **Cells (2,1), (2,2), (2,3):** Panels C, D, E
 - **Cells (3,1), (3,2):** Panels F, G
