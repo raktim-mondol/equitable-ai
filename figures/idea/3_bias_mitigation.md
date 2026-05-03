@@ -47,9 +47,6 @@ IB       0   0   2   0   2   1   1   1   1   0   0   0   0   0   0   0      8
 TB       3   2   0   0   0   2   1   1   0   0   0   0   1   0   0   0     10
 AB       0   0   1   0   0   0   0   0   0   0   2   1   1   0   1   1      7
 ```
-
-Column totals (mitigation prevalence): SN=3, DA=2, DC=15, RS=3, CH=3, DO=4, AD=4, SL=5, FL=4, SD=4, FW=6, TO=2, UC=3, CM=0, EC=4, CL=2
-
 ## Sankey JSON
 
 ```json
