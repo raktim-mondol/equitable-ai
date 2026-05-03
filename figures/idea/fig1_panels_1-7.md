@@ -198,7 +198,7 @@ BOTTOM ROW: Three compact resolution badges (text only):
 - "Subtype classification: 100% resolved" (4.5 pt #4A9E8E)
 - "Histological type: 80% resolved" (4.5 pt #E08E45)
 
-Equation box at bottom: "EOp = |TPR_a − TPR_b|    EOEq = max(|TPR_a−TPR_b|, |FPR_a−FPR_b|)" in 5.5 pt monospace #2C6E7B, pale tint box.
+Equation box at bottom: "EOp = |TPR_a − TPR_b|" in 6 pt monospace #2C6E7B, pale tint box.
 
 No reference text. No author names. No border. No icons. Flat vectors only.
 ```
