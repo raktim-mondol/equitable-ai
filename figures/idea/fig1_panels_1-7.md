@@ -18,6 +18,19 @@ Every panel must obey these rules exactly.
 - **Panel label:** Bold uppercase letter (A, B, C, …) in 9 pt sans-serif, top-left corner, 2 mm from canvas edges, colour #000000
 - **Chart area:** Centered within the canvas, 5.5 cm × 5.5 cm — square, axes drawn with 0.5 pt #9E9E9E strokes, no gridlines
 
+### Scale & Proportion
+All data values must be rendered with correct proportional relationships — not merely illustrative. Bar heights, curve positions, and gap sizes must reflect the actual numbers.
+
+- **Bar chart y-axis:** Always starts at 0.0 unless the metric is bounded differently (e.g., TPR 0.5–1.0, AUROC 0.4–1.0). Choose the range so bars fill 50–80% of the available chart height — never compressed into a narrow band.
+- **Bar widths:** Consistent within each chart. For grouped bars (2–4 per model), each bar is 0.6–0.8 cm wide with 0.15 cm gap between bars in a group and 0.4 cm between groups.
+- **Bar heights:** Proportional to data values. If reference TPR = 0.971 and disadvantaged TPR = 0.920 on a y-axis of 0.8–1.0, the 0.051 gap must be ~25% of the total axis span.
+- **ROC curves (AUROC):** Both axes span exactly 0.0–1.0, forming a perfect square sub-plot. The diagonal chance line runs corner-to-corner.
+- **Calibration plots (ECE):** Both axes span exactly 0.0–1.0, square sub-plot. The perfect-calibration diagonal runs corner-to-corner.
+- **Gap bars (before/after):** Use a consistent x-axis range anchored at 0.0, with the maximum gap value setting the upper limit plus 15% headroom.
+- **Gap arrows:** Double-headed arrows span the exact height difference between the two bars they connect. The Δ value annotation is placed at the arrow's midpoint.
+- **Across panels:** Bars representing the same metric range (e.g., accuracy 0–100%, AUROC 0–1) must use the same y-axis scale so visual comparison across panels is valid.
+- **No broken axes, no logarithmic scales, no truncated bars.**
+
 ### Typography
 - **Panel title:** 7 pt sans-serif bold, #333333, centered above chart
 - **Axis labels:** 5.5 pt sans-serif, #666666
@@ -85,17 +98,17 @@ Title: "TPR by Race Group (Lung Cancer Subtyping)" — 7 pt sans-serif bold, #33
 
 Two side-by-side bar pairs sharing a common y-axis "TPR" (range 0.8–1.0):
 
-LEFT PAIR — "LUAD Subtype" (subtitle 5.5 pt #666666):
-- Bar 1: deep teal (#2C6E7B) at height proportional to 0.971, 0.4 pt outline, 85% fill opacity. Label below bar: "White" (5 pt #666666).
-- Bar 2: muted crimson (#C44E52) at height proportional to 0.920, 0.4 pt outline, 85% fill opacity. Label below bar: "Black" (5 pt #666666).
-- Double-headed vertical arrow between bar tops, 0.6 pt #555555 stroke, annotated "Δ = 5.1 pp" (5 pt #444444).
+LEFT PAIR — "LUAD Subtype" — subtitle, 5.5 pt #666666:
+- Bar 1: deep teal (#2C6E7B) at height proportional to 0.971, 0.4 pt outline, 85% fill opacity. Label below bar: "White" — 5 pt #666666.
+- Bar 2: muted crimson (#C44E52) at height proportional to 0.920, 0.4 pt outline, 85% fill opacity. Label below bar: "Black" — 5 pt #666666.
+- Double-headed vertical arrow between bar tops, 0.6 pt #555555 stroke, annotated "Δ = 5.1 pp" — 5 pt #444444.
 
-RIGHT PAIR — "IDH1 Mutation (Brain)" (subtitle 5.5 pt #666666):
-- Bar 1: deep teal (#2C6E7B) at height proportional to ~0.92. Label: "White" (5 pt #666666).
-- Bar 2: muted crimson (#C44E52) at height proportional to ~0.86. Label: "Black" (5 pt #666666).
-- Double-headed vertical arrow annotated "Δ = 6.0 pp" (5 pt #444444).
+RIGHT PAIR — "IDH1 Mutation (Brain)" — subtitle, 5.5 pt #666666:
+- Bar 1: deep teal (#2C6E7B) at height proportional to ~0.92. Label: "White" — 5 pt #666666.
+- Bar 2: muted crimson (#C44E52) at height proportional to ~0.86. Label: "Black" — 5 pt #666666.
+- Double-headed vertical arrow annotated "Δ = 6.0 pp" — 5 pt #444444.
 
-Below bar pairs: small annotation "Higher TPR = better recall of true disease cases" (4.5 pt #999999, italic).
+Below bar pairs: small annotation "Higher TPR = better recall of true disease cases" — 4.5 pt #999999, italic.
 
 Equation box at bottom of chart: "ΔTPR = max_g TPR_g − min_g TPR_g" in 6 pt monospace #2C6E7B, pale tint box (#F0F5F5 fill, 1 pt #D0D0D0 border, 2 pt corner radius, 1.5 mm padding).
 
@@ -127,17 +140,17 @@ Chart area 5.5 cm × 5.5 cm centered — square. No gridlines. Axis strokes 0.5 
 Title: "Subgroup AUROC Gap (NSCLC Subtyping)" — 7 pt sans-serif bold, #333333.
 
 LEFT HALF (~55% width): Single ROC plot (axes ~2.5 cm × 2.5 cm). 
-- Deep teal curve (#2C6E7B, 1.0 pt stroke): hugging top-left, labeled "Best subgroup, AUC = 0.96" (5 pt #2C6E7B).
-- Muted crimson curve (#C44E52, 1.0 pt stroke): noticeably lower, labeled "Worst subgroup, AUC = 0.92" (5 pt #C44E52).
+- Deep teal curve (#2C6E7B, 1.0 pt stroke): hugging top-left, labeled "Best subgroup, AUC = 0.96" — 5 pt #2C6E7B.
+- Muted crimson curve (#C44E52, 1.0 pt stroke): noticeably lower, labeled "Worst subgroup, AUC = 0.92" — 5 pt #C44E52.
 - Area between curves shaded with #C44E52 at 10% opacity.
-- Bracket annotation between curves: "AUROC gap = 0.04" (5 pt #444444).
-- Dashed diagonal from (0,0) to (1,1): 0.4 pt #9E9E9E, labeled "Chance" (4 pt #9E9E9E).
+- Bracket annotation between curves: "AUROC gap = 0.04" — 5 pt #444444.
+- Dashed diagonal from (0,0) to (1,1): 0.4 pt #9E9E9E, labeled "Chance" — 4 pt #9E9E9E.
 
 RIGHT HALF (~45% width): Before/after gap comparison (two horizontal bars, same colour):
-- Label "AUROC Gap" (5.5 pt bold #666666) above.
-- Top bar: deep teal (#2C6E7B) at width proportional to 0.041, 85% opacity, labeled "Before FLEX" (5 pt #666666).
-- Bottom bar: deep teal (#2C6E7B) at width proportional to 0.016, 85% opacity, labeled "After FLEX" (5 pt #666666).
-- Downward arrow between bars annotated "↓ 61%" (5 pt #4A9E8E, bold).
+- Label "AUROC Gap" — 5.5 pt bold #666666 above.
+- Top bar: deep teal (#2C6E7B) at width proportional to 0.041, 85% opacity, labeled "Before FLEX" — 5 pt #666666.
+- Bottom bar: deep teal (#2C6E7B) at width proportional to 0.016, 85% opacity, labeled "After FLEX" — 5 pt #666666.
+- Downward arrow between bars annotated "↓ 61%" — 5 pt #4A9E8E, bold.
 - Note: both bars use the same deep teal fill as the reference group; before/after is indicated by labels and the reduction arrow.
 
 Equation box at bottom: "AUROC Gap = | max_g AUC_g − min_g AUC_g |" in 6 pt monospace #2C6E7B, pale tint box (#F0F5F5 fill, 1 pt #D0D0D0 border, 2 pt corner radius, 1.5 mm padding).
@@ -174,29 +187,29 @@ Chart area 5.5 cm × 5.5 cm centered — square. No gridlines. Axis strokes 0.5 
 Title: "Equality of Opportunity — EOp" — 7 pt sans-serif bold, #333333.
 
 TOP ROW: Two summary stat blocks (each ~1.8 cm × 0.75 cm, warm stone tint #D4C5C2 at 12%).
-- Left block: text "29.93% of tasks biased" + "11/37 across 20 cancer types" (5 pt #555555). Small amber "!" badge (#E08E45, 6 pt bold).
-- Right block: text "88.5% disparities resolved" + "91.1% in external validation" (5 pt #555555). Small sea green "✓" badge (#4A9E8E, 6 pt bold).
+- Left block: text "29.93% of tasks biased" + "11/37 across 20 cancer types" — 5 pt #555555. Small amber "!" badge (#E08E45, 6 pt bold).
+- Right block: text "88.5% disparities resolved" + "91.1% in external validation" — 5 pt #555555. Small sea green "✓" badge (#4A9E8E, 6 pt bold).
 
-MIDDLE ROW: Before/after EOp bar pairs for "LUAD vs LUSC (FFPE)" (subtitle 5.5 pt #666666).
+MIDDLE ROW: Before/after EOp bar pairs for "LUAD vs LUSC (FFPE)" — subtitle, 5.5 pt #666666.
 
-LEFT SECTION — "Before FAIR-Path" (label 5 pt bold #555555):
-- Deep teal bar (#2C6E7B) at height ~0.92, labeled "Reference TPR" (4.5 pt #666666).
-- Muted crimson bar (#C44E52) at height ~0.78, labeled "Disadvantaged TPR" (4.5 pt #666666).
+LEFT SECTION — "Before FAIR-Path" — label, 5 pt bold #555555:
+- Deep teal bar (#2C6E7B) at height ~0.92, labeled "Reference TPR" — 4.5 pt #666666.
+- Muted crimson bar (#C44E52) at height ~0.78, labeled "Disadvantaged TPR" — 4.5 pt #666666.
 - Vertical gap arrow (0.6 pt #555555) annotated "EOp gap significant (p = 0.048)" in 4.5 pt #C44E52.
 
-RIGHT SECTION — "After FAIR-Path" (label 5 pt bold #555555):
-- Deep teal bar (#2C6E7B) at height ~0.90, labeled "Reference TPR" (4.5 pt #666666).
-- Muted crimson bar (#C44E52) at height ~0.90, labeled "Disadvantaged TPR" (4.5 pt #666666).
+RIGHT SECTION — "After FAIR-Path" — label, 5 pt bold #555555:
+- Deep teal bar (#2C6E7B) at height ~0.90, labeled "Reference TPR" — 4.5 pt #666666.
+- Muted crimson bar (#C44E52) at height ~0.90, labeled "Disadvantaged TPR" — 4.5 pt #666666.
 - Both bars now at equal height — gap visually closed.
-- Annotation: "EOp gap resolved" (4.5 pt #4A9E8E).
+- Annotation: "EOp gap resolved" — 4.5 pt #4A9E8E.
 
 Dashed "Equality" reference line (#9E9E9E, 0.4 pt) spanning across both sections.
-Bridge arrow between sections: "Fairness-aware contrastive learning" (5 pt #555555, 0.6 pt).
+Bridge arrow between sections: "Fairness-aware contrastive learning" — 5 pt #555555, 0.6 pt.
 
 BOTTOM ROW: Three compact resolution badges (text only):
-- "Cancer detection: 100% resolved" (4.5 pt #4A9E8E)
-- "Subtype classification: 100% resolved" (4.5 pt #4A9E8E)
-- "Histological type: 80% resolved" (4.5 pt #E08E45)
+- "Cancer detection: 100% resolved" — 4.5 pt #4A9E8E
+- "Subtype classification: 100% resolved" — 4.5 pt #4A9E8E
+- "Histological type: 80% resolved" — 4.5 pt #E08E45
 
 Equation box at bottom: "EOp = |TPR_a − TPR_b|" in 6 pt monospace #2C6E7B, pale tint box.
 
@@ -230,11 +243,11 @@ Title: "Demographic Parity (Breast Cancer Staging)" — 7 pt sans-serif bold, #3
 LEFT (~60% of chart width): Bar chart "Positive Prediction Rate P(ŷ = 1)".
 - Deep teal bar (#2C6E7B, 85% opacity): height at ~65%, label "White patients" below (5 pt #666666).
 - Muted crimson bar (#C44E52, 85% opacity): height at ~46%, label "Non-White patients" below (5 pt #666666).
-- Vertical gap bracket between bar tops annotated "Δ = 19 pp" (5 pt #444444).
+- Vertical gap bracket between bar tops annotated "Δ = 19 pp" — 5 pt #444444.
 
 RIGHT (~40% of chart width): Warning inset box with amber (#E08E45 at 8% opacity) fill, 0.5 pt amber (#E08E45) solid border.
 - Amber warning triangle (△, 12 pt, #E08E45).
-- Text: "Does not account for true disease prevalence — use with caution" (4.5 pt #555555, 2 lines, centered).
+- Text: "Does not account for true disease prevalence — use with caution" — 4.5 pt #555555, 2 lines, centered.
 
 Equation box at bottom: "DP = | P(ŷ=1 | G=a) − P(ŷ=1 | G=b) |" in 6 pt monospace #2C6E7B, pale tint box.
 
@@ -266,26 +279,26 @@ Chart area 5.5 cm × 5.5 cm centered — square. No gridlines. Axis strokes 0.5 
 Title: "Expected Calibration Error (ECE)" — 7 pt sans-serif bold, #333333.
 
 TOP ROW: Two calibration plots side by side (each ~1.8 cm × 2.0 cm).
-X-axis: "Predicted probability" (4.5 pt #999999), range 0–1.
-Y-axis: "Observed frequency" (4.5 pt #999999), range 0–1.
+X-axis: "Predicted probability" — 4.5 pt #999999, range 0–1.
+Y-axis: "Observed frequency" — 4.5 pt #999999, range 0–1.
 Dashed perfect-calibration diagonal in each: 0.4 pt #9E9E9E.
 
 LEFT PLOT — "Before Alignment (ECE = 0.29)":
 - Data points as filled circles (radius 2 pt) in charcoal (#555555 at 70% opacity).
 - Several points noticeably far from diagonal.
-- Small amber "✗" (#E08E45, 7 pt) in top-left corner of plot.
+- Small amber "✗" — #E08E45, 7 pt in top-left corner of plot.
 
 RIGHT PLOT — "After Alignment (ECE = 0.13)":
 - Data points as filled circles (radius 2 pt) in charcoal (#555555 at 70% opacity).
 - Points clustered tightly around diagonal.
-- Small sea green "✓" (#4A9E8E, 7 pt) in top-left corner of plot.
+- Small sea green "✓" — #4A9E8E, 7 pt in top-left corner of plot.
 - Note: both plots use the same point colour; improvement is shown by proximity to diagonal.
 
-Arrow between plots: "Alignment correction" (5 pt #555555, 0.6 pt).
+Arrow between plots: "Alignment correction" — 5 pt #555555, 0.6 pt.
 
 BOTTOM ROW: Separate box with amber dashed border (0.5 pt #E08E45), amber tint fill (#E08E45 at 6% opacity).
-- Text: "Subgroup calibration gap: 0 of 78 studies reported" (5 pt #C44E52, bold).
-- Second line: "Major evidence gap — urgent research need" (4.5 pt #555555).
+- Text: "Subgroup calibration gap: 0 of 78 studies reported" — 5 pt #C44E52, bold.
+- Second line: "Major evidence gap — urgent research need" — 4.5 pt #555555.
 
 Equation box at bottom (sits beside the gap box, narrower): "ECE = Σ (|B_m|/n) · |acc(B_m) − conf(B_m)|" in 5 pt monospace #2C6E7B, pale tint box.
 
@@ -320,22 +333,22 @@ Title: "Worst-Group Accuracy (Breast Cancer Staging)" — 7 pt sans-serif bold, 
 
 Grouped horizontal bar chart showing 4 models. Each model has two bars side by side: deep teal (#2C6E7B) for "White patients", muted crimson (#C44E52) for "non-White patients". Thin error bars (0.3 pt #9E9E9E, ±SD) on all bars. Consistent colour assignment across all 4 models — never changes.
 
-Model 1 — "ResNet18" (label 5 pt #666666):
-  Teal bar at 70.6%, Crimson bar at 55.3% → gap bracket "15.4 pp" (4.5 pt #555555)
+Model 1 — "ResNet18" — label, 5 pt #666666:
+  Teal bar at 70.6%, Crimson bar at 55.3% → gap bracket "15.4 pp" — 4.5 pt #555555
 
-Model 2 — "EfficientNet" (label 5 pt #666666):
-  Teal bar at 67.3%, Crimson bar at 56.4% → gap bracket "10.9 pp" (4.5 pt #555555)
+Model 2 — "EfficientNet" — label, 5 pt #666666:
+  Teal bar at 67.3%, Crimson bar at 56.4% → gap bracket "10.9 pp" — 4.5 pt #555555
 
-Model 3 — "Ensemble" (label 5 pt #666666) ← MARKED AS WORST:
+Model 3 — "Ensemble" — label, 5 pt #666666 ← MARKED AS WORST:
   Teal bar at 62.9%, Crimson bar at 29.6%
   The crimson non-White bar is the shortest across all models — encircle it with a charcoal dashed ring (#555555, 0.6 pt stroke, diameter ~0.8 cm).
-  Bold annotation with leader line: "Worst-group accuracy = 29.6%" (5 pt #C44E52, bold).
-  Gap bracket: "Δ = 33.3 pp" (4.5 pt #C44E52, bold).
+  Bold annotation with leader line: "Worst-group accuracy = 29.6%" — 5 pt #C44E52, bold.
+  Gap bracket: "Δ = 33.3 pp" — 4.5 pt #C44E52, bold.
 
-Model 4 — "Slide Level" (label 5 pt #666666):
-  Teal bar at 65.4%, Crimson bar at 55.1% → gap bracket "10.3 pp" (4.5 pt #555555)
+Model 4 — "Slide Level" — label, 5 pt #666666:
+  Teal bar at 65.4%, Crimson bar at 55.1% → gap bracket "10.3 pp" — 4.5 pt #555555
 
-Small annotation bottom-left: "No model showed better performance for non-White patients" (4.5 pt #555555, italic).
+Small annotation bottom-left: "No model showed better performance for non-White patients" — 4.5 pt #555555, italic.
 
 Equation box at bottom: "WGA = min_{g ∈ G} Accuracy_g" in 6 pt monospace #2C6E7B, pale tint box.
 
@@ -369,18 +382,18 @@ Title: "Preserved-Site Cross-Validation" — 7 pt sans-serif bold, #333333.
 
 TOP ROW: Data-splitting schematic (two scenarios side by side, each ~2.5 cm wide).
 
-LEFT — "Standard CV" (5 pt bold #555555):
-Three rectangular site blocks (Site 1, Site 2, Site 3) in light tint fills (3 shades of warm stone #D4C5C2 at 40%, 25%, 10%). Coloured dots (patients) from each site interleaved across Fold 1, Fold 2, Fold 3 boxes below. Label: "All sites mixed in each fold — data leakage" (4.5 pt #C44E52).
+LEFT — "Standard CV" — 5 pt bold #555555:
+Three rectangular site blocks (Site 1, Site 2, Site 3) in light tint fills (3 shades of warm stone #D4C5C2 at 40%, 25%, 10%). Coloured dots (patients) from each site interleaved across Fold 1, Fold 2, Fold 3 boxes below. Label: "All sites mixed in each fold — data leakage" — 4.5 pt #C44E52.
 
-RIGHT — "Preserved-Site CV" (5 pt bold #555555):
-Same three site blocks, but each site stays intact in exactly one fold. Fold 1 = only Site 1 dots, Fold 2 = only Site 2 dots, Fold 3 = only Site 3 dots. Label: "Each site in one fold — no leakage" (4.5 pt #4A9E8E).
+RIGHT — "Preserved-Site CV" — 5 pt bold #555555:
+Same three site blocks, but each site stays intact in exactly one fold. Fold 1 = only Site 1 dots, Fold 2 = only Site 2 dots, Fold 3 = only Site 3 dots. Label: "Each site in one fold — no leakage" — 4.5 pt #4A9E8E.
 
 BOTTOM ROW: Bar chart "Ancestry Prediction (TCGA-BRCA)" — y-axis AUROC 0.0–1.0.
 - Deep teal bar (#2C6E7B): height at 0.798, label "Standard CV" below (5 pt #666666).
 - Muted crimson bar (#C44E52): height at 0.507, label "Preserved-site CV" below (5 pt #666666).
-- Dashed horizontal line at 0.5 (#9E9E9E, 0.4 pt) labeled "Chance" (4.5 pt #9E9E9E).
-- Downward arrow between bars annotated "Δ = 0.291, P < 0.001" (5 pt #C44E52, bold).
-- Small annotation: "51/56 features declined; avg Δ = 0.069" (4.5 pt #555555).
+- Dashed horizontal line at 0.5 (#9E9E9E, 0.4 pt) labeled "Chance" — 4.5 pt #9E9E9E.
+- Downward arrow between bars annotated "Δ = 0.291, P < 0.001" — 5 pt #C44E52, bold.
+- Small annotation: "51/56 features declined; avg Δ = 0.069" — 4.5 pt #555555.
 
 Equation box at bottom: "Site-leakage = AUROC_standard − AUROC_preserved-site" in 6 pt monospace #2C6E7B, pale tint box.
 
