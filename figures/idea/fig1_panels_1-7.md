@@ -96,11 +96,11 @@ Scientific illustration, high resolution 4K sharp, clean flat vector style, whit
 
 Chart area 5.5 cm × 5.5 cm centered — square. No gridlines. Axis strokes 0.5 pt #9E9E9E. Tick labels 5 pt #999999.
 
-Title: "TPR Disparity by Race Group" — 7 pt sans-serif bold, #333333.
+Title: "TPR Disparity in Lung Cancer Subtype Classification" — 7 pt sans-serif bold, #333333.
 
-Two bar groups for lung cancer subtyping. Common y-axis "TPR" with range 0.88–1.00. Each group has 3 bars: White (deep teal #2C6E7B), Black (muted crimson #C44E52), Asian (warm amber #D4943A).
+Two bar groups, shared y-axis "TPR" (range 0.88–1.00). Each group: White (deep teal #2C6E7B), Black (muted crimson #C44E52), Asian (warm amber #D4943A).
 
-"[MGB-Lung]" — subtitle, 5.5 pt #666666:
+MGB-Lung — subtitle, 5.5 pt #666666:
 - White: deep teal at height 0.971. Label "White" below — 5 pt #666666. Value "0.971" — 4 pt #999999 above.
 - Black: muted crimson at height 0.920. Label "Black" below — 5 pt #666666. Value "0.920" — 4 pt #999999 above.
 - Asian: warm amber at height 0.965. Label "Asian" below — 5 pt #666666. Value "0.965" — 4 pt #999999 above.
