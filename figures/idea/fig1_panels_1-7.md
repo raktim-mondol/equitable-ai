@@ -98,17 +98,19 @@ Chart area 5.5 cm × 5.5 cm centered — square. No gridlines. Axis strokes 0.5 
 
 Title: "TPR Disparity by Race Group" — 7 pt sans-serif bold, #333333.
 
-Two side-by-side bar pairs for LUAD lung cancer subtyping (ABMIL + UNI). Common y-axis "TPR" with range 0.88–1.00.
+Two side-by-side bar groups for LUAD lung cancer subtyping (ABMIL + UNI). Common y-axis "TPR" with range 0.88–1.00. Each group has 3 bars: White (deep teal #2C6E7B), Black (muted crimson #C44E52), Asian (warm amber #D4943A). White is the reference group in both.
 
-LEFT PAIR — "[MGB-Lung]" — subtitle, 5.5 pt #666666:
-- Bar 1: deep teal (#2C6E7B) at height 0.971. Label below: "White" — 5 pt #666666. Value "0.971" — 4 pt #999999 above bar.
-- Bar 2: muted crimson (#C44E52) at height 0.920. Label below: "Black" — 5 pt #666666. Value "0.920" — 4 pt #999999 above bar.
-- Double-headed vertical arrow between bar tops, 0.6 pt #555555, annotated "Δ = 5.1 pp" — 5 pt #444444.
+LEFT GROUP — "[MGB-Lung]" — subtitle, 5.5 pt #666666:
+- White: deep teal at height 0.971. Label "White" below — 5 pt #666666. Value "0.971" — 4 pt #999999 above.
+- Black: muted crimson at height 0.920. Label "Black" below — 5 pt #666666. Value "0.920" — 4 pt #999999 above.
+- Asian: warm amber at height 0.965. Label "Asian" below — 5 pt #666666. Value "0.965" — 4 pt #999999 above.
+- Arrow from White (0.971) to Black (0.920), annotated "White–Black Δ = 5.1 pp" — 5 pt #444444.
 
-RIGHT PAIR — "[TCGA-LUAD/LUSC]" — subtitle, 5.5 pt #666666:
-- Bar 1: deep teal (#2C6E7B) at height 0.960. Label: "White" — 5 pt #666666. Value "0.960" — 4 pt #999999 above bar.
-- Bar 2: muted crimson (#C44E52) at height 0.916. Label: "Asian" — 5 pt #666666. Value "0.916" — 4 pt #999999 above bar.
-- Double-headed vertical arrow from 0.960 to 0.916, annotated "Δ = 4.4 pp" — 5 pt #444444.
+RIGHT GROUP — "[TCGA-LUAD/LUSC]" — subtitle, 5.5 pt #666666:
+- White: deep teal at height 0.960. Label "White" below — 5 pt #666666. Value "0.960" — 4 pt #999999 above.
+- Black: muted crimson at height 0.950. Label "Black" below — 5 pt #666666. Value "0.950" — 4 pt #999999 above.
+- Asian: warm amber at height 0.916. Label "Asian" below — 5 pt #666666. Value "0.916" — 4 pt #999999 above.
+- Arrow from White (0.960) to Asian (0.916), annotated "White–Asian Δ = 4.4 pp" — 5 pt #444444.
 
 Annotation below bars: "LUAD subtyping, ABMIL + UNI, 20-fold CV" — 4.5 pt #999999, italic, centered.
 
