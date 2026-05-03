@@ -131,7 +131,7 @@ $$\text{AUROC Gap} = \left| \max_g \text{AUC}_g - \min_g \text{AUC}_g \right|$$
 
 ### Real Data (from Huang et al. 2025, Nature Communications 16:11485)
 - NSCLC subtyping (NSCLC-TYPE): fairness gap reduced from 0.041 → 0.016 after FLEX adaptation
-- TPR disparity RMSE reduced from 0.140 → 0.085 (39% reduction)
+- TPR disparity RMSE (C-UAD-EGFR task): reduced from 0.140 → 0.085 (39% reduction)
 - OOD AUROC improved by 6.4% on average across morphology, biomarker, and gene mutation tasks
 
 ### AI Image Generation Prompt
