@@ -102,7 +102,7 @@ LEFT PAIR — "[MGB-Lung]" — subtitle, 5.5 pt #666666:
 - Bar 2: muted crimson (#C44E52) at height 0.920. Label below: "Black" — 5 pt #666666. Value "0.920" — 4 pt #999999 above bar.
 - Double-headed vertical arrow between bar tops, 0.6 pt #555555, annotated "Δ = 5.1 pp" — 5 pt #444444.
 
-RIGHT PAIR — "[TCGA-Lung]" — subtitle, 5.5 pt #666666:
+RIGHT PAIR — "[TCGA-LUAD/LUSC]" — subtitle, 5.5 pt #666666:
 - Bar 1: deep teal (#2C6E7B) at height 0.960. Label: "White" — 5 pt #666666. Value "0.960" — 4 pt #999999 above bar.
 - Bar 2: muted crimson (#C44E52) at height 0.916. Label: "Asian" — 5 pt #666666. Value "0.916" — 4 pt #999999 above bar.
 - Double-headed vertical arrow from 0.960 to 0.916, annotated "Δ = 4.4 pp" — 5 pt #444444.
