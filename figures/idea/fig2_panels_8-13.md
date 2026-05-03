@@ -86,7 +86,8 @@ $$\text{OOD Gap} = \text{AUROC}_{\text{ID}} - \text{AUROC}_{\text{OOD}} \qquad \
 - Cancer classification when TSS ~ label (correlated): collapses to <20–50% — dramatic OOD failure
 - Stain normalization (Reinhard, Macenko): TSS prediction reduced but linear probe accuracies remained >80% (TCGA-LUSC-5) and >97% (CAMELYON16)
 - Foundation models do NOT eliminate batch effects; site signatures dominate distances in feature space
-- Corroborating: WILDS-CAMELYON17 benchmark shows 22.9 pp ID–OOD accuracy gap; CORAL, IRM, and Group DRO all leave this gap largely unresolved on histopathology data
+- Site signatures are already encoded in the first few principal components of feature space — accessible shortcuts for any downstream classifier
+- Stain normalization only slightly mitigates but does not remove these signatures; removing them from feature vectors remains an open challenge
 
 ### AI Image Generation Prompt
 
