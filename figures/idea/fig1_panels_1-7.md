@@ -81,11 +81,12 @@ All data values must be rendered with correct proportional relationships — not
 $$\Delta \text{TPR} = \max_g \text{TPR}_g - \min_g \text{TPR}_g$$
 
 ### Real Data (from Vaidya et al. 2024, Nature Medicine 30:1174–1190)
-- Lung cancer subtyping (MGB→MGB test): White TPR = 0.971, Black TPR = 0.920 → 5.1 pp gap
-- IDH1 mutation prediction (brain cancer): mean TPR disparity for Black patients = −0.060 (95% CI −0.080 to −0.020) with UNI encoder
-- Breast cancer subtyping AUC gap: White 0.98 vs Black 0.95 = 3.0% gap
-- IDH1 mutation prediction AUC gap: White vs Black = 16.0% (with ResNet50)
+- Lung cancer subtyping, LUAD (MGB→MGB test, ABMIL + UNI encoder): White TPR = 0.971 ± 0.004, Black TPR = 0.920 ± 0.006 → 5.1 pp gap (Extended Data Fig. 6d)
+- LUSC subtype: identical values — White 0.971, Black 0.920
+- IDH1 mutation prediction (brain cancer): overall mean TPR disparity = −0.060 (95% CI −0.080 to −0.020) with UNI encoder (Extended Data Table 6)
+- For Black patients with IDH1 mutation specifically, TPR disparity = −0.284 (95% CI −0.482 to −0.086) — a much larger gap
 - Self-supervised encoders (CTransPath, UNI) reduced gaps by up to 50% vs ResNet50
+- Note: exact race-stratified White/Black TPR pair values for IDH1 are NOT reported in the paper text — only the mean disparity metric (−0.060) is given
 
 ### AI Image Generation Prompt
 
