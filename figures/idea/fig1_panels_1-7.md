@@ -150,10 +150,12 @@ No reference text. No author names. No border. No icons. Flat vectors only.
 
 ---
 
-## Panel C — Equalised Odds / Equality of Opportunity
+## Panel C — Equality of Opportunity (EOp)
 
 ### Equation
-$$\text{EOp} = \left| \text{TPR}_a - \text{TPR}_b \right| \qquad \text{EOEq} = \max\left( \left|\text{TPR}_a - \text{TPR}_b\right|,\; \left|\text{FPR}_a - \text{FPR}_b\right| \right)$$
+$$\text{EOp} = \left| \text{TPR}_a - \text{TPR}_b \right|$$
+
+Note: Lin et al. (2025) uses EOp (TPR equality only) as its primary fairness metric. Equalised odds (EOEq = TPR + FPR equality) is reported in supplementary Table S4 but not in main results. Only 1 of 78 experimental papers (Soltan & Washington 2024) demonstrably implements full EOEq — shown separately in Panel K with EBAcc/AUROCDiff.
 
 ### Real Data (from Lin et al. 2025)
 - 29.93% (11/37) of cancer diagnostic tasks showed significant race, gender, or age bias in standard models
