@@ -80,9 +80,10 @@ All data values must be rendered with correct proportional relationships — not
 ### Equation
 $$\Delta \text{TPR} = \max_g \text{TPR}_g - \min_g \text{TPR}_g$$
 
-### Real Data (from Vaidya et al. 2024, Nature Medicine 30:1174–1190)
-- Lung cancer subtyping, LUAD (MGB→MGB test, ABMIL + UNI encoder): White TPR = 0.971 ± 0.004, Black TPR = 0.920 ± 0.006 → 5.1 pp gap (Extended Data Fig. 6d)
-- LUSC subtype: identical values — White 0.971, Black 0.920
+### Real Data (from Vaidya et al. 2024, Nature Medicine 30:1174–1190, Extended Data Fig. 6)
+- LUAD lung cancer subtyping, ABMIL + UNI encoder:
+  - MGB→MGB (external): White TPR = 0.971 ± 0.004, Black TPR = 0.920 ± 0.006 → 5.1 pp gap (Panel D)
+  - TCGA→TCGA (internal): White TPR = 0.960 ± 0.004, Black TPR = 0.950 ± 0.004, Asian TPR = 0.916 ± 0.020 → largest gap is White vs Asian at 4.4 pp (Panel B)
 - Across all 16 cancer types, TPR for White patients was higher than for Black patients in 14 of 16 types
 - Self-supervised encoders (CTransPath, UNI) reduced gaps by up to 50% vs ResNet50; TPR disparity approached zero with CTransPath+TransMIL+AR
 
