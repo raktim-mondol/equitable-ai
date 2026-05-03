@@ -15,7 +15,7 @@ Every panel must obey these rules exactly.
 ### Geometry
 - **Panel canvas:** 7.0 cm wide × 5.5 cm tall (chart area only; caption is separate text, not part of the image)
 - **Bounding box:** Tight — trim all excess whitespace around the chart. Panels have no border stroke. Internal margin ≤2 mm from chart elements to canvas edge
-- **Panel label:** Bold uppercase letter (A, B, C, …) in 9 pt sans-serif, top-left corner, 2 mm from canvas edges, colour #2C6E7B
+- **Panel label:** Bold uppercase letter (A, B, C, …) in 9 pt sans-serif, top-left corner, 2 mm from canvas edges, colour #000000
 - **Chart area:** Centered within the canvas, 6.0 cm × 4.0 cm, axes drawn with 0.5 pt #9E9E9E strokes, no gridlines
 
 ### Typography
