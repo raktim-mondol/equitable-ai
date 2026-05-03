@@ -44,7 +44,8 @@ All data values must be rendered with correct proportional relationships — not
 | Role | Colour | Hex |
 |------|--------|-----|
 | Reference / advantaged group (bar fill) | Deep teal | **#2C6E7B** |
-| Disadvantaged group (bar fill) | Muted crimson | **#C44E52** |
+| Disadvantaged group 1 (bar fill) | Muted crimson | **#C44E52** |
+| Disadvantaged group 2 (bar fill) | Warm amber | **#D4943A** |
 | Success / resolution badge (text & icon only, never bar fill) | Sea green | **#4A9E8E** |
 | Section background tint (never bar fill) | Warm stone | **#D4C5C2** |
 | Knowledge gap / warning (text & icon only, never bar fill) | Amber | **#E08E45** |
