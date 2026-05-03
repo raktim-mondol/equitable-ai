@@ -259,7 +259,7 @@ No reference text. No author names. No border. No icons. Flat vectors only.
 ```
 
 ### Caption Text (for separate use — NOT rendered on figure)
-**Demographic parity: equal fraction of positive predictions across groups.** Soltan & Washington (2024) found that White patients received positive predictions at 58–71% vs 30–62% for non-White patients in breast cancer staging. Important caveat: demographic parity does not account for true prevalence differences between groups and can be satisfied while providing poor care to all groups.
+**Demographic parity: equal fraction of positive predictions across groups.** Soltan & Washington (2024) found White patient accuracy ranged 58–71% vs 30–62% for non-White patients across 10 CNN architectures in breast cancer staging (binary). While the paper reports accuracy rather than P(ŷ=1) directly, the consistent White-favouring gap illustrates the demographic parity concern. Important caveat: demographic parity does not account for true prevalence differences between groups and can be satisfied while providing poor care to all groups.
 
 ---
 
