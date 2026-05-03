@@ -204,7 +204,7 @@ No reference text. No author names. No border. No icons. Flat vectors only.
 ```
 
 ### Caption Text (for separate use — NOT rendered on figure)
-**Equalised odds: TPR and FPR equal across demographic groups; equality of opportunity: only TPR equal.** Lin et al. (2025) found that 29.93% of cancer diagnostic tasks (11/37, spanning 20 cancer types) showed significant race, gender, or age bias. Their FAIR-Path framework mitigated 88.5% of these disparities internally and 91.1% in external cohorts — the most comprehensive histopathology fairness evaluation to date.
+**Equality of Opportunity (EOp): equal TPR across demographic groups.** Lin et al. (2025) found that 29.93% of cancer diagnostic tasks (11/37, spanning 20 cancer types) showed significant EOp disparities by race, gender, or age. Their FAIR-Path framework mitigated 88.5% of these disparities internally and 91.1% in external cohorts. EOp focuses on equalising recall (TPR) — ensuring disadvantaged groups are not systematically under-detected — while the stricter equalised odds (EOEq) additionally requires equal FPR and was only reported by 1 of 78 experimental studies (Soltan & Washington 2024).
 
 ---
 
