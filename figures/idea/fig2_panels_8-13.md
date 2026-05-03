@@ -80,7 +80,7 @@ $$\text{OOD Gap} = \text{AUROC}_{\text{ID}} - \text{AUROC}_{\text{OOD}} \qquad \
 ```
 Scientific illustration, high resolution 4K sharp, clean flat vector style, white background. Panel canvas 6.5 cm × 6.5 cm square, borderless. Tight bounding box — trim all excess whitespace. Panel label "H" in 9 pt bold sans-serif at top-left corner, 2 mm from edges, colour #000000.
 
-Chart area 6.0 cm × 4.0 cm centered. No gridlines. Axis strokes 0.5 pt #9E9E9E. Tick labels 5 pt #999999.
+Chart area 5.5 cm × 5.5 cm centered — square. No gridlines. Axis strokes 0.5 pt #9E9E9E. Tick labels 5 pt #999999.
 
 Title: "ID vs OOD Gap (Site Confounding)" — 7 pt sans-serif bold, #333333.
 
@@ -132,7 +132,7 @@ $$\text{MI}(X; Y) = \sum_{x \in X} \sum_{y \in Y} P(x,y) \log \frac{P(x,y)}{P(x)
 ```
 Scientific illustration, high resolution 4K sharp, clean flat vector style, white background. Panel canvas 6.5 cm × 6.5 cm square, borderless. Tight bounding box — trim all excess whitespace. Panel label "I" in 9 pt bold sans-serif at top-left corner, 2 mm from edges, colour #000000.
 
-Chart area 6.0 cm × 4.0 cm centered. No gridlines. Axis strokes 0.5 pt #9E9E9E. Tick labels 5 pt #999999.
+Chart area 5.5 cm × 5.5 cm centered — square. No gridlines. Axis strokes 0.5 pt #9E9E9E. Tick labels 5 pt #999999.
 
 Title: "Bias Proxy: Site-Classifiability & MI" — 7 pt sans-serif bold, #333333.
 
@@ -176,7 +176,7 @@ $$\text{TPR-RMSE} = \sqrt{\frac{1}{n} \sum_{i=1}^{n} \left( \text{TPR}_i - \over
 ```
 Scientific illustration, high resolution 4K sharp, clean flat vector style, white background. Panel canvas 6.5 cm × 6.5 cm square, borderless. Tight bounding box — trim all excess whitespace. Panel label "J" in 9 pt bold sans-serif at top-left corner, 2 mm from edges, colour #000000.
 
-Chart area 6.0 cm × 4.0 cm centered. No gridlines. Axis strokes 0.5 pt #9E9E9E. Tick labels 5 pt #999999.
+Chart area 5.5 cm × 5.5 cm centered — square. No gridlines. Axis strokes 0.5 pt #9E9E9E. Tick labels 5 pt #999999.
 
 Title: "TPR Disparity RMSE (C-UAD-EGFR)" — 7 pt sans-serif bold, #333333.
 
@@ -227,7 +227,7 @@ $$\text{EBAcc} = \left| \text{BalAcc}_a - \text{BalAcc}_b \right| \qquad \text{A
 ```
 Scientific illustration, high resolution 4K sharp, clean flat vector style, white background. Panel canvas 6.5 cm × 6.5 cm square, borderless. Tight bounding box — trim all excess whitespace. Panel label "K" in 9 pt bold sans-serif at top-left corner, 2 mm from edges, colour #000000.
 
-Chart area 6.0 cm × 4.0 cm centered. No gridlines. Axis strokes 0.5 pt #9E9E9E. Tick labels 5 pt #999999.
+Chart area 5.5 cm × 5.5 cm centered — square. No gridlines. Axis strokes 0.5 pt #9E9E9E. Tick labels 5 pt #999999.
 
 Title: "EBAcc & AUROCDiff" — 7 pt sans-serif bold, #333333.
 
@@ -288,7 +288,7 @@ $$J = \text{TPR} + \text{TNR} - 1 = \max_t \left( \text{sensitivity}(t) + \text{
 ```
 Scientific illustration, high resolution 4K sharp, clean flat vector style, white background. Panel canvas 6.5 cm × 6.5 cm square, borderless. Tight bounding box — trim all excess whitespace. Panel label "L" in 9 pt bold sans-serif at top-left corner, 2 mm from edges, colour #000000.
 
-Chart area 6.0 cm × 4.0 cm centered. No gridlines. Axis strokes 0.5 pt #9E9E9E. Tick labels 5 pt #999999.
+Chart area 5.5 cm × 5.5 cm centered — square. No gridlines. Axis strokes 0.5 pt #9E9E9E. Tick labels 5 pt #999999.
 
 Title: "Youden's Index Under Distribution Shift" — 7 pt sans-serif bold, #333333.
 
@@ -349,7 +349,7 @@ $$\text{Var}_{\text{hosp}} = \frac{1}{K} \sum_{k=1}^{K} \left( \text{Acc}_k - \o
 ```
 Scientific illustration, high resolution 4K sharp, clean flat vector style, white background. Panel canvas 6.5 cm × 6.5 cm square, borderless. Tight bounding box — trim all excess whitespace. Panel label "M" in 9 pt bold sans-serif at top-left corner, 2 mm from edges, colour #000000.
 
-Chart area 6.0 cm × 4.0 cm centered. No gridlines. Axis strokes 0.5 pt #9E9E9E. Tick labels 5 pt #999999.
+Chart area 5.5 cm × 5.5 cm centered — square. No gridlines. Axis strokes 0.5 pt #9E9E9E. Tick labels 5 pt #999999.
 
 Title: "Inter-Hospital Variance (Federated Learning)" — 7 pt sans-serif bold, #333333.
 
