@@ -399,7 +399,6 @@ No reference text. No author names. No border. No icons. Flat vectors only.
 - Arrange **6 panels (H–M)** in a **3 × 2 grid**
 - **Row 1:** Panels H, I, J
 - **Row 2:** Panels K, L, M
-- Colour legend: placed in a narrow horizontal strip below the grid (0.8 cm tall, full grid width)
 - Each panel is borderless; the grid arrangement provides visual separation via gutters
 
 ### Dimensions
