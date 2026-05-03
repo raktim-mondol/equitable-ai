@@ -95,24 +95,19 @@ Chart area 5.5 cm × 5.5 cm centered — square. No gridlines. Axis strokes 0.5 
 
 Title: "TPR Disparity by Race Group" — 7 pt sans-serif bold, #333333.
 
-Two side-by-side bar pairs showing the same task (LUAD subtyping) evaluated on different test populations. Common y-axis "TPR" with range 0.88–1.00.
+Two side-by-side bar pairs for LUAD lung cancer subtyping (ABMIL + UNI). Common y-axis "TPR" with range 0.88–1.00.
 
-LEFT PAIR — "Test: MGB (External Validation)" — subtitle, 5.5 pt #666666:
-- Bar 1: deep teal (#2C6E7B) at height proportional to 0.971, bar width 0.9 cm, 0.4 pt outline, 85% fill opacity. Label below bar: "White" — 5 pt #666666.
-- Bar 2: muted crimson (#C44E52) at height proportional to 0.920, bar width 0.9 cm, 0.4 pt outline, 85% fill opacity. Label below bar: "Black" — 5 pt #666666.
-- Double-headed vertical arrow between bar tops, 0.6 pt #555555 stroke, annotated "Δ = 5.1 pp" — 5 pt #444444, bold.
-- Error bars: ±0.004 on White, ±0.006 on Black (0.3 pt #999999).
-- Small annotation above White bar: "0.971" — 4 pt #999999. Above Black bar: "0.920" — 4 pt #999999.
+LEFT PAIR — "[MGB-Lung]" — subtitle, 5.5 pt #666666:
+- Bar 1: deep teal (#2C6E7B) at height 0.971. Label below: "White" — 5 pt #666666. Value "0.971" — 4 pt #999999 above bar.
+- Bar 2: muted crimson (#C44E52) at height 0.920. Label below: "Black" — 5 pt #666666. Value "0.920" — 4 pt #999999 above bar.
+- Double-headed vertical arrow between bar tops, 0.6 pt #555555, annotated "Δ = 5.1 pp" — 5 pt #444444.
 
-RIGHT PAIR — "Test: TCGA (Internal Validation)" — subtitle, 5.5 pt #666666:
-- Bar 1: deep teal (#2C6E7B) at height proportional to 0.960, bar width 0.9 cm. Label: "White" — 5 pt #666666.
-- Bar 2: muted crimson (#C44E52) at height proportional to 0.950, bar width 0.9 cm. Label: "Black" — 5 pt #666666.
-- Bar 3: muted crimson (#C44E52) at height proportional to 0.916, bar width 0.9 cm. Label: "Asian" — 5 pt #666666.
-- Double-headed vertical arrow from White bar top (0.960) to Asian bar top (0.916), annotated "Δ = 4.4 pp (White–Asian)" — 5 pt #444444.
-- Error bars: ±0.004 on White, ±0.004 on Black, ±0.020 on Asian (0.3 pt #999999).
+RIGHT PAIR — "[TCGA-Lung]" — subtitle, 5.5 pt #666666:
+- Bar 1: deep teal (#2C6E7B) at height 0.960. Label: "White" — 5 pt #666666. Value "0.960" — 4 pt #999999 above bar.
+- Bar 2: muted crimson (#C44E52) at height 0.916. Label: "Asian" — 5 pt #666666. Value "0.916" — 4 pt #999999 above bar.
+- Double-headed vertical arrow from 0.960 to 0.916, annotated "Δ = 4.4 pp" — 5 pt #444444.
 
-Annotation below bars: "ABMIL + UNI encoder | LUAD lung cancer subtyping" — 4.5 pt #999999, italic, centered.
-Context note: "In 14/16 cancer types, White TPR > Black TPR" — 4.5 pt #666666.
+Annotation below bars: "LUAD subtyping, ABMIL + UNI, 20-fold CV" — 4.5 pt #999999, italic, centered.
 
 Equation box at bottom of chart: "ΔTPR = max_g TPR_g − min_g TPR_g" in 6 pt monospace #2C6E7B, pale tint box (#F0F5F5 fill, 1 pt #D0D0D0 border, 2 pt corner radius, 1.5 mm padding).
 
