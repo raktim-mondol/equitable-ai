@@ -1,340 +1,419 @@
-# AI Image Generation Prompts — Figure 1: Panels 1–7
+# AI Image Generation Prompts — Figure 1: Panels A–G
 
 ## Overview
 
-Generate a **7-panel multi-figure illustration** (3×3 grid, 2 cells for legend/title) for an academic paper titled *"Towards Equitable AI in Pathology: A Systematic Review of Fairness Challenges and Debiasing Methods in Histopathology Imaging."* Each panel explains one or more fairness metrics using a **real published histopathology example** with actual numbers from the 78-study systematic review corpus. The figure serves as a visual glossary for histopathology researchers unfamiliar with fairness evaluation.
+Generate a **7-panel multi-figure illustration** (3×3 grid, 2 cells used for legend/title) for an academic paper titled *"Towards Equitable AI in Pathology: A Systematic Review of Fairness Challenges and Debiasing Methods in Histopathology Imaging."* Each panel explains one fairness metric using a **real published histopathology example** with actual numbers from the 78-study systematic review corpus. The figure serves as a visual glossary for histopathology researchers.
 
-**Style:** Clean scientific illustration — like a Nature Reviews figure or BioRender diagram. Flat vector aesthetic, no photo-realism. Use a consistent two-color scheme: **blue (#1F78B4)** for the advantaged/reference group, **orange (#E66101)** for the disadvantaged group.
-
-**Layout:** 3 columns × 3 rows on a white/transparent background. Each panel is self-contained with a mini chart/diagram and a 1–2 line caption below it. Overall figure title at top: **"How Fairness Metrics Work — Part 1: Group-Level Performance Metrics"**
+**Figure title (top):** **"How Fairness Metrics Work — Part 1: Group-Level Performance Metrics"**
 
 ---
 
-## Panel 1: TPR / FPR Disparity
+## Global Style Specification (ALL panels)
 
-### Reference
-**Vaidya et al. (2024)** — *"Demographic bias in misdiagnosis by computational pathology models"*, Nature Medicine, Vol. 30, pp. 1174–1190.
-- **Citation key:** `vaidya2024demographic`
-- **Dataset:** TCGA (breast, lung, brain), MGB (breast, lung), EBRAINS brain tumor atlas; whole slide images
-- **Why this example:** The only study in the corpus to systematically measure TPR disparity across race groups for multiple cancer types on histopathology WSIs, revealing that Black patients consistently have lower recall rates.
+Every panel must obey these rules exactly:
 
-### Real Data
-- **Lung cancer subtyping** (MGB→MGB test): White TPR = **0.971**, Black TPR = **0.920** → **5.1 percentage-point gap**
-- **IDH1 mutation prediction** (brain cancer): mean TPR disparity for Black patients = **−0.060** (95% CI −0.080 to −0.020) with UNI encoder
-- **Breast cancer subtyping**: AUC gap White (0.98) vs Black (0.95) = **3.0% gap**
-- **IDH1 mutation prediction AUC gap**: White vs Black = **16.0%** (with ResNet50)
+### Geometry
+- **Panel canvas:** 7.0 cm wide × 5.5 cm tall (chart area only; caption is separate text, not part of the image)
+- **Bounding box:** Tight — no padding beyond the panel border. Trim all excess whitespace around the chart to the minimum needed for legibility (≤2 mm margin inside the panel edge)
+- **Panel border:** 0.5 pt solid stroke, colour #D0D0D0, rounded corners (radius 3 pt)
+- **Panel label:** Bold uppercase letter (A, B, C, …) in 9 pt sans-serif, top-left corner, 2 mm from panel edges, colour #2C6E7B
+- **Chart area:** Centered within the canvas, 6.0 cm × 4.0 cm, axes drawn with 0.5 pt #9E9E9E strokes, no gridlines
+
+### Typography
+- **Panel title:** 7 pt sans-serif bold, #333333, centered above chart
+- **Axis labels:** 5.5 pt sans-serif, #666666
+- **Tick labels:** 5 pt sans-serif, #999999
+- **Data labels / annotations:** 5 pt sans-serif, #444444
+- **Equation text:** 6 pt monospace (#2C6E7B), placed in a pale tint box (#F0F5F5, 1 pt #D0D0D0 border, 2 pt corner radius) at bottom of chart area, 1.5 mm padding
+- **Caption (outside panel):** NOT included in the image — supplied separately as text
+
+### Colour Palette
+Derived from a **split-complementary academic scheme** (teal base, muted crimson accent, sea-green for improvement):
+
+| Role | Colour | Hex |
+|------|--------|-----|
+| Reference / advantaged group | Deep teal | **#2C6E7B** |
+| Disadvantaged group | Muted crimson | **#C44E52** |
+| After mitigation / equality achieved | Sea green | **#4A9E8E** |
+| Before mitigation / baseline | Warm stone grey | **#D4C5C2** |
+| Knowledge gap / warning | Amber | **#E08E45** |
+| Neutral reference lines / chance | Cool grey | **#9E9E9E** |
+| Highlight / emphasis stroke | Charcoal | **#555555** |
+| Background | White | **#FFFFFF** |
+
+### Visual Style
+- **Flat vector aesthetic** — no gradients, no 3D extrusions, no drop shadows, no photo-realistic textures
+- **Stroke width:** All bar outlines 0.4 pt, all connector lines 0.6 pt, all emphasis strokes 1.0 pt
+- **Fill opacity:** Bars and filled areas at 85% opacity for a professional printed look
+- **Markers:** Small filled circles (radius 2 pt) for data points on scatter/calibration plots
+- **Icons:** Minimalist line-art histopathology slide icon (12 pt × 12 pt) in bottom-right corner, colour #9E9E9E at 40% opacity, as a discreet domain marker only (no meaning, no legend entry)
+
+### What NOT to include on any panel
+- No author names, journal names, year, or citation keys
+- No reference text of any kind
+- No "Data from…" or "See Table…" footnotes
+- No legend inside the panel (legend is a separate cell in the grid)
+- No emoji, clip-art, or decorative elements
+
+---
+
+## Panel A — TPR / FPR Disparity
+
+### Equation
+$$\Delta \text{TPR} = \max_g \text{TPR}_g - \min_g \text{TPR}_g$$
+
+### Real Data (from Vaidya et al. 2024, Nature Medicine 30:1174–1190)
+- Lung cancer subtyping (MGB→MGB test): White TPR = 0.971, Black TPR = 0.920 → 5.1 pp gap
+- IDH1 mutation prediction (brain cancer): mean TPR disparity for Black patients = −0.060 (95% CI −0.080 to −0.020) with UNI encoder
+- Breast cancer subtyping AUC gap: White 0.98 vs Black 0.95 = 3.0% gap
+- IDH1 mutation prediction AUC gap: White vs Black = 16.0% (with ResNet50)
 - Self-supervised encoders (CTransPath, UNI) reduced gaps by up to 50% vs ResNet50
-- TPR disparity for Black patients approached zero when using CTransPath+TransMIL+AR
 
 ### AI Image Generation Prompt
 
 ```
-Scientific illustration, clean flat vector style, white background, single panel 8cm x 6cm.
+Scientific illustration, clean flat vector style, white background. Panel canvas 7.0 cm × 5.5 cm. Tight bounding box — trim all excess whitespace. Panel border: 0.5 pt #D0D0D0 solid stroke with 3 pt rounded corners. Panel label "A" in 9 pt bold sans-serif at top-left corner, 2 mm from edges, colour #2C6E7B.
 
-Two side-by-side sets of bar charts titled "TPR by Race Group (Lung Cancer Subtyping, MGB Cohort)".
+Chart area 6.0 cm × 4.0 cm centered. No gridlines. Axis strokes 0.5 pt #9E9E9E. Tick labels 5 pt #999999.
 
-Left bar pair: "LUAD Subtype"
-- Blue bar labeled "White" at height 0.971
-- Orange bar labeled "Black" at height 0.920
-- Double-headed arrow between them annotated "Δ = 5.1pp"
+Title: "TPR by Race Group (Lung Cancer Subtyping)" — 7 pt sans-serif bold, #333333.
 
-Right bar pair: "IDH1 Mutation (Brain)"
-- Blue bar labeled "White" at approximate height 0.92
-- Orange bar labeled "Black" at approximate height 0.86
-- Double-headed arrow annotated "Δ = 6.0pp"
+Two side-by-side bar pairs:
 
-Below each bar pair: a small 2×2 confusion matrix with cells labeled TP, FN, FP, TN. The TP cell highlighted in green, FN cell highlighted in red. For the Black group, show the FN count visibly larger than for White group.
+LEFT PAIR — "LUAD Subtype":
+- Bar 1: deep teal (#2C6E7B) at height proportional to 0.971, 0.4 pt outline, 85% fill opacity. Label below: "White" (5 pt, #666666).
+- Bar 2: muted crimson (#C44E52) at height proportional to 0.920, 0.4 pt outline, 85% fill opacity. Label below: "Black" (5 pt, #666666).
+- Double-headed arrow between bar tops, 0.6 pt #555555 stroke, annotated "Δ = 5.1 pp" (5 pt #444444).
 
-Below: small text "Vaidya et al. 2024, Nature Medicine 30:1174–1190".
-Tiny histopathology slide icon as domain marker.
+RIGHT PAIR — "IDH1 Mutation (Brain)":
+- Bar 1: deep teal (#2C6E7B) at height proportional to ~0.92.
+- Bar 2: muted crimson (#C44E52) at height proportional to ~0.86.
+- Double-headed arrow annotated "Δ = 6.0 pp" (5 pt #444444).
 
-Clean academic style, no gridlines, subtle axis labels. Blue (#1F78B4) and orange (#E66101). 
-No shadows, no 3D effects. Vector illustration quality suitable for scientific publication.
+Below each bar pair: tiny 2×2 confusion matrix (total size ~1.2 cm × 1.0 cm). Cells labeled TP (top-left, #4A9E8E fill at 50%), FN (top-right, #C44E52 fill at 40%), FP (bottom-left, #E08E45 fill at 40%), TN (bottom-right, #4A9E8E fill at 50%). For the Black/disadvantaged group, FN cell visibly larger than for White/reference group.
+
+Equation box at bottom of chart: "ΔTPR = max_g TPR_g − min_g TPR_g" in 6 pt monospace #2C6E7B, pale tint box (#F0F5F5 fill, 1 pt #D0D0D0 border, 2 pt corner radius, 1.5 mm padding).
+
+Discreet line-art histopathology slide icon (12×12 pt, #9E9E9E at 40% opacity) bottom-right corner.
+
+No reference text. No author names. No legend inside panel. Clean academic style. Flat vectors only — no gradients, shadows, or 3D effects.
 ```
 
-### Caption Text
-**TPR/FPR disparity = max TPR − min TPR (or RMSE across subgroups).** Vaidya et al. (2024) found that lung cancer subtyping models achieve TPR = 0.971 for White patients but only 0.920 for Black patients — a 5.1pp gap. For IDH1 mutation prediction, Black patients showed mean TPR disparity of −0.060, meaning the model systematically misses true disease cases more often in disadvantaged groups.
+### Caption Text (for separate use — NOT rendered on figure)
+**TPR/FPR disparity = max TPR − min TPR (or RMSE across subgroups).** Vaidya et al. (2024) found that lung cancer subtyping models achieve TPR = 0.971 for White patients but only 0.920 for Black patients — a 5.1 pp gap. For IDH1 mutation prediction, Black patients showed mean TPR disparity of −0.060, meaning the model systematically misses more true disease cases in disadvantaged groups.
 
 ---
 
-## Panel 2: Subgroup AUROC Gap
+## Panel B — Subgroup AUROC Gap
 
-### Reference
-**Huang et al. (2025)** — *"Knowledge-guided adaptation of pathology foundation models effectively improves fairness"*
-- **Citation key:** `huang2025knowledge`
+### Equation
+$$\text{AUROC Gap} = \left| \max_g \text{AUC}_g - \min_g \text{AUC}_g \right|$$
 
-### Real Data
-- NSCLC subtyping (NSCLC-TYPE): fairness gap reduced from **0.041 → 0.016** after FLEX adaptation
-- TPR disparity RMSE reduced from **0.140 → 0.085** (39% reduction)
+### Real Data (from Huang et al. 2025, Nature Communications 16:11485)
+- NSCLC subtyping (NSCLC-TYPE): fairness gap reduced from 0.041 → 0.016 after FLEX adaptation
+- TPR disparity RMSE reduced from 0.140 → 0.085 (39% reduction)
 - OOD AUROC improved by 6.4% on average across morphology, biomarker, and gene mutation tasks
 
 ### AI Image Generation Prompt
 
 ```
-Scientific illustration, clean flat vector style, white background, single panel 8cm x 6cm.
+Scientific illustration, clean flat vector style, white background. Panel canvas 7.0 cm × 5.5 cm. Tight bounding box — trim all excess whitespace. Panel border: 0.5 pt #D0D0D0 solid stroke with 3 pt rounded corners. Panel label "B" in 9 pt bold sans-serif at top-left corner, 2 mm from edges, colour #2C6E7B.
 
-A single ROC plot with two smooth curves. The blue curve (labeled "Best subgroup, AUROC=0.96") is close to the top-left corner. The orange curve (labeled "Worst subgroup, AUROC=0.92") is noticeably lower. 
-The area between the curves is lightly shaded in orange, with a bracket annotation "AUROC gap = 0.04". 
-A grey dashed diagonal line from (0,0) to (1,1) represents random chance.
-Below the plot, small text: "Huang et al. 2025".
-Right side inset: two small bar charts showing "Before FLEX (gap=0.041)" and "After FLEX (gap=0.016)" with the gap shrinking.
+Chart area 6.0 cm × 4.0 cm centered. No gridlines. Axis strokes 0.5 pt #9E9E9E. Tick labels 5 pt #999999.
 
-Blue (#1F78B4) and orange (#E66101) color scheme. Clean, no gridlines. Scientific publication quality.
+Title: "Subgroup AUROC Gap (NSCLC Subtyping)" — 7 pt sans-serif bold, #333333.
+
+LEFT HALF: Single ROC plot (axes 2.5 cm × 2.5 cm). 
+- Deep teal curve (#2C6E7B, 1.0 pt stroke): hugging top-left, labeled "Best subgroup, AUC = 0.96" (5 pt, #2C6E7B).
+- Muted crimson curve (#C44E52, 1.0 pt stroke): noticeably lower, labeled "Worst subgroup, AUC = 0.92" (5 pt, #C44E52).
+- Area between curves shaded with #C44E52 at 12% opacity.
+- Bracket annotation between curves: "AUROC gap = 0.04" (5 pt #444444).
+- Dashed diagonal from (0,0) to (1,1): 0.4 pt #9E9E9E.
+
+RIGHT HALF: Before/after inset (two bars, ~1.5 cm tall each):
+- Top bar: warm stone (#D4C5C2) at height 0.041, labeled "Before FLEX" (5 pt, #666666).
+- Bottom bar: sea green (#4A9E8E) at height 0.016, labeled "After FLEX" (5 pt, #666666).
+- Downward arrow between them annotated "↓ 61%" (5 pt #4A9E8E).
+
+Equation box at bottom: "AUROC Gap = | max_g AUC_g − min_g AUC_g |" in 6 pt monospace #2C6E7B, pale tint box (#F0F5F5 fill, 1 pt #D0D0D0 border, 2 pt corner radius, 1.5 mm padding).
+
+Discreet line-art histopathology slide icon (12×12 pt, #9E9E9E at 40% opacity) bottom-right corner.
+
+No reference text. No author names. No legend inside panel. Flat vectors only.
 ```
 
-### Caption Text
-**Subgroup AUROC gap = |AUC_best − AUC_worst|.** Huang et al. (2025) found a fairness gap of 0.041 for NSCLC subtyping, reduced to 0.016 after knowledge-guided adaptation — the model discriminates better for one demographic group than another.
+### Caption Text (for separate use — NOT rendered on figure)
+**Subgroup AUROC gap = |AUC_best − AUC_worst|.** Huang et al. (2025) found a fairness gap of 0.041 for NSCLC subtyping, reduced to 0.016 after knowledge-guided adaptation — the model discriminates better for one demographic group than another, a gap that can be substantially narrowed with targeted adaptation.
 
 ---
 
-## Panel 3: Equalised Odds / Equality of Opportunity
+## Panel C — Equalised Odds / Equality of Opportunity
 
-### Reference
-**Lin et al. (2025)** — *"Contrastive learning enhances fairness in pathology artificial intelligence systems"*
-- **Citation key:** `lin2025contrastive`
-- **Dataset:** TCGA (28,732 WSIs from 14,456 patients across 20 cancer types), CPTAC-3 (1,248 slides), PLCO (1,573 FFPE), DFCI (1,000+ slides); 15 independent cohorts total
-- **Why this example:** The most comprehensive histopathology fairness evaluation to date — 20 cancer types, 8 datasets, 7 institutions. Measures equal opportunity (EOp) and equalized odds (EOEq) per demographic group, and shows before/after mitigation.
+### Equation
+$$\text{EOp} = \left| \text{TPR}_a - \text{TPR}_b \right| \qquad \text{EOEq} = \max\left( \left|\text{TPR}_a - \text{TPR}_b\right|,\; \left|\text{FPR}_a - \text{FPR}_b\right| \right)$$
 
-### Real Data
-- **29.93%** (11/37) of cancer diagnostic tasks showed significant race, gender, or age bias in standard models
-- FAIR-Path mitigated **88.5%** of baseline disparities in internal validation
-- **91.1%** reduction in diagnostic performance gaps in external validation (15 independent cohorts)
-- **100%** resolution in cancer detection and subtype classification tasks
-- **80.0%** resolution in histological type classification tasks
-- Specific example — LUAD vs LUSC classification (FFPE): significant racial disparity in EOp (p=0.048), significant gender disparity in EOp (p<0.0001), and gender disparity in EBAcc (p=0.0059)
-- IDC vs ILC (breast, FFPE): significant age disparities in EOp (p=0.038) and EBAcc (p=0.044)
-- GBM vs LGG (brain, frozen): significant racial disparities in EOp (p=0.025)
-- Most disparities found in underrepresented groups: racial minorities, females, older age groups
+### Real Data (from Lin et al. 2025)
+- 29.93% (11/37) of cancer diagnostic tasks showed significant race, gender, or age bias in standard models
+- FAIR-Path mitigated 88.5% of baseline disparities in internal validation
+- 91.1% reduction in diagnostic performance gaps in external validation (15 independent cohorts)
+- 100% resolution in cancer detection and subtype classification tasks; 80% in histological type classification
+- LUAD vs LUSC (FFPE): significant racial disparity in EOp (p = 0.048), gender disparity in EOp (p < 0.0001)
 
 ### AI Image Generation Prompt
 
 ```
-Scientific illustration, clean flat vector style, white background, single panel 8cm x 6cm.
+Scientific illustration, clean flat vector style, white background. Panel canvas 7.0 cm × 5.5 cm. Tight bounding box — trim all excess whitespace. Panel border: 0.5 pt #D0D0D0 solid stroke with 3 pt rounded corners. Panel label "C" in 9 pt bold sans-serif at top-left corner, 2 mm from edges, colour #2C6E7B.
 
-Top section: A summary statistics block.
-Left: "Standard Model" with a red warning badge "29.93% of tasks biased" (11/37 across 20 cancer types).
-Right: "FAIR-Path" with a green checkmark badge "88.5% disparities resolved".
+Chart area 6.0 cm × 4.0 cm centered. No gridlines. Axis strokes 0.5 pt #9E9E9E. Tick labels 5 pt #999999.
 
-Middle section: Two bar chart pairs in before/after layout for EOp (Equal Opportunity difference).
+Title: "Equalised Odds (EOp / EOEq)" — 7 pt sans-serif bold, #333333.
 
-Left pair labeled "Before FAIR-Path (LUAD vs LUSC)":
-- Blue bar "Reference group TPR ≈ 0.92" 
-- Orange bar "Disadvantaged group TPR ≈ 0.78" 
-- Gap arrow annotated "EOp gap significant (p=0.048)"
+TOP ROW: Summary stat blocks (each ~1.8 cm × 0.8 cm).
+- Left block: warm stone (#D4C5C2) background tint, text "29.93% of tasks biased" + "11/37 across 20 cancer types" (5 pt #555555). Amber warning badge (#E08E45, small circle with "!").
+- Right block: sea green (#4A9E8E at 15% opacity) background tint, text "88.5% disparities resolved" + "91.1% in external validation" (5 pt #555555). Sea green checkmark (#4A9E8E).
 
-Right pair labeled "After FAIR-Path":
-- Both bars now nearly equal height around 0.90
-- Gap arrow shows near-zero difference
-- Annotation: "88.5% mitigation across all tasks"
+MIDDLE ROW: Before/after EOp bar pairs for "LUAD vs LUSC (FFPE)".
+- LEFT ("Before FAIR-Path"): deep teal bar (#2C6E7B) at height ~0.92 (reference TPR), muted crimson bar (#C44E52) at height ~0.78 (disadvantaged TPR). Gap arrow (0.6 pt #555555) annotated "EOp gap significant (p = 0.048)" in 5 pt #C44E52.
+- RIGHT ("After FAIR-Path"): both bars at equal height ~0.90 in sea green (#4A9E8E). Gap arrow shows near-zero difference, annotated "EOp gap resolved" in 5 pt #4A9E8E.
+- Dashed "Equality" reference line (#9E9E9E, 0.4 pt) at y = 0 across both pairs.
+- Bridge arrow between left and right labeled "Fairness-aware contrastive learning" (5 pt #555555).
 
-Between the two pairs: a bridging arrow with "Fairness-aware contrastive learning".
+BOTTOM ROW: Three small task-type resolution badges:
+- "Cancer detection" → "100% resolved" (sea green #4A9E8E)
+- "Subtype classification" → "100% resolved" (sea green #4A9E8E)
+- "Histological type" → "80% resolved" (amber #E08E45)
 
-Bottom: Three small task icons (lung, breast, brain) with resolution badges:
-- Cancer detection: "100% resolved" (green)
-- Subtype classification: "100% resolved" (green) 
-- Histological type: "80% resolved" (yellow)
+Equation box at bottom: "EOp = |TPR_a − TPR_b|    EOEq = max(|TPR_a−TPR_b|, |FPR_a−FPR_b|)" in 6 pt monospace #2C6E7B, pale tint box.
 
-Dashed horizontal "Equality target" line at y=0 across both chart pairs.
+Discreet line-art histopathology slide icon (12×12 pt, #9E9E9E at 40% opacity) bottom-right corner.
 
-Below: small text "Lin et al. 2025 — 28,732 TCGA WSIs, 20 cancer types, 15 cohorts".
-Small histopathology slide icon in corner.
-
-Blue (#1F78B4) and orange (#E66101). Clean vector style. No 3D effects.
+No reference text. No author names. No legend inside panel. Flat vectors only.
 ```
 
-### Caption Text
+### Caption Text (for separate use — NOT rendered on figure)
 **Equalised odds: TPR and FPR equal across demographic groups; equality of opportunity: only TPR equal.** Lin et al. (2025) found that 29.93% of cancer diagnostic tasks (11/37, spanning 20 cancer types) showed significant race, gender, or age bias. Their FAIR-Path framework mitigated 88.5% of these disparities internally and 91.1% in external cohorts — the most comprehensive histopathology fairness evaluation to date.
 
 ---
 
-## Panel 4: Demographic Parity
+## Panel D — Demographic Parity
 
-### Reference
-**Soltan & Washington (2024)** — *"Challenges in Reducing Bias Using Post-Processing Fairness for Breast Cancer Staging"*
-- **Citation key:** `soltan2024challenges`
+### Equation
+$$\text{DP} = \left| P(\hat{Y}=1 \mid G=a) - P(\hat{Y}=1 \mid G=b) \right|$$
 
-### Real Data
-- Binary breast cancer classification: White group positive prediction rate **58–71%**, non-White group **30–62%**
+### Real Data (from Soltan & Washington 2024, Algorithms 17:141)
+- Binary breast cancer classification: White group positive prediction rate 58–71%, non-White group 30–62%
 - Post-processing fairness interventions showed mixed results — no consistent improvement across groups
 - Multi-class staging: lower overall performance with inconsistent disparities
 
 ### AI Image Generation Prompt
 
 ```
-Scientific illustration, clean flat vector style, white background, single panel 8cm x 6cm.
+Scientific illustration, clean flat vector style, white background. Panel canvas 7.0 cm × 5.5 cm. Tight bounding box — trim all excess whitespace. Panel border: 0.5 pt #D0D0D0 solid stroke with 3 pt rounded corners. Panel label "D" in 9 pt bold sans-serif at top-left corner, 2 mm from edges, colour #2C6E7B.
 
-A bar chart titled "Positive Prediction Rate P(ŷ=1)" showing two bars: 
-a tall blue bar at ~65% labeled "White patients", and a shorter orange bar at ~46% labeled "non-White patients". 
-A dashed horizontal line across both bars labeled "Equal rate (if parity achieved)". 
-A warning triangle symbol (⚠) next to the chart with text "Ignores true disease prevalence — use with care".
-Below: small text "Soltan & Washington 2024".
+Chart area 6.0 cm × 4.0 cm centered. No gridlines. Axis strokes 0.5 pt #9E9E9E. Tick labels 5 pt #999999.
 
-Blue (#1F78B4) and orange (#E66101). Clean vector style, scientific publication quality.
+Title: "Demographic Parity (Breast Cancer Staging)" — 7 pt sans-serif bold, #333333.
+
+LEFT (60% of chart width): Bar chart "Positive Prediction Rate P(ŷ = 1)".
+- Deep teal bar (#2C6E7B, 85% opacity): height at ~65%, label "White patients" below (5 pt #666666).
+- Muted crimson bar (#C44E52, 85% opacity): height at ~46%, label "Non-White patients" below (5 pt #666666).
+- Dashed horizontal line (#9E9E9E, 0.4 pt) spanning both bars at y = 55%, labeled "Equal rate (if parity achieved)" (4.5 pt #9E9E9E).
+- Gap bracket between bar tops annotated "Δ = 19 pp" (5 pt #444444).
+
+RIGHT (40% of chart width): Warning inset box with amber (#E08E45 at 10% opacity) fill, 0.5 pt amber border.
+- Amber warning triangle symbol (⚠, 14 pt, #E08E45).
+- Text: "Does not account for true disease prevalence — use with caution" (4.5 pt #555555, 2 lines, centered).
+
+Equation box at bottom: "DP = | P(ŷ=1 | G=a) − P(ŷ=1 | G=b) |" in 6 pt monospace #2C6E7B, pale tint box.
+
+Discreet line-art histopathology slide icon (12×12 pt, #9E9E9E at 40% opacity) bottom-right corner.
+
+No reference text. No author names. No legend inside panel. Flat vectors only.
 ```
 
-### Caption Text
-**Demographic parity: equal fraction of positive predictions across groups.** Soltan & Washington (2024) found that White patients received positive predictions at 58–71% vs 30–62% for non-White patients in breast cancer staging. ⚠ Does not account for true prevalence differences between groups.
+### Caption Text (for separate use — NOT rendered on figure)
+**Demographic parity: equal fraction of positive predictions across groups.** Soltan & Washington (2024) found that White patients received positive predictions at 58–71% vs 30–62% for non-White patients in breast cancer staging. ⚠ Important caveat: demographic parity does not account for true prevalence differences between groups and can be satisfied while providing poor care to all groups.
 
 ---
 
-## Panel 5: Expected Calibration Error (ECE) & Subgroup Calibration Gap
+## Panel E — Expected Calibration Error (ECE) & Subgroup Calibration Gap
 
-### Reference
-**Roschewitz et al. (2023)** — *"Automatic correction of performance drift under acquisition shift in medical imaging"*, Nature Communications
-- **Citation key:** `roschewitz2023automatic`
+### Equation
+$$\text{ECE} = \sum_{m=1}^{M} \frac{|B_m|}{n} \left| \text{acc}(B_m) - \text{conf}(B_m) \right| \qquad \text{Subgroup Cal. Gap} = \left| \text{ECE}_a - \text{ECE}_b \right|$$
 
-### Real Data
-- Histopathology: ECE improved from **0.29 → 0.13–0.14** after alignment correction
-- Mammography Youden's index improved: Scanner A 0.295→0.651, Scanner B 0.589→0.594
-- **Subgroup calibration gap:** **0 studies (0%)** reported this in the entire 78-study corpus — a major evidence gap
+### Real Data (from Roschewitz et al. 2023, Nature Communications 14:7236)
+- Histopathology: ECE improved from 0.29 → 0.13–0.14 after alignment correction
+- Mammography Youden's index improved: Scanner A 0.295 → 0.651, Scanner B 0.589 → 0.594
+- **Subgroup calibration gap: 0 studies (0%) reported this in the entire 78-study corpus** — a major evidence gap
 
 ### AI Image Generation Prompt
 
 ```
-Scientific illustration, clean flat vector style, white background, single panel 8cm x 6cm.
+Scientific illustration, clean flat vector style, white background. Panel canvas 7.0 cm × 5.5 cm. Tight bounding box — trim all excess whitespace. Panel border: 0.5 pt #D0D0D0 solid stroke with 3 pt rounded corners. Panel label "E" in 9 pt bold sans-serif at top-left corner, 2 mm from edges, colour #2C6E7B.
 
-Two calibration plots side by side. Each shows predicted probability (x-axis, 0 to 1) vs observed frequency (y-axis, 0 to 1). 
+Chart area 6.0 cm × 4.0 cm centered. No gridlines. Axis strokes 0.5 pt #9E9E9E. Tick labels 5 pt #999999.
 
-Left plot titled "Before Alignment (ECE=0.29)": points deviate substantially from the diagonal, with several dots far from the dashed perfect-calibration line. A red "X" annotation.
+Title: "Expected Calibration Error (ECE)" — 7 pt sans-serif bold, #333333.
 
-Right plot titled "After Alignment (ECE=0.13)": points cluster tightly around the diagonal. A green checkmark annotation.
+TOP ROW: Two calibration plots side by side (each ~1.8 cm × 2.0 cm).
+X-axis: "Predicted probability" (4.5 pt #999999), range 0–1.
+Y-axis: "Observed frequency" (4.5 pt #999999), range 0–1.
+Dashed perfect-calibration diagonal in each: 0.4 pt #9E9E9E.
 
-Between the two plots, an arrow labeled "Alignment correction".
+LEFT PLOT — "Before Alignment (ECE = 0.29)":
+- Data points (filled circles, radius 2 pt) in warm stone (#D4C5C2), several far from diagonal.
+- Large amber "✗" marker (#E08E45, 8 pt) in corner.
 
-Below the calibration plots, a separate small box outlined in red dashed border, containing the text "Subgroup calibration gap: N=0 studies reported" with a magnifying glass icon and "?".
+RIGHT PLOT — "After Alignment (ECE = 0.13)":
+- Same data points now in sea green (#4A9E8E), clustered tightly around diagonal.
+- Sea green "✓" marker (#4A9E8E, 8 pt) in corner.
 
-Below: small text "Roschewitz et al. 2023, Nature Communications".
+Arrow between plots: "Alignment correction" (5 pt #555555).
 
-Blue and orange dots for different subgroups within each plot. Clean vector style.
+BOTTOM ROW: Separate box with amber dashed border (0.5 pt #E08E45), amber tint fill (#E08E45 at 8% opacity).
+- Magnifying glass line-art icon (10 pt, #E08E45).
+- Text: "Subgroup calibration gap: 0 of 78 studies reported" (5 pt #C44E52, bold).
+- Second line: "Major evidence gap — urgent research need" (4.5 pt #555555).
+
+Equation box at bottom (takes half width, sits beside the gap box): "ECE = Σ (|B_m|/n) · |acc(B_m) − conf(B_m)|" in 5.5 pt monospace #2C6E7B, pale tint box.
+
+Discreet line-art histopathology slide icon (12×12 pt, #9E9E9E at 40% opacity) bottom-right corner.
+
+No reference text. No author names. No legend inside panel. Flat vectors only.
 ```
 
-### Caption Text
-**ECE measures miscalibration (predicted probability vs observed frequency).** Roschewitz et al. (2023) reduced ECE from 0.29 to 0.13 via alignment correction. Subgroup calibration gap — difference in ECE across demographic groups — remains entirely unreported (0 of 78 studies).
+### Caption Text (for separate use — NOT rendered on figure)
+**ECE measures miscalibration (predicted probability vs observed frequency).** Roschewitz et al. (2023) reduced ECE from 0.29 to 0.13 via unsupervised prediction alignment. Subgroup calibration gap — the difference in ECE across demographic groups — remains entirely unreported in the histopathology fairness literature (0 of 78 studies), representing a critical evidence gap for safe clinical deployment.
 
 ---
 
-## Panel 6: Worst-Group Accuracy
+## Panel F — Worst-Group Accuracy
 
-### Reference
-**Soltan & Washington (2024)** — *"Challenges in Reducing Bias Using Post-Processing Fairness for Breast Cancer Stage Classification with Deep Learning"*, Algorithms, Vol. 17, 141.
-- **Citation key:** `soltan2024challenges`
-- **Dataset:** AIM-Ahead / Nightingale Open Science Dataset; 10,856 breast biopsy WSIs from 842 patients (2014–2020)
-- **Why this example:** Reports full subgroup-stratified accuracy/precision/recall/F1 tables for 10 CNN architectures across White vs non-White groups — the most granular worst-group data in the corpus. The Ensemble model's non-White accuracy (29.56%) is less than half the White accuracy (62.88%).
+### Equation
+$$\text{WGA} = \min_{g \in \mathcal{G}} \; \text{Accuracy}_g$$
 
-### Real Data (from Table 3, prior to fairness adjustments)
-- **ResNet18**: White accuracy **70.62%** ± 2.83 vs non-White **55.27%** ± 6.33 → **15.35pp gap**
-- **ResNet50**: White **67.37%** ± 1.75 vs non-White **61.95%** ± 4.31 → 5.42pp gap
-- **Ensemble model**: White **62.88%** ± 8.76 vs non-White **29.56%** ± 13.26 → **33.32pp gap** (most extreme)
-- **Slide Level**: White **65.44%** ± 8.18 vs non-White **55.11%** ± 16.47 → 10.33pp gap
+### Real Data (from Soltan & Washington 2024, Algorithms 17:141 — 10,856 breast biopsy WSIs, 842 patients)
+- ResNet18: White accuracy 70.62% ± 2.83 vs non-White 55.27% ± 6.33 → 15.35 pp gap
+- ResNet50: White 67.37% ± 1.75 vs non-White 61.95% ± 4.31 → 5.42 pp gap
+- Ensemble model: White 62.88% ± 8.76 vs non-White 29.56% ± 13.26 → **33.32 pp gap** (most extreme)
+- Slide Level: White 65.44% ± 8.18 vs non-White 55.11% ± 16.47 → 10.33 pp gap
 - Across all 10 models: White accuracy range 58–71%, non-White range 30–62%
-- ResNet18 recall: White 0.71 ± 0.03, non-White 0.55 ± 0.06
-- ResNet18 F1: White 0.73 ± 0.03, non-White 0.46 ± 0.08
-- Independent t-tests: majority of models showed statistically significant FPR differences between groups; TPR differences trended consistently toward better White performance with no reversed cases
 
 ### AI Image Generation Prompt
 
 ```
-Scientific illustration, clean flat vector style, white background, single panel 8cm x 6cm.
+Scientific illustration, clean flat vector style, white background. Panel canvas 7.0 cm × 5.5 cm. Tight bounding box — trim all excess whitespace. Panel border: 0.5 pt #D0D0D0 solid stroke with 3 pt rounded corners. Panel label "F" in 9 pt bold sans-serif at top-left corner, 2 mm from edges, colour #2C6E7B.
 
-Title: "Accuracy by Demographic Group (Breast Cancer Staging, Binary Classification)"
+Chart area 6.0 cm × 4.0 cm centered. No gridlines. Axis strokes 0.5 pt #9E9E9E. Tick labels 5 pt #999999.
 
-A grouped horizontal bar chart showing four representative models from the study:
+Title: "Worst-Group Accuracy (Breast Cancer Staging)" — 7 pt sans-serif bold, #333333.
+
+Grouped horizontal bar chart showing 4 models. Each model has two bars: deep teal (#2C6E7B) for White patients, muted crimson (#C44E52) for non-White patients. Thin error bars (0.3 pt, ±SD) on all bars.
 
 Model 1 — "ResNet18":
-  Blue bar (White): 70.6%, Orange bar (non-White): 55.3%
+  Teal bar: 70.6%, Crimson bar: 55.3% → gap bracket "15.4 pp" (4.5 pt #555555)
 
 Model 2 — "EfficientNet":
-  Blue bar (White): 67.3%, Orange bar (non-White): 56.4%
+  Teal bar: 67.3%, Crimson bar: 56.4% → gap bracket "10.9 pp" (4.5 pt #555555)
 
-Model 3 — "Ensemble":
-  Blue bar (White): 62.9%, Orange bar (non-White): 29.6% ← SHORTEST bar circled in red
+Model 3 — "Ensemble" ← MARKED AS WORST:
+  Teal bar: 62.9%, Crimson bar: 29.6%
+  Crimson bar is shortest in entire chart — encircled with charcoal dashed ring (#555555, 0.6 pt, radius ~0.6 cm).
+  Bold annotation pointing to it: "Worst-group accuracy = 29.6%" (5 pt #C44E52, bold).
+  Gap bracket: "Δ = 33.3 pp" (5 pt #C44E52, bold).
 
 Model 4 — "Slide Level":
-  Blue bar (White): 65.4%, Orange bar (non-White): 55.1%
+  Teal bar: 65.4%, Crimson bar: 55.1% → gap bracket "10.3 pp" (4.5 pt #555555)
 
-A prominent red dashed circle around the Ensemble non-White bar (29.6%), with annotation "Worst-group accuracy = 29.6%".
-A bracket connecting the Ensemble White bar (62.9%) to non-White bar (29.6%) labeled "Δ = 33.3pp".
+Right-side inset (1.0 cm × 1.0 cm): line-art histopathology slide with a faded crimson "✗" (#C44E52 at 60% opacity) overlaid, indicating diagnostic failure for the disadvantaged group.
 
-Right side inset: a small histopathology slide with a faded red "X" indicating diagnostic failure for the disadvantaged group.
+Equation box at bottom: "WGA = min_{g ∈ G} Accuracy_g" in 6 pt monospace #2C6E7B, pale tint box.
 
-Below: small text "Soltan & Washington 2024, Algorithms 17:141 — 10,856 breast biopsy WSIs".
+Discreet line-art histopathology slide icon (12×12 pt, #9E9E9E at 40% opacity) bottom-right corner.
 
-Blue (#1F78B4) for White/advantaged, orange (#E66101) for non-White/disadvantaged.
-Error bars (±SD) on all bars. Clean vector style. Scientific publication quality.
+No reference text. No author names. No legend inside panel. Flat vectors only.
 ```
 
-### Caption Text
-**Worst-group accuracy = min(accuracy across predefined subgroups).** Soltan & Washington (2024) evaluated 10 CNN architectures on 10,856 breast biopsy WSIs and found the Ensemble model achieves 62.9% accuracy for White patients but only 29.6% for non-White patients — the worst group receives less than half the best group's accuracy. No model showed better performance for non-White patients, and post-processing fairness interventions yielded mixed results.
+### Caption Text (for separate use — NOT rendered on figure)
+**Worst-group accuracy = min(accuracy across predefined subgroups).** Soltan & Washington (2024) evaluated 10 CNN architectures on 10,856 breast biopsy WSIs and found the Ensemble model achieves 62.9% accuracy for White patients but only 29.6% for non-White patients — the worst group receives less than half the best group's accuracy. No model showed better performance for non-White patients; post-processing interventions yielded mixed results.
 
 ---
 
-## Panel 7: Preserved-Site Cross-Validation
+## Panel G — Preserved-Site Cross-Validation
 
-### Reference
-**Howard et al. (2021)** — *"The impact of site-specific digital histology signatures on deep learning model accuracy and bias"*, Nature Communications
-- **Citation key:** `howard2021site`
+### Equation
+$$\text{Site-leakage} = \text{AUROC}_{\text{standard CV}} - \text{AUROC}_{\text{preserved-site CV}}$$
 
-### Real Data
-- Site prediction from histology features: AUROC **0.964–0.999** across cancer subtypes
-- Ancestry prediction (TCGA-BRCA): **AUROC 0.798 (standard CV) → 0.507 (preserved-site CV)**, P<0.001 → near-chance
+### Real Data (from Howard et al. 2021, Nature Communications 12:4423)
+- Site prediction from histology features: AUROC 0.964–0.999 across cancer subtypes
+- Ancestry prediction (TCGA-BRCA): AUROC 0.798 (standard CV) → 0.507 (preserved-site CV), P < 0.001 → near-chance
 - 51/56 (91.1%) features showed AUROC decline with preserved-site CV; average decrease = 0.069
-- PIK3CA mutation (TCGA-LUSC): AUROC 0.614→0.386, P<0.001
+- PIK3CA mutation (TCGA-LUSC): AUROC 0.614 → 0.386, P < 0.001
 
 ### AI Image Generation Prompt
 
 ```
-Scientific illustration, clean flat vector style, white background, single panel 8cm x 6cm.
+Scientific illustration, clean flat vector style, white background. Panel canvas 7.0 cm × 5.5 cm. Tight bounding box — trim all excess whitespace. Panel border: 0.5 pt #D0D0D0 solid stroke with 3 pt rounded corners. Panel label "G" in 9 pt bold sans-serif at top-left corner, 2 mm from edges, colour #2C6E7B.
 
-Top section: Schematic showing data splitting. Three rectangular blocks labeled "Site 1", "Site 2", "Site 3" in different shades.
+Chart area 6.0 cm × 4.0 cm centered. No gridlines. Axis strokes 0.5 pt #9E9E9E. Tick labels 5 pt #999999.
 
-Standard CV (left): all blocks are interleaved with colored dots mixed across folds (Fold 1, Fold 2, Fold 3). Label: "Standard CV — all sites mixed in each fold."
+Title: "Preserved-Site Cross-Validation" — 7 pt sans-serif bold, #333333.
 
-Preserved-site CV (right): each site block stays intact in exactly one fold (Fold 1 = Site 1, Fold 2 = Site 2, Fold 3 = Site 3). Label: "Preserved-site CV — each site in one fold."
+TOP ROW: Data-splitting schematic (two scenarios side by side, each ~2.5 cm wide).
 
-Bottom section: two bar pairs. Left pair labeled "Ancestry Prediction (TCGA-BRCA)": blue bar at 0.798 (Standard CV), orange bar at 0.507 (Preserved-site CV). Dashed line at 0.5 (chance). Arrow between bars annotated "Δ=0.291, P<0.001".
+LEFT — "Standard CV":
+Three rectangular site blocks (Site 1, Site 2, Site 3) in light tint fills (3 shades of #D4C5C2). Coloured dots (patients) from each site interleaved across Fold 1, Fold 2, Fold 3 boxes below. Label: "All sites mixed in each fold — data leakage" (4.5 pt #C44E52).
 
-Below: small text "Howard et al. 2021, Nature Communications".
+RIGHT — "Preserved-Site CV":
+Same three site blocks, but each site stays intact in exactly one fold. Fold 1 = only Site 1 dots, Fold 2 = only Site 2 dots, Fold 3 = only Site 3 dots. Label: "Each site in one fold — no leakage" (4.5 pt #4A9E8E).
 
-Clean flat vector style. Blue (#1F78B4) and orange (#E66101).
+BOTTOM ROW: Bar chart "Ancestry Prediction (TCGA-BRCA)".
+- Deep teal bar (#2C6E7B): height at 0.798, label "Standard CV" below.
+- Muted crimson bar (#C44E52): height at 0.507, label "Preserved-site CV" below.
+- Dashed horizontal line at 0.5 (#9E9E9E, 0.4 pt) labeled "Chance" (4.5 pt #9E9E9E).
+- Downward arrow between bars annotated "Δ = 0.291, P < 0.001" (5 pt #C44E52, bold).
+- Small annotation: "51/56 features declined; avg Δ = 0.069" (4.5 pt #555555).
+
+Equation box at bottom: "Site-leakage = AUROC_standard − AUROC_preserved-site" in 6 pt monospace #2C6E7B, pale tint box.
+
+Discreet line-art histopathology slide icon (12×12 pt, #9E9E9E at 40% opacity) bottom-right corner.
+
+No reference text. No author names. No legend inside panel. Flat vectors only.
 ```
 
-### Caption Text
-**Preserved-site CV: each site stays in one fold, preventing data leakage.** Howard et al. (2021) showed ancestry prediction AUROC collapsed from 0.798 (standard CV) to 0.507 (preserved-site CV, P<0.001), exposing that standard CV inflates performance by leaking site-specific signatures across folds.
+### Caption Text (for separate use — NOT rendered on figure)
+**Preserved-site CV: each site stays in one fold, preventing data leakage.** Howard et al. (2021) showed ancestry prediction AUROC collapsed from 0.798 (standard CV) to 0.507 (preserved-site CV, P < 0.001) — exposing that standard CV inflates performance by leaking site-specific digital histology signatures across folds, a finding confirmed across 91.1% of extracted features.
 
 ---
 
 ## Assembly Instructions — Figure 1
 
 ### Final Layout
-- Arrange **7 panels** in a **3×3 grid** (2 cells for legend/title)
-- Figure title at top: **"How Fairness Metrics Work — Part 1: Group-Level Performance Metrics (Panels 1–7)"**
-- Panel labels 1–7 in the top-left corner of each panel
-- Cells 8–9: Color legend + key references block
+- Arrange **7 panels (A–G)** in a **3 × 3 grid** — cells (1,1) through (3,3)
+- **Cell (1,1):** Title block + colour legend (spanning 1 column, 1 row)
+- **Cells (1,2), (1,3):** Panels A, B
+- **Cells (2,1), (2,2), (2,3):** Panels C, D, E
+- **Cells (3,1), (3,2):** Panels F, G
+- **Cell (3,3):** Key takeaways / "Part 1 → Part 2" bridge text (optional)
 
 ### Dimensions
-- **3×3 grid**: approximately 22 cm wide × 18 cm tall at 300 DPI
-- Each panel: ~5.0 cm × 5.0 cm (chart area) + 1.2 cm (caption)
-- Gutters: 0.4 cm horizontal, 0.4 cm vertical between panels
+- **Full grid:** exactly 22.0 cm wide × 18.0 cm tall at 300 DPI (2598 × 2126 px)
+- **Each panel cell:** 7.0 cm wide × 5.5 cm tall
+- **Gutters:** 0.3 cm horizontal, 0.3 cm vertical between panels
+- **Grid margins:** 0.5 cm top, 0.5 cm bottom, 0.5 cm left, 0.5 cm right
+- **Bounding box:** Crop exactly to grid margins — zero whitespace beyond the outermost borders
 
-### Color Palette
-- Advantaged group: **#1F78B4** (blue)
-- Disadvantaged group: **#E66101** (orange)
-- After mitigation / improvement: **#33A02C** (green)
-- Before mitigation / baseline: **#BABABA** (grey)
-- Knowledge gap / missing: **#D55E00** (red)
-- Neutral / reference lines: **#999999** (grey)
-- Background: **#FFFFFF** (white)
+### Colour Legend (cell 1,1)
+- Deep teal (#2C6E7B) = Reference / advantaged group
+- Muted crimson (#C44E52) = Disadvantaged group
+- Sea green (#4A9E8E) = After mitigation / equality achieved
+- Warm stone (#D4C5C2) = Before mitigation / baseline
+- Amber (#E08E45) = Knowledge gap / caution
 
-### Color Legend
-- 🟦 Blue (#1F78B4) = Advantaged / Reference group
-- 🟧 Orange (#E66101) = Disadvantaged group
-- 🟩 Green (#33A02C) = After mitigation
-- ⬜ Grey (#BABABA) = Before mitigation / Baseline
+### Shared Footer (below grid, not inside any panel)
+"Data from 78-study systematic review of fairness in histopathology AI. See Table 1 for the full 15-metric inventory and reporting frequency."
 
-### Shared Footer
-"Data from 78-study systematic review of fairness in histopathology AI (Mondol et al., 2026). See Table 1 for full 15-metric inventory."
-
-### References for Figure Caption
+### References (for figure caption — NOT on figure)
 1. Vaidya et al. (2024). Demographic bias in misdiagnosis by computational pathology models. *Nature Medicine*, 30, 1174–1190.
 2. Huang et al. (2025). Knowledge-guided adaptation of pathology foundation models effectively improves cross-domain generalization and demographic fairness. *Nature Communications*, 16, 11485.
 3. Lin et al. (2025). Contrastive learning enhances fairness in pathology artificial intelligence systems.
