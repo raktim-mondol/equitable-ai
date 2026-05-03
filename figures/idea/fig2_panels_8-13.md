@@ -41,6 +41,10 @@ Every panel must obey these rules exactly. These are **identical** to Figure 1 �
 
 **Critical colour rule:** Bar fills always use group-identity colours (deep teal for reference/advantaged/large-data, muted crimson for disadvantaged/confounded/small-data). Never use sea green, warm stone, or amber as bar fills. Before/after mitigation is conveyed through layout, labels, arrows, and annotation text — not through bar colour changes. Section background tints and success/warning badges may use warm stone, sea green, or amber sparingly as non-bar accents.
 
+### Rendering Quality
+- **Output:** High resolution, 4K, sharp — minimum 300 DPI at final print size, anti-aliased vector rendering, crisp edges on all text and chart elements
+- **Format:** Lossless (PNG or TIFF), suitable for academic publication
+
 ### Visual Style
 - **Flat vector aesthetic** — no gradients, no 3D extrusions, no drop shadows, no photo-realistic textures
 - **Stroke width:** All bar outlines 0.4 pt, all connector lines 0.6 pt, all emphasis strokes 1.0 pt
