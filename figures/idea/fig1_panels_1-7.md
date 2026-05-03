@@ -135,10 +135,10 @@ LEFT HALF (~55% width): Single ROC plot (axes ~2.5 cm × 2.5 cm).
 
 RIGHT HALF (~45% width): Before/after gap comparison (two horizontal bars, same colour):
 - Label "AUROC Gap" (5.5 pt bold #666666) above.
-- Top bar: charcoal (#555555) at width proportional to 0.041, 85% opacity, labeled "Before FLEX" (5 pt #666666).
-- Bottom bar: charcoal (#555555) at width proportional to 0.016, 85% opacity, labeled "After FLEX" (5 pt #666666).
+- Top bar: deep teal (#2C6E7B) at width proportional to 0.041, 85% opacity, labeled "Before FLEX" (5 pt #666666).
+- Bottom bar: deep teal (#2C6E7B) at width proportional to 0.016, 85% opacity, labeled "After FLEX" (5 pt #666666).
 - Downward arrow between bars annotated "↓ 61%" (5 pt #4A9E8E, bold).
-- Note: both bars use the same charcoal fill; before/after is indicated by labels and the reduction arrow.
+- Note: both bars use the same deep teal fill as the reference group; before/after is indicated by labels and the reduction arrow.
 
 Equation box at bottom: "AUROC Gap = | max_g AUC_g − min_g AUC_g |" in 6 pt monospace #2C6E7B, pale tint box (#F0F5F5 fill, 1 pt #D0D0D0 border, 2 pt corner radius, 1.5 mm padding).
 
