@@ -95,21 +95,23 @@ Scientific illustration, high resolution 4K sharp, clean flat vector style, whit
 
 Chart area 5.5 cm × 5.5 cm centered — square. No gridlines. Axis strokes 0.5 pt #9E9E9E. Tick labels 5 pt #999999.
 
-Title: "TPR by Race Group (Lung Cancer Subtyping)" — 7 pt sans-serif bold, #333333.
+Title: "TPR Disparity by Race Group" — 7 pt sans-serif bold, #333333.
 
-Two side-by-side bar pairs sharing a common y-axis "TPR" (range 0.8–1.0):
-
-LEFT PAIR — "LUAD Subtype" — subtitle, 5.5 pt #666666:
+LEFT (~65% of chart width): Bar pair "LUAD Subtype (Lung Cancer)" — subtitle, 5.5 pt #666666.
+Common y-axis "TPR" with range 0.85–1.00 to make the 5.1 pp gap clearly visible.
 - Bar 1: deep teal (#2C6E7B) at height proportional to 0.971, 0.4 pt outline, 85% fill opacity. Label below bar: "White" — 5 pt #666666.
 - Bar 2: muted crimson (#C44E52) at height proportional to 0.920, 0.4 pt outline, 85% fill opacity. Label below bar: "Black" — 5 pt #666666.
 - Double-headed vertical arrow between bar tops, 0.6 pt #555555 stroke, annotated "Δ = 5.1 pp" — 5 pt #444444.
+- Small error bars (±0.004 on White, ±0.006 on Black, 0.3 pt #999999).
 
-RIGHT PAIR — "IDH1 Mutation (Brain)" — subtitle, 5.5 pt #666666:
-- Bar 1: deep teal (#2C6E7B) at height proportional to ~0.92. Label: "White" — 5 pt #666666.
-- Bar 2: muted crimson (#C44E52) at height proportional to ~0.86. Label: "Black" — 5 pt #666666.
-- Double-headed vertical arrow annotated "Δ = 6.0 pp" — 5 pt #444444.
+RIGHT (~35% of chart width): Summary box with warm stone tint (#D4C5C2 at 10%) and 0.5 pt #D4C5C2 border, ~2.5 cm wide.
+- Header: "IDH1 Mutation (Brain)" — 5.5 pt bold #555555, centered.
+- Text: "Mean TPR disparity = −0.060" — 5 pt #444444.
+- Text: "95% CI [−0.080, −0.020]" — 4.5 pt #999999.
+- Text: "UNI encoder, pooled subgroups" — 4 pt #999999, italic.
+- Small note: "Race-stratified White vs Black TPR pair not reported for this task" — 3.5 pt #999999, italic.
 
-Below bar pairs: small annotation "Higher TPR = better recall of true disease cases" — 4.5 pt #999999, italic.
+Below: small annotation "Higher TPR = better recall of true disease cases" — 4.5 pt #999999, italic.
 
 Equation box at bottom of chart: "ΔTPR = max_g TPR_g − min_g TPR_g" in 6 pt monospace #2C6E7B, pale tint box (#F0F5F5 fill, 1 pt #D0D0D0 border, 2 pt corner radius, 1.5 mm padding).
 
