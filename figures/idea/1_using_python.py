@@ -5,7 +5,7 @@ from matplotlib.patches import FancyBboxPatch
 
 # ── Panel: 6.5 cm × 6.5 cm at 300 DPI ─────────────
 CM = 1/2.54  # cm to inches
-fig, ax = plt.subplots(figsize=(6.5*CM, 6.5*CM), dpi=300)
+fig, ax = plt.subplots(figsize=(7.0*CM, 7.0*CM), dpi=300)
 
 # ── Colours ───────────────────────────────────────
 TEAL    = '#2C6E7B'
